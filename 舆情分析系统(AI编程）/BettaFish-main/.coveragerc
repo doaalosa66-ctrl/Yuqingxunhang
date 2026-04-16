@@ -1,0 +1,12 @@
+[run]
+source = .
+include =
+    InsightEngine/utils/text_processing.py
+    utils/retry_helper.py
+    ReportEngine/ir/validator.py
+    InsightEngine/utils/db.py
+    InsightEngine/tools/search.py
+    ReportEngine/utils/json_parser.py
+
+[report]
+show_missing = True

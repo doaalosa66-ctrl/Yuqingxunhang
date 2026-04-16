@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03 - 报告详情页（真实测试数据）</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-color: #f8f9fa;
+            --text-color: #212529;
+            --primary-color: #2563eb;
+            --card-bg: #ffffff;
+            --border-color: #dee2e6;
+            --shadow-color: rgba(0,0,0,0.08);
+        }
+
+        body {
+            font-family: -apple-system, 'SF Pro Display', 'PingFang SC', sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .page-header {
+            background: #fff;
+            border-bottom: 1px solid var(--border-color);
+            padding: 16px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .page-title {
+            font-size: 13px;
+            color: #6c757d;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 32px 24px;
+            display: flex;
+            gap: 32px;
+        }
+
+        /* 左侧目录 */
+        .toc-sidebar {
+            width: 260px;
+            flex-shrink: 0;
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+        }
+
+        .toc-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .toc-list {
+            list-style: none;
+        }
+
+        .toc-item {
+            margin-bottom: 8px;
+        }
+
+        .toc-link {
+            display: block;
+            padding: 8px 12px;
+            font-size: 13px;
+            color: #6c757d;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .toc-link:hover {
+            background: #f1f3f5;
+            color: var(--primary-color);
+        }
+
+        .toc-link.active {
+            background: #e7f1ff;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        /* 主内容区 */
+        .report-main {
+            flex: 1;
+            min-width: 0;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 48px;
+            border-radius: 16px;
+            margin-bottom: 32px;
+            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.25);
+        }
+
+        .hero-hint {
+            font-size: 12px;
+            opacity: 0.9;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+
+        .hero-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            opacity: 0.95;
+            margin-bottom: 24px;
+        }
+
+        .hero-summary {
+            font-size: 15px;
+            line-height: 1.8;
+            opacity: 0.95;
+            margin-bottom: 24px;
+        }
+
+        .hero-highlights {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .hero-kpis {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .kpi-card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .kpi-label {
+            font-size: 12px;
+            opacity: 0.85;
+            margin-bottom: 8px;
+        }
+
+        .kpi-value {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .kpi-delta {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        .kpi-delta.up::before {
+            content: '↑ ';
+        }
+
+        /* 章节 */
+        .chapter {
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px var(--shadow-color);
+        }
+
+        .chapter h2 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #212529;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .chapter h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #495057;
+            margin: 24px 0 12px;
+        }
+
+        .chapter p {
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        /* FAB 悬浮按钮 */
+        .fab {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            z-index: 1000;
+        }
+
+        .fab-main {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: #fff;
+            border: none;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .fab-main:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+        }
+
+        .fab-menu {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            display: none;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .fab.active .fab-menu {
+            display: flex;
+            animation: fadeInUp 0.3s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fab-item {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #fff;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 8px var(--shadow-color);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .fab-item:hover {
+            background: #f8f9fa;
+            transform: scale(1.05);
+        }
+
+        .fab-item::before {
+            content: attr(data-label);
+            position: absolute;
+            right: 60px;
+            background: #212529;
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .fab-item:hover::before {
+            opacity: 1;
+        }
+
+        .note {
+            margin-top: 32px;
+            padding: 20px;
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 12px;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-header">
+        <div class="page-title">页面核查 03 / 06 — 报告详情页（真实测试数据：2026年出海短剧市场现状分析）</div>
+    </div>
+
+    <div class="container">
+        <!-- 左侧目录 -->
+        <aside class="toc-sidebar">
+            <div class="toc-title">报告目录</div>
+            <ul class="toc-list">
+                <li class="toc-item">
+                    <a href="#hero" class="toc-link active">概览摘要</a>
+                </li>
+                <li class="toc-item">
+                    <a href="#section-1" class="toc-link">一、市场全景概览</a>
+                </li>
+                <li class="toc-item">
+                    <a href="#section-2" class="toc-link">二、发展历程</a>
+                </li>
+                <li class="toc-item">
+                    <a href="#section-3" class="toc-link">三、用户动态</a>
+                </li>
+                <li class="toc-item">
+                    <a href="#section-4" class="toc-link">四、影响因素</a>
+                </li>
+                <li class="toc-item">
+                    <a href="#section-5" class="toc-link">五、监管态势</a>
+                </li>
+                <li class="toc-item">
+                    <a href="#section-6" class="toc-link">六、战略前瞻</a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- 主内容区 -->
+        <main class="report-main">
+            <!-- Hero Section -->
+            <section id="hero" class="hero-section">
+                <p class="hero-hint">舆情分析报告</p>
+                <h1 class="hero-title">2026年出海短剧市场全景深度报告</h1>
+                <p class="hero-subtitle">文化出海新浪潮：从野蛮生长到价值深耕的关键转折</p>
+
+                <p class="hero-summary">
+                    2026年，全球出海短剧市场已从野蛮生长进入精细化运营的全新阶段。市场规模预计突破50-60亿美元，AI技术使制作成本降低40%-80%，付费场景从"爽点收割"转向"情感共鸣+时长留存"的文化深度价值挖掘，呈现北美市场成熟化、东南亚市场爆发式增长的多元格局。本报告整合多源数据，深度剖析市场全貌、战略路径与风险应对。
+                </p>
+
+                <ul class="hero-highlights">
+                    <li><span class="badge">市场进入精细化运营与品质升级的全新阶段，全球付费用户规模预计突破5亿</span></li>
+                    <li><span class="badge">AI技术实现制作成本降低40%-80%，制片成本降至20%，单集大制作仅需数小时</span></li>
+                    <li><span class="badge">付费场景从爽点收割转向情感共鸣+时长留存，付费率45%，文化深度价值挖掘占比40%</span></li>
+                    <li><span class="badge">商业模式从单一付费到"广告+付费+品牌定制+IP衍生"的多元营收变革</span></li>
+                    <li><span class="badge">东南亚占90%增量市场，中东北非（MENA）地区同比增长988%（数据来源）</span></li>
+                </ul>
+
+                <div class="hero-kpis">
+                    <div class="kpi-card">
+                        <div class="kpi-label">全球市场规模预计</div>
+                        <div class="kpi-value">50-60亿美元</div>
+                        <div class="kpi-delta up">同比增长194.9%</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-label">AI降低成本幅度</div>
+                        <div class="kpi-value">40%-80%</div>
+                        <div class="kpi-delta up">制作效率提升</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-label">用户付费意愿率</div>
+                        <div class="kpi-value">48.8%</div>
+                        <div class="kpi-delta up">提升8.3个百分点</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-label">付费模式营收占比</div>
+                        <div class="kpi-value">66.3%</div>
+                        <div class="kpi-delta">仍保持主导地位</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 章节 1 -->
+            <section id="section-1" class="chapter">
+                <h2>一、市场全景概览：影响因素与舆论反应分析</h2>
+                <p>
+                    解析2026年出海短剧市场的核心驱动力、全球分布与关键量化指标，揭示市场增长动力、用户付费意愿与文化适配难题。
+                </p>
+
+                <h3>1.1 舆论场中的观点</h3>
+                <p>
+                    市场增长受"情感共鸣+时长留存"的文化深度价值挖掘驱动。"付费场景"与"爽点收割"成为核心争议焦点。
+                </p>
+
+                <h3>1.2 关键影响因素预测</h3>
+                <p>
+                    市场增长受全球内容分发产业格局、文化适配能力、商业模式创新等多重因素影响。AI技术降本增效、东南亚市场爆发式增长、北美市场成熟化运营成为三大核心驱动力。
+                </p>
+            </section>
+
+            <!-- 章节 2 -->
+            <section id="section-2" class="chapter">
+                <h2>二、发展历程：市场演进与传播脉络</h2>
+                <p>
+                    短剧出海起源于国内产业链成熟、海外流量红利与技术支撑等多重背景。
+                </p>
+
+                <h3>2.1 发展与发酵时间线</h3>
+                <p>
+                    市场演进经历了从2023年萌芽期到2024年海外验证期，再到2025年规模化扩张的关键节点。
+                </p>
+
+                <h3>2.2 传播路径分析</h3>
+                <p>
+                    传播路径已从萌芽期的"爆款试错"，演进到当前的"精准投放+本地化运营+数据驱动"的成熟打法。
+                </p>
+
+                <h3>2.3 权威媒体深度报道注解</h3>
+                <p>
+                    权威媒体聚焦短剧出海的商业模式创新、文化适配挑战与监管风险，呈现多维度的深度分析。
+                </p>
+            </section>
+
+            <!-- 章节 3 -->
+            <section id="section-3" class="chapter">
+                <h2>三、用户动态：全球用户行为态势分析</h2>
+                <p>
+                    分析不同区域（北美、欧洲、中东、东南亚等）用户行为特征、偏好差异与文化适配影响，揭示用户的付费意愿与内容偏好。
+                </p>
+
+                <h3>3.1 用户画像与行为特征</h3>
+                <p>
+                    全球用户呈现"年轻化、移动化、碎片化"的核心特征，付费意愿受内容质量、文化共鸣与平台体验三重因素影响。
+                </p>
+
+                <h3>3.2 区域差异与文化适配</h3>
+                <p>
+                    北美市场成熟化运营，东南亚市场爆发式增长，中东北非（MENA）地区同比增长988%，呈现显著的区域差异。
+                </p>
+            </section>
+
+            <!-- 章节 4 -->
+            <section id="section-4" class="chapter">
+                <h2>四、影响因素：驱动力与挑战并存的产业格局</h2>
+                <p>
+                    分析市场增长的产业格局、商业战略与监管风险等多重因素影响，揭示产业链成熟度、文化适配能力与战略压力指标。
+                </p>
+
+                <h3>4.1 产业链成熟度</h3>
+                <p>
+                    AI技术降本增效、制作成本降低40%-80%、制片成本降至20%，单集大制作仅需数小时，产业链成熟度显著提升。
+                </p>
+
+                <h3>4.2 商业模式创新</h3>
+                <p>
+                    商业模式从单一付费到"广告+付费+品牌定制+IP衍生"的多元营收变革，付费模式营收占比66.3%，仍保持主导地位。
+                </p>
+            </section>
+
+            <!-- 章节 5 -->
+            <section id="section-5" class="chapter">
+                <h2>五、监管态势：政策风险与合规应对</h2>
+                <p>
+                    分析中国政府、行业监管机构与欧美全球平台（TikTok、Snapchat等）的监管态度，揭示头部企业、中小企业与行业组织观点。
+                </p>
+
+                <h3>5.1 政策风险</h3>
+                <p>
+                    中国政府加强内容审核与版权保护，欧美平台强化数据隐私与内容合规，监管态势趋严。
+                </p>
+
+                <h3>5.2 合规应对</h3>
+                <p>
+                    头部企业建立完善的内容审核机制与版权保护体系，中小企业面临合规成本压力，行业组织推动自律规范。
+                </p>
+            </section>
+
+            <!-- 章节 6 -->
+            <section id="section-6" class="chapter">
+                <h2>六、战略前瞻：未来趋势与应对建议</h2>
+                <p>
+                    分析全球出海短剧市场未来发展趋势与平台策略，揭示技术创新、战略布局与风险管控的系统应对建议。
+                </p>
+
+                <h3>6.1 技术创新</h3>
+                <p>
+                    AI技术持续降本增效，虚拟制作、实时渲染与智能推荐成为核心技术方向，推动产业链升级。
+                </p>
+
+                <h3>6.2 战略布局</h3>
+                <p>
+                    北美市场深耕精细化运营，东南亚市场抢占增量红利，中东北非（MENA）地区探索本地化路径，全球化布局加速。
+                </p>
+
+                <h3>6.3 风险管控</h3>
+                <p>
+                    建立完善的内容审核机制、版权保护体系与数据合规流程，应对监管风险与市场竞争压力。
+                </p>
+            </section>
+
+            <div class="note">
+                <strong>📋 核查要点：</strong><br>
+                ✓ Hero Section（标题、摘要、KPI 卡片）<br>
+                ✓ 报告目录（左侧 ToC，点击跳转）<br>
+                ✓ 报告正文（章节、段落、标题层级）<br>
+                ✓ 悬浮操作按钮（FAB：PDF / HTML / MD 导出，右下角）<br>
+                ✓ 响应式布局（目录固定，内容滚动）<br>
+                ✓ 使用真实测试数据：final_report_2026年出海短剧市场现状分析_20260416_115244.html
+            </div>
+        </main>
+    </div>
+
+    <!-- FAB 悬浮按钮 -->
+    <div class="fab" id="fab">
+        <button class="fab-main" id="fabMain" aria-label="导出选项">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+        </button>
+        <div class="fab-menu" id="fabMenu">
+            <button class="fab-item" data-label="导出 PDF" onclick="alert('导出 PDF 功能')">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                </svg>
+            </button>
+            <button class="fab-item" data-label="下载 HTML" onclick="alert('下载 HTML 功能')">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="16 18 22 12 16 6"/>
+                    <polyline points="8 6 2 12 8 18"/>
+                </svg>
+            </button>
+            <button class="fab-item" data-label="下载 MD" onclick="alert('下载 MD 功能')">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 6h16M4 12h10M4 18h7"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // FAB toggle
+        document.getElementById('fabMain').addEventListener('click', function() {
+            document.getElementById('fab').classList.toggle('active');
+        });
+
+        // TOC active state
+        const tocLinks = document.querySelectorAll('.toc-link');
+        const sections = document.querySelectorAll('section[id]');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scroll
+        tocLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

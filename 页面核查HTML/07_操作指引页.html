@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07 - 操作指引页</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, 'SF Pro Display', 'PingFang SC', 'Helvetica Neue', sans-serif;
+            background: #0A0A0C;
+            color: #EBEBF5;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 30% 30%, rgba(10,132,255,0.08) 0%, transparent 55%),
+                radial-gradient(ellipse at 70% 70%, rgba(48,209,88,0.05) 0%, transparent 55%);
+            pointer-events: none;
+        }
+
+        /* ── 模拟主页背景 ── */
+        .bg-hint {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 14px;
+            color: rgba(235,235,245,0.15);
+            letter-spacing: 2px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ── 右下角两个悬浮按钮 ── */
+        .fab-group {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 99999;
+        }
+
+        .fab-pill {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            padding: 9px 18px 9px 14px;
+            border: 1px solid rgba(120,180,255,0.18);
+            border-radius: 999px;
+            background: rgba(10,20,40,0.45);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            color: rgba(180,210,255,0.72);
+            font-size: 12.5px;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            cursor: pointer;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.28), 0 0 0 1px rgba(59,158,255,0.06) inset;
+            transition: background 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s;
+            border: none;
+        }
+
+        .fab-pill:hover {
+            background: rgba(20,40,80,0.62);
+            border-color: rgba(120,180,255,0.32);
+            color: rgba(210,230,255,0.92);
+            box-shadow: 0 4px 24px rgba(59,158,255,0.18), 0 0 0 1px rgba(59,158,255,0.12) inset;
+        }
+
+        .fab-pill svg {
+            width: 15px;
+            height: 15px;
+            flex-shrink: 0;
+            opacity: 0.85;
+        }
+
+        /* ── 遮罩 ── */
+        #guideOverlay {
+            position: fixed;
+            inset: 0;
+            z-index: 99998;
+            background: rgba(0,0,10,0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.28s ease;
+        }
+
+        #guideOverlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        #guideOverlay.open #guideModal {
+            transform: scale(1) translateY(0);
+        }
+
+        /* ── Modal ── */
+        #guideModal {
+            width: min(640px, 92vw);
+            max-height: 82vh;
+            background: rgba(8,8,20,0.92);
+            border: 1px solid rgba(255,255,255,0.14);
+            border-radius: 22px;
+            backdrop-filter: blur(32px);
+            -webkit-backdrop-filter: blur(32px);
+            box-shadow: 0 24px 80px rgba(0,0,0,0.7), 0 0 60px rgba(10,132,255,0.08);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transform: scale(0.94) translateY(12px);
+            transition: transform 0.45s cubic-bezier(0.34,1.56,0.64,1);
+        }
+
+        /* ── 工具栏 ── */
+        .guide-toolbar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 18px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            background: rgba(0,0,0,0.2);
+            flex-shrink: 0;
+        }
+
+        .guide-toolbar-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #ebebf5;
+            letter-spacing: 0.04em;
+            flex: 1;
+        }
+
+        /* 缩放控件 */
+        .zoom-controls {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 2px 4px;
+        }
+
+        .zoom-btn {
+            width: 26px;
+            height: 26px;
+            border: none;
+            background: transparent;
+            color: rgba(235,235,245,0.6);
+            cursor: pointer;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.15s, color 0.15s;
+        }
+
+        .zoom-btn:hover {
+            background: rgba(255,255,255,0.08);
+            color: rgba(235,235,245,0.9);
+        }
+
+        .zoom-btn svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        #guideZoomLabel {
+            font-size: 11px;
+            font-weight: 600;
+            color: rgba(235,235,245,0.6);
+            min-width: 36px;
+            text-align: center;
+            font-family: monospace;
+        }
+
+        /* 关闭按钮 */
+        .guide-close {
+            width: 28px;
+            height: 28px;
+            border: none;
+            background: rgba(255,255,255,0.06);
+            border-radius: 50%;
+            color: rgba(235,235,245,0.6);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 4px;
+            transition: background 0.15s, color 0.15s;
+        }
+
+        .guide-close:hover {
+            background: rgba(255,59,48,0.2);
+            color: #FF453A;
+        }
+
+        .guide-close svg {
+            width: 13px;
+            height: 13px;
+        }
+
+        /* ── 滚动内容区 ── */
+        .guide-scroll {
+            overflow-y: auto;
+            flex: 1;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255,255,255,0.1) transparent;
+        }
+
+        .guide-scroll::-webkit-scrollbar { width: 4px; }
+        .guide-scroll::-webkit-scrollbar-track { background: transparent; }
+        .guide-scroll::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.1);
+            border-radius: 2px;
+        }
+
+        #guideContent {
+            padding: 24px 28px 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            transform-origin: top center;
+            transition: transform 0.28s ease;
+        }
+
+        /* ── 步骤卡片 ── */
+        .guide-step {
+            display: flex;
+            gap: 16px;
+            padding: 16px 18px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+        .guide-step:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: rgba(255,255,255,0.13);
+        }
+
+        .step-num {
+            font-size: 22px;
+            font-weight: 800;
+            color: rgba(10,132,255,0.35);
+            letter-spacing: -0.04em;
+            flex-shrink: 0;
+            padding-top: 2px;
+            min-width: 28px;
+            font-family: monospace;
+        }
+
+        .step-body {
+            flex: 1;
+        }
+
+        .step-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .step-desc {
+            font-size: 13px;
+            color: rgba(235,235,245,0.55);
+            line-height: 1.65;
+        }
+
+        .step-tag {
+            display: inline-block;
+            margin-top: 8px;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: rgba(10,132,255,0.7);
+            background: rgba(10,132,255,0.1);
+            border: 1px solid rgba(10,132,255,0.2);
+            border-radius: 4px;
+            padding: 2px 8px;
+        }
+
+        .step-tag.green {
+            color: rgba(48,209,88,0.8);
+            background: rgba(48,209,88,0.1);
+            border-color: rgba(48,209,88,0.2);
+        }
+
+        .step-tag.amber {
+            color: rgba(255,159,10,0.8);
+            background: rgba(255,159,10,0.1);
+            border-color: rgba(255,159,10,0.2);
+        }
+
+        /* ── 提示条 ── */
+        .guide-tip {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 12px 16px;
+            background: rgba(48,209,88,0.06);
+            border: 1px solid rgba(48,209,88,0.18);
+            border-radius: 10px;
+            font-size: 12px;
+            color: rgba(48,209,88,0.85);
+            line-height: 1.6;
+        }
+
+        .guide-tip svg {
+            width: 15px;
+            height: 15px;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .guide-tip code {
+            background: rgba(48,209,88,0.12);
+            border-radius: 3px;
+            padding: 1px 5px;
+            font-family: monospace;
+            font-size: 11px;
+        }
+
+        /* ── 核查说明 ── */
+        .note {
+            position: fixed;
+            bottom: 28px;
+            left: 28px;
+            max-width: 340px;
+            padding: 14px 16px;
+            background: rgba(255,159,10,0.08);
+            border: 1px solid rgba(255,159,10,0.22);
+            border-radius: 14px;
+            font-size: 12px;
+            color: rgba(255,200,120,0.9);
+            line-height: 1.7;
+            z-index: 100;
+            backdrop-filter: blur(12px);
+        }
+
+        .note strong {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 背景提示 -->
+    <div class="bg-hint">主页面背景（点击右下角按钮触发）</div>
+
+    <!-- 右下角悬浮按钮组 -->
+    <div class="fab-group">
+        <!-- 历史报告 -->
+        <button class="fab-pill" onclick="alert('打开历史报告抽屉（见 04_历史报告列表页.html）')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            <span>历史报告</span>
+        </button>
+
+        <!-- 使用指引 -->
+        <button class="fab-pill" onclick="document.getElementById('guideOverlay').classList.add('open')">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="10" cy="10" r="8"/>
+                <line x1="10" y1="9" x2="10" y2="14"/>
+                <circle cx="10" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+            </svg>
+            <span>使用指引</span>
+        </button>
+    </div>
+
+    <!-- 使用指引 Modal -->
+    <div id="guideOverlay">
+        <div id="guideModal">
+
+            <!-- 工具栏 -->
+            <div class="guide-toolbar">
+                <span class="guide-toolbar-title">使用指引</span>
+
+                <!-- 缩放控件 -->
+                <div class="zoom-controls">
+                    <button class="zoom-btn" onclick="guideZoom(-1)" title="缩小">
+                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                            <line x1="3" y1="8" x2="13" y2="8"/>
+                        </svg>
+                    </button>
+                    <span id="guideZoomLabel">100%</span>
+                    <button class="zoom-btn" onclick="guideZoom(1)" title="放大">
+                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                            <line x1="8" y1="3" x2="8" y2="13"/>
+                            <line x1="3" y1="8" x2="13" y2="8"/>
+                        </svg>
+                    </button>
+                    <button class="zoom-btn" onclick="guideZoom(0)" title="重置">
+                        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 8a6 6 0 1 1 1.5 4"/>
+                            <polyline points="2 13 2 8 7 8"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- 关闭 -->
+                <button class="guide-close" onclick="document.getElementById('guideOverlay').classList.remove('open')" title="关闭">
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                        <line x1="3" y1="3" x2="13" y2="13"/>
+                        <line x1="13" y1="3" x2="3" y2="13"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- 滚动内容区 -->
+            <div class="guide-scroll">
+                <div id="guideContent">
+
+                    <!-- 步骤 01 -->
+                    <div class="guide-step">
+                        <div class="step-num">01</div>
+                        <div class="step-body">
+                            <div class="step-title">配置 LLM 引擎</div>
+                            <div class="step-desc">点击搜索框右侧参数图标，展开高级面板，选择「LLM 配置」填写 API Key 并保存。首次使用必须完成此步骤。</div>
+                            <span class="step-tag">前置条件</span>
+                        </div>
+                    </div>
+
+                    <!-- 步骤 02 -->
+                    <div class="guide-step">
+                        <div class="step-num">02</div>
+                        <div class="step-body">
+                            <div class="step-title">输入舆情主题</div>
+                            <div class="step-desc">在中央搜索框输入你想分析的品牌、事件或关键词，例如「某品牌危机公关」。支持中英文混合输入。</div>
+                            <span class="step-tag">核心操作</span>
+                        </div>
+                    </div>
+
+                    <!-- 步骤 03 -->
+                    <div class="guide-step">
+                        <div class="step-num">03</div>
+                        <div class="step-body">
+                            <div class="step-title">选择数据源与深度</div>
+                            <div class="step-desc">展开参数面板，选择「MindSpider 公开抓取」或「私有数据库」，并设置抓取深度。深度越高，分析越全面，耗时也越长。</div>
+                            <span class="step-tag amber">可选配置</span>
+                        </div>
+                    </div>
+
+                    <!-- 步骤 04 -->
+                    <div class="guide-step">
+                        <div class="step-num">04</div>
+                        <div class="step-body">
+                            <div class="step-title">等待 Agent 协作分析</div>
+                            <div class="step-desc">提交后，Query / Media / Insight 三个智能体将并行工作。你可以在「系统思考流」终端实时观察每个 Agent 的进度与发现。</div>
+                            <span class="step-tag green">自动执行</span>
+                        </div>
+                    </div>
+
+                    <!-- 步骤 05 -->
+                    <div class="guide-step">
+                        <div class="step-num">05</div>
+                        <div class="step-body">
+                            <div class="step-title">生成与导出报告</div>
+                            <div class="step-desc">三个 Agent 完成后，切换到「报告引擎」Tab，点击「生成最终报告」。报告生成后可通过右下角 FAB 按钮导出 PDF / HTML / Markdown。</div>
+                            <span class="step-tag green">输出结果</span>
+                        </div>
+                    </div>
+
+                    <!-- 提示条 -->
+                    <div class="guide-tip">
+                        <svg viewBox="0 0 16 16" fill="none" stroke="rgba(48,209,88,0.8)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M8 1a5 5 0 0 1 2 9.6V12H6v-1.4A5 5 0 0 1 8 1z"/>
+                            <line x1="6" y1="15" x2="10" y2="15"/>
+                        </svg>
+                        <span>可上传自定义 <code>.md</code> 模板文件，让报告结构完全符合你的业务需求。</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 核查说明 -->
+    <div class="note">
+        <strong>📋 核查要点</strong>
+        ✓ 右下角两个悬浮胶囊按钮（历史报告 + 使用指引）<br>
+        ✓ 点击「使用指引」弹出 Modal（弹入动画）<br>
+        ✓ Modal 顶部工具栏（标题 + 缩放控件 + 关闭）<br>
+        ✓ 5 个步骤卡片（编号 01-05，hover 高亮）<br>
+        ✓ 步骤标签颜色区分（蓝/绿/琥珀）<br>
+        ✓ 底部绿色提示条（自定义模板）<br>
+        ✓ 缩放功能（75% ~ 150%，6 档）<br>
+        ✓ ESC 键 / 点击遮罩关闭<br>
+        ✓ 点击「历史报告」按钮跳转提示
+    </div>
+
+    <script>
+    (function () {
+        var STEPS = [0.75, 0.85, 1.0, 1.15, 1.3, 1.5];
+        var idx = 2;
+
+        window.guideZoom = function (dir) {
+            if (dir === 0) { idx = 2; }
+            else if (dir > 0 && idx < STEPS.length - 1) { idx++; }
+            else if (dir < 0 && idx > 0) { idx--; }
+            var c = document.getElementById('guideContent');
+            var l = document.getElementById('guideZoomLabel');
+            if (c) c.style.transform = 'scale(' + STEPS[idx] + ')';
+            if (l) l.textContent = Math.round(STEPS[idx] * 100) + '%';
+        };
+
+        // 遮罩开关动画
+        var overlay = document.getElementById('guideOverlay');
+        var modal   = document.getElementById('guideModal');
+
+        var observer = new MutationObserver(function () {
+            var isOpen = overlay.classList.contains('open');
+            overlay.style.opacity = isOpen ? '1' : '0';
+            overlay.style.pointerEvents = isOpen ? 'auto' : 'none';
+            if (modal) {
+                modal.style.transform = isOpen
+                    ? 'scale(1) translateY(0)'
+                    : 'scale(0.94) translateY(12px)';
+            }
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        });
+        observer.observe(overlay, { attributes: true, attributeFilter: ['class'] });
+
+        // 点击遮罩背景关闭
+        overlay.addEventListener('click', function (e) {
+            if (e.target === overlay) {
+                overlay.classList.remove('open');
+            }
+        });
+
+        // ESC 关闭
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') overlay.classList.remove('open');
+        });
+
+        // Ctrl + 滚轮缩放
+        document.getElementById('guideModal').addEventListener('wheel', function (e) {
+            if (e.ctrlKey) {
+                e.preventDefault();
+                guideZoom(e.deltaY < 0 ? 1 : -1);
+            }
+        }, { passive: false });
+    })();
+    </script>
+</body>
+</html>

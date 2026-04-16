@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05 - 系统配置页</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --space-void: #0A0A0C;
+            --glass-bg: rgba(255,255,255,0.05);
+            --glass-border: rgba(255,255,255,0.10);
+            --text-silver: #EBEBF5;
+            --text-dim: rgba(235,235,245,0.80);
+            --text-ghost: rgba(235,235,245,0.58);
+            --neon-blue: #0A84FF;
+            --neon-green: #30D158;
+            --neon-amber: #FF9F0A;
+            --neon-red: #FF453A;
+            --r-md: 16px;
+            --r-lg: 22px;
+        }
+
+        body {
+            font-family: -apple-system, 'SF Pro Display', 'PingFang SC', sans-serif;
+            background: var(--space-void);
+            color: var(--text-silver);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 30%, rgba(10,132,255,0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        /* Modal 遮罩 */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            padding: 20px;
+        }
+
+        /* Modal 容器 */
+        .config-modal {
+            width: 720px;
+            max-width: 90vw;
+            max-height: 85vh;
+            background: rgba(10, 10, 20, 0.95);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--r-lg);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            animation: modalIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes modalIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        /* Modal Header */
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 24px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            flex-shrink: 0;
+        }
+
+        .modal-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-silver);
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .modal-btn {
+            padding: 8px 16px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(255,255,255,0.06);
+            color: var(--text-dim);
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .modal-btn:hover {
+            background: rgba(255,255,255,0.10);
+            color: var(--text-silver);
+        }
+
+        .modal-btn.primary {
+            background: var(--neon-blue);
+            border-color: var(--neon-blue);
+            color: #fff;
+        }
+
+        .modal-btn.primary:hover {
+            background: #0077ED;
+        }
+
+        .modal-close {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.06);
+            border: none;
+            color: var(--text-dim);
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .modal-close:hover {
+            background: rgba(255,59,48,0.2);
+            color: var(--neon-red);
+        }
+
+        /* Tab Bar */
+        .tab-bar {
+            display: flex;
+            gap: 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            background: rgba(0,0,0,0.2);
+            padding: 0 24px;
+            flex-shrink: 0;
+        }
+
+        .tab-btn {
+            padding: 14px 20px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-dim);
+            background: none;
+            border: none;
+            border-bottom: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-bottom: -1px;
+        }
+
+        .tab-btn:hover {
+            color: var(--text-silver);
+        }
+
+        .tab-btn.active {
+            color: var(--neon-blue);
+            border-bottom-color: var(--neon-blue);
+        }
+
+        /* Modal Body */
+        .modal-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 24px;
+        }
+
+        .modal-body::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .modal-body::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .modal-body::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.15);
+            border-radius: 3px;
+        }
+
+        /* Tab Panel */
+        .tab-panel {
+            display: none;
+        }
+
+        .tab-panel.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Banner */
+        .tab-banner {
+            padding: 14px 18px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .tab-banner.info {
+            background: rgba(10,132,255,0.1);
+            border: 1px solid rgba(10,132,255,0.25);
+            color: rgba(140,190,255,0.95);
+        }
+
+        .tab-banner.warning {
+            background: rgba(255,159,10,0.1);
+            border: 1px solid rgba(255,159,10,0.25);
+            color: rgba(255,200,120,0.95);
+        }
+
+        /* Config Group */
+        .config-group {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+
+        .config-group-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-silver);
+            margin-bottom: 6px;
+        }
+
+        .config-group-subtitle {
+            font-size: 12px;
+            color: var(--text-ghost);
+            margin-bottom: 16px;
+        }
+
+        /* Config Field */
+        .config-field {
+            margin-bottom: 16px;
+        }
+
+        .config-field:last-child {
+            margin-bottom: 0;
+        }
+
+        .config-field-label {
+            display: block;
+            font-size: 13px;
+            color: var(--text-dim);
+            margin-bottom: 8px;
+        }
+
+        .config-field-label .required {
+            color: var(--neon-red);
+            margin-left: 2px;
+        }
+
+        .config-field-input {
+            width: 100%;
+            padding: 10px 14px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.10);
+            border-radius: 8px;
+            color: var(--text-silver);
+            font-size: 14px;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        .config-field-input::placeholder {
+            color: var(--text-ghost);
+        }
+
+        .config-field-input:focus {
+            border-color: var(--neon-blue);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .config-field-input[type="password"] {
+            font-family: 'Courier New', monospace;
+            letter-spacing: 2px;
+        }
+
+        .config-field-hint {
+            font-size: 11px;
+            color: var(--text-ghost);
+            margin-top: 6px;
+        }
+
+        /* Password Toggle */
+        .password-wrapper {
+            position: relative;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 32px;
+            height: 32px;
+            border: none;
+            background: rgba(255,255,255,0.06);
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .password-toggle:hover {
+            background: var(--neon-blue);
+        }
+
+        .password-toggle svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--text-dim);
+            transition: stroke 0.2s ease;
+        }
+
+        .password-toggle:hover svg {
+            stroke: #fff;
+        }
+
+        /* Select */
+        select.config-field-input {
+            cursor: pointer;
+        }
+
+        /* Status Message */
+        .status-message {
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-size: 13px;
+            margin-bottom: 16px;
+            display: none;
+        }
+
+        .status-message.visible {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .status-message.success {
+            background: rgba(48,209,88,0.15);
+            border: 1px solid rgba(48,209,88,0.3);
+            color: var(--neon-green);
+        }
+
+        .status-message.error {
+            background: rgba(255,59,48,0.15);
+            border: 1px solid rgba(255,59,48,0.3);
+            color: var(--neon-red);
+        }
+
+        /* Modal Footer */
+        .modal-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 24px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            flex-shrink: 0;
+        }
+
+        .footer-hint {
+            font-size: 12px;
+            color: var(--text-ghost);
+        }
+
+        .footer-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .note {
+            position: fixed;
+            bottom: 24px;
+            left: 24px;
+            max-width: 360px;
+            padding: 16px;
+            background: rgba(255,159,10,0.1);
+            border: 1px solid rgba(255,159,10,0.25);
+            border-radius: var(--r-md);
+            font-size: 13px;
+            color: rgba(255,200,120,0.9);
+            line-height: 1.6;
+            z-index: 200;
+        }
+    </style>
+</head>
+<body>
+    <div class="modal-overlay">
+        <div class="config-modal">
+            <!-- Header -->
+            <div class="modal-header">
+                <div class="modal-title">⚙️ 系统配置</div>
+                <div class="modal-actions">
+                    <button class="modal-btn" id="refreshBtn">刷新</button>
+                    <button class="modal-close" id="closeBtn">×</button>
+                </div>
+            </div>
+
+            <!-- Tab Bar -->
+            <div class="tab-bar">
+                <button class="tab-btn active" data-tab="user">用户配置</button>
+                <button class="tab-btn" data-tab="ops">运维配置</button>
+            </div>
+
+            <!-- Body -->
+            <div class="modal-body">
+                <!-- Status Message -->
+                <div class="status-message" id="statusMessage"></div>
+
+                <!-- Tab: 用户配置 -->
+                <div class="tab-panel active" id="tab-user">
+                    <div class="tab-banner info">
+                        <strong>💡 提示：</strong>用户配置包含 LLM API Keys、搜索工具等常用设置，修改后需点击"保存"按钮生效。
+                    </div>
+
+                    <!-- LLM 配置 -->
+                    <div class="config-group">
+                        <div class="config-group-title">LLM API 配置</div>
+                        <div class="config-group-subtitle">配置各引擎使用的 LLM 模型与 API Keys</div>
+
+                        <div class="config-field">
+                            <label class="config-field-label">InsightEngine API Key <span class="required">*</span></label>
+                            <div class="password-wrapper">
+                                <input type="password" class="config-field-input" id="insightApiKey" placeholder="sk-xxxxxxxxxxxxxxxx" value="sk-abc123def456ghi789">
+                                <button class="password-toggle" onclick="togglePassword('insightApiKey')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                </button>
+                            </div>
+                            <div class="config-field-hint">Kimi-K2 模型，用于本地数据库深度搜索</div>
+                        </div>
+
+                        <div class="config-field">
+                            <label class="config-field-label">MediaEngine API Key <span class="required">*</span></label>
+                            <div class="password-wrapper">
+                                <input type="password" class="config-field-input" id="mediaApiKey" placeholder="sk-xxxxxxxxxxxxxxxx" value="sk-xyz789abc123def456">
+                                <button class="password-toggle" onclick="togglePassword('mediaApiKey')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                </button>
+                            </div>
+                            <div class="config-field-hint">Gemini-2.5-Pro 模型，用于网页多模态搜索</div>
+                        </div>
+
+                        <div class="config-field">
+                            <label class="config-field-label">QueryEngine API Key <span class="required">*</span></label>
+                            <div class="password-wrapper">
+                                <input type="password" class="config-field-input" id="queryApiKey" placeholder="sk-xxxxxxxxxxxxxxxx" value="sk-qwe456rty789uio012">
+                                <button class="password-toggle" onclick="togglePassword('queryApiKey')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                </button>
+                            </div>
+                            <div class="config-field-hint">DeepSeek-Chat 模型，用于新闻查询</div>
+                        </div>
+
+                        <div class="config-field">
+                            <label class="config-field-label">ReportEngine API Key <span class="required">*</span></label>
+                            <div class="password-wrapper">
+                                <input type="password" class="config-field-input" id="reportApiKey" placeholder="sk-xxxxxxxxxxxxxxxx" value="sk-asd123fgh456jkl789">
+                                <button class="password-toggle" onclick="togglePassword('reportApiKey')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                </button>
+                            </div>
+                            <div class="config-field-hint">Gemini-2.5-Pro 模型，用于报告编排</div>
+                        </div>
+                    </div>
+
+                    <!-- 搜索工具配置 -->
+                    <div class="config-group">
+                        <div class="config-group-title">搜索工具配置</div>
+                        <div class="config-group-subtitle">配置外部搜索 API（Tavily / Bocha / Anspire）</div>
+
+                        <div class="config-field">
+                            <label class="config-field-label">搜索工具类型</label>
+                            <select class="config-field-input" id="searchToolType">
+                                <option value="tavily">Tavily（新闻搜索）</option>
+                                <option value="bocha" selected>Bocha AI（多模态搜索）</option>
+                                <option value="anspire">Anspire AI（网页搜索）</option>
+                            </select>
+                        </div>
+
+                        <div class="config-field">
+                            <label class="config-field-label">Tavily API Key</label>
+                            <div class="password-wrapper">
+                                <input type="password" class="config-field-input" id="tavilyApiKey" placeholder="tvly-xxxxxxxxxxxxxxxx" value="tvly-abc123def456">
+                                <button class="password-toggle" onclick="togglePassword('tavilyApiKey')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="config-field">
+                            <label class="config-field-label">Bocha API Key</label>
+                            <div class="password-wrapper">
+                                <input type="password" class="config-field-input" id="bochaApiKey" placeholder="bocha-xxxxxxxxxxxxxxxx" value="bocha-xyz789abc123">
+                                <button class="password-toggle" onclick="togglePassword('bochaApiKey')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 缓存配置 -->
+                    <div class="config-group">
+                        <div class="config-group-title">缓存配置</div>
+                        <div class="config-group-subtitle">配置报告缓存策略</div>
+
+                        <div class="config-field">
+                            <label class="config-field-label">启用缓存</label>
+                            <select class="config-field-input" id="cacheEnabled">
+                                <option value="true" selected>是</option>
+                                <option value="false">否</option>
+                            </select>
+                            <div class="config-field-hint">相同查询在 TTL 内直接返回缓存，0 秒 / 0 Token</div>
+                        </div>
+
+                        <div class="config-field">
+                            <label class="config-field-label">缓存 TTL（小时）</label>
+                            <input type="number" class="config-field-input" id="cacheTtl" value="6.0" min="0.5" max="72" step="0.5">
+                            <div class="config-field-hint">精确匹配缓存有效期，默认 6 小时</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: 运维配置 -->
+                <div class="tab-panel" id="tab-ops">
+                    <div class="tab-banner warning">
+                        <strong>⚠️ 警告：</strong>运维配置包含数据库连接、系统参数等敏感设置，修改不当可能导致系统无法启动，请谨慎操作。
+                    </div>
+
+                    <!-- 数据库配置 -->
+                    <div class="config-group">
+                        <div class="config-group-title">数据库配置</div>
+                        <div class="config-group-subtitle">配置 MySQL / PostgreSQL 连接参数</div>
+
+                        <div class="config-field">
+                            <label class="config-field-label">数据库类型</label>
+                            <select class="config-field-input" id="dbDialect">
+                                <option value="mysql" selected>MySQL</option>
+                                <option value="postgresql">PostgreSQL</option>
+                            </select>
+                        </div>
+
+                        <div class="config-field">
+                            <label class="config-field-label">数据库主机</label>
+                            <input type="text" class="config-field-input" id="dbHost" value="localhost">
+                        </div>
+
+                        <div class="config-field">
+                            <label class="config-field-label">数据库端口</label>
+                            <input type="number" class="config-field-input" id="dbPort" value="5444">
+                        </div>
+
+                        <div class="config-field">
+                            <label class="config-field-label">数据库名称</label>
+                            <input type="text" class="config-field-input" id="dbName" value="bettafish">
+                        </div>
+
+                        <div class="config-field">
+                            <label class="config-field-label">数据库用户名</label>
+                            <input type="text" class="config-field-input" id="dbUser" value="root">
+                        </div>
+
+                        <div class="config-field">
+                            <label class="config-field-label">数据库密码</label>
+                            <div class="password-wrapper">
+                                <input type="password" class="config-field-input" id="dbPassword" value="password123">
+                                <button class="password-toggle" onclick="togglePassword('dbPassword')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 系统参数 -->
+                    <div class="config-group">
+                        <div class="config-group-title">系统参数</div>
+                        <div class="config-group-subtitle">配置 Flask 服务器与系统限制</div>
+
+                        <div class="config-field">
+                            <label class="config-field-label">Flask 主机</label>
+                            <input type="text" class="config-field-input" id="flaskHost" value="0.0.0.0">
+                        </div>
+
+                        <div class="config-field">
+                            <label class="config-field-label">Flask 端口</label>
+                            <input type="number" class="config-field-input" id="flaskPort" value="8080">
+                        </div>
+
+                        <div class="config-field">
+                            <label class="config-field-label">最大段落数（MAX_PARAGRAPHS）</label>
+                            <input type="number" class="config-field-input" id="maxParagraphs" value="10">
+                            <div class="config-field-hint">限制各引擎生成的段落数量，降低 Token 消耗</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="modal-footer">
+                <div class="footer-hint">修改后需点击"保存"按钮生效</div>
+                <div class="footer-actions">
+                    <button class="modal-btn" id="cancelBtn">取消</button>
+                    <button class="modal-btn primary" id="saveBtn">保存配置</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="note">
+        <strong>📋 核查要点：</strong><br>
+        ✓ 配置 Modal（720px 宽，居中显示）<br>
+        ✓ Tab 切换栏（用户配置 / 运维配置）<br>
+        ✓ 配置分组（LLM API Keys、搜索工具、数据库）<br>
+        ✓ 密码字段显示/隐藏切换（眼睛图标）<br>
+        ✓ 保存按钮 / 取消按钮<br>
+        ✓ 配置状态提示（成功 / 失败）<br>
+        ✓ 响应式布局（内容滚动，Header/Footer 固定）
+    </div>
+
+    <script>
+        // Tab 切换
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const targetTab = this.dataset.tab;
+
+                // 更新按钮状态
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                // 更新面板显示
+                document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+                document.getElementById(`tab-${targetTab}`).classList.add('active');
+            });
+        });
+
+        // 密码显示/隐藏
+        function togglePassword(inputId) {
+            const input = document.getElementById(inputId);
+            input.type = input.type === 'password' ? 'text' : 'password';
+        }
+
+        // 保存配置
+        document.getElementById('saveBtn').addEventListener('click', function() {
+            const statusMsg = document.getElementById('statusMessage');
+            statusMsg.className = 'status-message success visible';
+            statusMsg.textContent = '✅ 配置已保存，正在重载系统...';
+
+            setTimeout(() => {
+                statusMsg.textContent = '✅ 配置已生效，系统已重载';
+                setTimeout(() => {
+                    statusMsg.classList.remove('visible');
+                }, 3000);
+            }, 1500);
+        });
+
+        // 取消
+        document.getElementById('cancelBtn').addEventListener('click', function() {
+            if (confirm('确认放弃未保存的修改？')) {
+                alert('已取消修改');
+            }
+        });
+
+        // 关闭
+        document.getElementById('closeBtn').addEventListener('click', function() {
+            alert('关闭配置 Modal');
+        });
+
+        // 刷新
+        document.getElementById('refreshBtn').addEventListener('click', function() {
+            alert('刷新配置（从服务器重新加载）');
+        });
+    </script>
+</body>
+</html>

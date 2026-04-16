@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06 - 控制台日志页</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --space-void: #0A0A0C;
+            --console-bg: #1c1c1e;
+            --console-text: #30d158;
+            --console-text-dim: rgba(48,209,88,0.6);
+            --text-silver: #EBEBF5;
+            --text-dim: rgba(235,235,245,0.80);
+            --text-ghost: rgba(235,235,245,0.58);
+            --neon-blue: #0A84FF;
+            --neon-green: #30D158;
+            --neon-amber: #FF9F0A;
+            --neon-red: #FF453A;
+            --border-light: rgba(255,255,255,0.08);
+            --r-md: 16px;
+        }
+
+        body {
+            font-family: -apple-system, 'SF Pro Display', 'PingFang SC', sans-serif;
+            background: var(--space-void);
+            color: var(--text-silver);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .page-header {
+            padding: 12px 20px;
+            border-bottom: 1px solid var(--border-light);
+            background: rgba(255,255,255,0.03);
+            font-size: 13px;
+            color: var(--text-ghost);
+            letter-spacing: 1px;
+            flex-shrink: 0;
+        }
+
+        .console-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+            overflow: hidden;
+        }
+
+        /* App Switcher */
+        .app-switcher {
+            display: flex;
+            padding: 8px 10px;
+            gap: 4px;
+            background: rgba(0,0,0,0.4);
+            border-bottom: 1px solid var(--border-light);
+            flex-shrink: 0;
+        }
+
+        .app-button {
+            flex: 1;
+            padding: 9px 6px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 500;
+            transition: all 0.15s ease;
+            position: relative;
+            border-radius: 8px;
+            color: var(--text-ghost);
+        }
+
+        .app-button.active {
+            background: rgba(255,255,255,0.08);
+            color: var(--text-silver);
+            font-weight: 600;
+        }
+
+        .app-button:not(.active):hover {
+            background: rgba(255,255,255,0.04);
+            color: var(--text-dim);
+        }
+
+        .app-button.locked {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .app-button.locked:hover {
+            background: transparent;
+        }
+
+        /* Status Indicator Dot */
+        .status-indicator {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--neon-red);
+        }
+
+        .status-indicator.running {
+            background: var(--neon-green);
+            box-shadow: 0 0 6px rgba(48,209,88,0.5);
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        .status-indicator.starting {
+            background: var(--neon-amber);
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Console Output */
+        .console-output {
+            flex: 1;
+            background: var(--console-bg);
+            color: var(--console-text);
+            font-family: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
+            font-size: 12px;
+            overflow: hidden;
+            white-space: pre-wrap;
+            word-break: break-all;
+            min-height: 0;
+            position: relative;
+        }
+
+        /* Console Status Bar */
+        .console-status-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 28px;
+            background: linear-gradient(180deg, rgba(48,209,88,0.15) 0%, rgba(48,209,88,0.08) 100%);
+            backdrop-filter: blur(10px);
+            color: var(--console-text);
+            font-family: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
+            font-size: 11px;
+            padding: 0 15px;
+            border-bottom: 1px solid rgba(48,209,88,0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 2;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .console-status-bar.hidden {
+            opacity: 0;
+            transform: translateY(-110%);
+        }
+
+        .status-message {
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-weight: 500;
+        }
+
+        .status-details {
+            margin-left: 15px;
+            color: rgba(48,209,88,0.7);
+            font-size: 10px;
+        }
+
+        /* Console Layer */
+        .console-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 36px 15px 15px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            box-sizing: border-box;
+            transform: translateX(100%);
+            opacity: 0;
+            pointer-events: none;
+            transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+        }
+
+        .console-layer.active {
+            transform: translateX(0);
+            opacity: 1;
+            pointer-events: auto;
+            z-index: 1;
+        }
+
+        .console-layer::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .console-layer::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .console-layer::-webkit-scrollbar-thumb {
+            background: rgba(48,209,88,0.3);
+            border-radius: 2px;
+        }
+
+        .console-line {
+            margin-bottom: 2px;
+            line-height: 1.5;
+        }
+
+        .console-line.error {
+            color: var(--neon-red);
+        }
+
+        .console-line.warning {
+            color: var(--neon-amber);
+        }
+
+        .console-line.info {
+            color: rgba(10,132,255,0.9);
+        }
+
+        .console-line.success {
+            color: var(--neon-green);
+        }
+
+        .console-line.dim {
+            color: var(--console-text-dim);
+        }
+
+        /* Skeleton Screen */
+        .skeleton-screen {
+            padding: 20px;
+            opacity: 0.6;
+        }
+
+        .skeleton-line {
+            height: 14px;
+            margin-bottom: 8px;
+            background: linear-gradient(90deg, #2a2a2e 25%, #3a3a3e 50%, #2a2a2e 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s ease-in-out infinite;
+            border-radius: 3px;
+        }
+
+        .skeleton-line:nth-child(odd)  { width: 95%; }
+        .skeleton-line:nth-child(even) { width: 80%; }
+
+        @keyframes skeleton-loading {
+            0%   { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* Status Bar */
+        .status-bar {
+            padding: 8px 20px;
+            border-top: 1px solid var(--border-light);
+            background: rgba(0,0,0,0.3);
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-ghost);
+            flex-shrink: 0;
+        }
+
+        .status-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .connection-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--neon-green);
+            margin-right: 6px;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        .shutdown-btn {
+            padding: 6px 14px;
+            background: rgba(255,59,48,0.15);
+            border: 1px solid rgba(255,59,48,0.3);
+            border-radius: 6px;
+            color: var(--neon-red);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .shutdown-btn:hover {
+            background: rgba(255,59,48,0.25);
+        }
+
+        .note {
+            position: fixed;
+            bottom: 60px;
+            right: 20px;
+            max-width: 340px;
+            padding: 14px;
+            background: rgba(255,159,10,0.1);
+            border: 1px solid rgba(255,159,10,0.25);
+            border-radius: var(--r-md);
+            font-size: 12px;
+            color: rgba(255,200,120,0.9);
+            line-height: 1.6;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-header">页面核查 06 / 06 — 控制台日志页（引擎输出）</div>
+
+    <div class="console-section">
+        <!-- App Switcher -->
+        <div class="app-switcher">
+            <button class="app-button active" data-app="insight" onclick="switchApp('insight')">
+                <span class="status-indicator running" id="status-insight"></span>
+                洞察引擎
+            </button>
+            <button class="app-button" data-app="media" onclick="switchApp('media')">
+                <span class="status-indicator running" id="status-media"></span>
+                媒体引擎
+            </button>
+            <button class="app-button" data-app="query" onclick="switchApp('query')">
+                <span class="status-indicator running" id="status-query"></span>
+                搜索引擎
+            </button>
+            <button class="app-button" data-app="forum" onclick="switchApp('forum')">
+                <span class="status-indicator" id="status-forum"></span>
+                论坛引擎
+            </button>
+            <button class="app-button locked" data-app="report" title="需等待其余三个Agent工作完毕">
+                <span class="status-indicator" id="status-report"></span>
+                报告引擎
+            </button>
+        </div>
+
+        <!-- Console Output -->
+        <div class="console-output" id="consoleOutput">
+            <!-- Console Status Bar -->
+            <div class="console-status-bar" id="consoleStatusBar">
+                <span class="status-message">InsightEngine 运行中 — 正在分析段落 3/8...</span>
+                <span class="status-details">已用时 42.3s</span>
+            </div>
+
+            <!-- Insight Layer (active) -->
+            <div class="console-layer active" id="layer-insight">
+                <div class="console-line dim">[InsightEngine] 初始化配置...</div>
+                <div class="console-line">[InsightEngine] 连接数据库 bettafish-db:5444</div>
+                <div class="console-line success">[InsightEngine] 数据库连接成功</div>
+                <div class="console-line">[InsightEngine] 关键词优化器启动 (Qwen-Plus)</div>
+                <div class="console-line">[InsightEngine] 原始查询: "2026年出海短剧市场现状分析"</div>
+                <div class="console-line">[InsightEngine] 优化后查询: "出海短剧 海外市场 2026 短视频 付费 AI制作"</div>
+                <div class="console-line">[InsightEngine] 生成报告结构，共 8 段</div>
+                <div class="console-line">[InsightEngine] 开始分析段落 1/8: 市场全景概览</div>
+                <div class="console-line dim">  → 搜索关键词: 出海短剧 市场规模 2026</div>
+                <div class="console-line dim">  → 命中 127 条记录，聚类采样后保留 23 条</div>
+                <div class="console-line">[InsightEngine] 段落 1/8 完成 (耗时 8.2s)</div>
+                <div class="console-line">[InsightEngine] 开始分析段落 2/8: 发展历程</div>
+                <div class="console-line dim">  → 搜索关键词: 短剧出海 发展历程 2023 2024 2025</div>
+                <div class="console-line dim">  → 命中 89 条记录，聚类采样后保留 18 条</div>
+                <div class="console-line">[InsightEngine] 段落 2/8 完成 (耗时 7.6s)</div>
+                <div class="console-line">[InsightEngine] 开始分析段落 3/8: 用户动态</div>
+                <div class="console-line dim">  → 搜索关键词: 出海短剧 用户行为 付费意愿 北美 东南亚</div>
+                <div class="console-line dim">  → 命中 203 条记录，聚类采样后保留 31 条</div>
+                <div class="console-line warning">[InsightEngine] 反思迭代第 1 轮: 发现数据缺口，补充搜索...</div>
+                <div class="console-line dim">  → 补充关键词: MENA 中东北非 短剧 用户增长</div>
+                <div class="console-line dim">  → 补充命中 45 条记录</div>
+                <div class="console-line">[InsightEngine] 段落 3/8 分析中... (已用时 12.1s)</div>
+            </div>
+
+            <!-- Media Layer -->
+            <div class="console-layer" id="layer-media">
+                <div class="console-line dim">[MediaEngine] 初始化配置...</div>
+                <div class="console-line">[MediaEngine] 搜索工具: BochaAPI (多模态)</div>
+                <div class="console-line success">[MediaEngine] 搜索工具连接成功</div>
+                <div class="console-line">[MediaEngine] 生成报告结构，共 8 段</div>
+                <div class="console-line">[MediaEngine] 开始分析段落 1/8: 市场全景概览</div>
+                <div class="console-line dim">  → Bocha 搜索: "出海短剧 市场规模 2026"</div>
+                <div class="console-line dim">  → 返回 15 条网页结果 + 3 条视频结果</div>
+                <div class="console-line">[MediaEngine] 段落 1/8 完成 (耗时 11.3s)</div>
+                <div class="console-line">[MediaEngine] 开始分析段落 2/8: 发展历程</div>
+                <div class="console-line dim">  → Bocha 搜索: "短剧出海 发展历程 时间线"</div>
+                <div class="console-line dim">  → 返回 12 条网页结果</div>
+                <div class="console-line">[MediaEngine] 段落 2/8 完成 (耗时 9.8s)</div>
+                <div class="console-line">[MediaEngine] 开始分析段落 3/8: 用户动态</div>
+                <div class="console-line dim">  → Bocha 搜索: "出海短剧 用户 付费 北美 东南亚"</div>
+                <div class="console-line dim">  → 返回 18 条网页结果 + 5 条图片结果</div>
+                <div class="console-line">[MediaEngine] 段落 3/8 完成 (耗时 13.2s)</div>
+                <div class="console-line success">[MediaEngine] 所有段落分析完成！</div>
+                <div class="console-line success">[MediaEngine] 最终报告已生成 (总耗时 87.4s)</div>
+            </div>
+
+            <!-- Query Layer -->
+            <div class="console-layer" id="layer-query">
+                <div class="console-line dim">[QueryEngine] 初始化配置...</div>
+                <div class="console-line">[QueryEngine] 搜索工具: Tavily (新闻搜索)</div>
+                <div class="console-line success">[QueryEngine] Tavily 连接成功</div>
+                <div class="console-line">[QueryEngine] 生成报告结构，共 8 段</div>
+                <div class="console-line">[QueryEngine] 开始分析段落 1/8: 市场全景概览</div>
+                <div class="console-line dim">  → Tavily 搜索: "出海短剧 市场规模 2026 最新"</div>
+                <div class="console-line dim">  → 返回 10 条新闻结果</div>
+                <div class="console-line">[QueryEngine] 段落 1/8 完成 (耗时 6.1s)</div>
+                <div class="console-line">[QueryEngine] 开始分析段落 2/8: 发展历程</div>
+                <div class="console-line dim">  → Tavily 搜索: "短剧出海 发展 2025 2026"</div>
+                <div class="console-line dim">  → 返回 8 条新闻结果</div>
+                <div class="console-line">[QueryEngine] 段落 2/8 完成 (耗时 5.7s)</div>
+                <div class="console-line success">[QueryEngine] 所有段落分析完成！</div>
+                <div class="console-line success">[QueryEngine] 最终报告已生成 (总耗时 62.3s)</div>
+            </div>
+
+            <!-- Forum Layer -->
+            <div class="console-layer" id="layer-forum">
+                <div class="skeleton-screen">
+                    <div class="skeleton-line"></div>
+                    <div class="skeleton-line"></div>
+                    <div class="skeleton-line"></div>
+                    <div class="skeleton-line"></div>
+                    <div class="skeleton-line"></div>
+                </div>
+                <div class="console-line dim" style="padding:0 0 0 0;">[ForumEngine] 等待启动...</div>
+            </div>
+
+            <!-- Report Layer -->
+            <div class="console-layer" id="layer-report">
+                <div class="console-line dim">[ReportEngine] 等待三路引擎完成...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Status Bar -->
+    <div class="status-bar">
+        <div class="status-bar-left">
+            <span><span class="connection-dot"></span>WebSocket 已连接</span>
+            <span id="systemTime">2026-04-16 14:23:45</span>
+        </div>
+        <button class="shutdown-btn">关闭系统</button>
+    </div>
+
+    <div class="note">
+        <strong>📋 核查要点：</strong><br>
+        ✓ 引擎切换按钮（5 个：Insight/Media/Query/Forum/Report）<br>
+        ✓ 状态指示器（绿色运行中 / 红色停止 / 黄色启动中）<br>
+        ✓ 控制台输出区（黑色背景、绿色文字）<br>
+        ✓ 控制台状态栏（顶部悬浮，显示当前任务）<br>
+        ✓ 报告引擎按钮锁定（需等待其他引擎完成）<br>
+        ✓ 骨架屏（论坛引擎未启动时显示）<br>
+        ✓ 底部状态栏（WebSocket 连接状态 + 系统时钟）
+    </div>
+
+    <script>
+        let currentApp = 'insight';
+
+        function switchApp(app) {
+            // 更新按钮状态
+            document.querySelectorAll('.app-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-app="${app}"]`).classList.add('active');
+
+            // 切换 layer
+            document.querySelectorAll('.console-layer').forEach(layer => {
+                layer.classList.remove('active');
+            });
+            document.getElementById(`layer-${app}`).classList.add('active');
+
+            // 更新状态栏
+            const statusMessages = {
+                insight: 'InsightEngine 运行中 — 正在分析段落 3/8...',
+                media:   'MediaEngine 已完成 — 最终报告已生成',
+                query:   'QueryEngine 已完成 — 最终报告已生成',
+                forum:   'ForumEngine 未启动',
+                report:  'ReportEngine 等待中...',
+            };
+            const statusDetails = {
+                insight: '已用时 42.3s',
+                media:   '总耗时 87.4s',
+                query:   '总耗时 62.3s',
+                forum:   '',
+                report:  '',
+            };
+
+            document.querySelector('.status-message').textContent = statusMessages[app];
+            document.querySelector('.status-details').textContent = statusDetails[app];
+
+            currentApp = app;
+        }
+
+        // 实时时钟
+        function updateTime() {
+            const now = new Date();
+            const pad = n => String(n).padStart(2, '0');
+            document.getElementById('systemTime').textContent =
+                `${now.getFullYear()}-${pad(now.getMonth()+1)}-${pad(now.getDate())} ${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        // 模拟实时日志追加
+        let logInterval = null;
+        const insightLayer = document.getElementById('layer-insight');
+        const logLines = [
+            { text: '[InsightEngine] 反思迭代第 2 轮: 数据充分，停止迭代', cls: '' },
+            { text: '[InsightEngine] 段落 3/8 完成 (耗时 18.4s)', cls: '' },
+            { text: '[InsightEngine] 开始分析段落 4/8: 影响因素', cls: '' },
+            { text: '  → 搜索关键词: 出海短剧 AI 制作成本 降本增效', cls: 'dim' },
+            { text: '  → 命中 156 条记录，聚类采样后保留 27 条', cls: 'dim' },
+        ];
+        let logIdx = 0;
+
+        function appendLog() {
+            if (logIdx >= logLines.length) {
+                clearInterval(logInterval);
+                return;
+            }
+            const { text, cls } = logLines[logIdx++];
+            const line = document.createElement('div');
+            line.className = `console-line ${cls}`;
+            line.textContent = text;
+            insightLayer.appendChild(line);
+            insightLayer.scrollTop = insightLayer.scrollHeight;
+        }
+
+        // 每 2 秒追加一行日志（仅在 insight 层激活时）
+        logInterval = setInterval(() => {
+            if (currentApp === 'insight') appendLog();
+        }, 2000);
+    </script>
+</body>
+</html>

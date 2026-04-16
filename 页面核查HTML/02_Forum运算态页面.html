@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02 - Forum State 运算态页面</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --space-void: #0A0A0C;
+            --neon-blue: #0A84FF;
+            --neon-green: #30D158;
+            --neon-amber: #FF9F0A;
+            --neon-red: #FF453A;
+            --text-silver: #EBEBF5;
+            --text-dim: rgba(235,235,245,0.80);
+            --text-ghost: rgba(235,235,245,0.58);
+            --glass-bg: rgba(255,255,255,0.05);
+            --glass-border: rgba(255,255,255,0.10);
+            --r-md: 16px;
+            --r-lg: 22px;
+        }
+
+        body {
+            font-family: -apple-system, 'SF Pro Display', 'PingFang SC', sans-serif;
+            background: var(--space-void);
+            color: var(--text-silver);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 30% 40%, rgba(10,132,255,0.10) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 60%, rgba(48,209,88,0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, rgba(255,159,10,0.06) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .page-title {
+            font-size: 13px;
+            color: var(--text-ghost);
+            letter-spacing: 2px;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        /* ── Forum State 容器 ── */
+        .forum-state {
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── 节点区 ── */
+        .forum-nodes-wrapper {
+            position: relative;
+        }
+
+        .forum-nodes {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            padding: 32px 0;
+        }
+
+        .forum-node {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            cursor: default;
+        }
+
+        /* 节点球体 */
+        .node-orb {
+            position: relative;
+            width: 72px;
+            height: 72px;
+        }
+
+        .node-ring {
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.12);
+            animation: ring-idle 3s ease-in-out infinite;
+        }
+
+        .node-core {
+            position: absolute;
+            inset: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.06);
+            backdrop-filter: blur(8px);
+            transition: all 0.4s ease;
+        }
+
+        /* idle 状态 */
+        .forum-node.idle .node-ring {
+            border-color: rgba(255,255,255,0.12);
+            animation: ring-idle 3s ease-in-out infinite;
+        }
+        .forum-node.idle .node-core {
+            background: rgba(255,255,255,0.06);
+        }
+
+        /* active 状态 - query 蓝色 */
+        #node-query.active .node-ring {
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 20px rgba(10,132,255,0.4);
+            animation: ring-active 1.2s ease-in-out infinite;
+        }
+        #node-query.active .node-core {
+            background: rgba(10,132,255,0.25);
+            box-shadow: 0 0 30px rgba(10,132,255,0.3);
+        }
+
+        /* active 状态 - media 绿色 */
+        #node-media.active .node-ring {
+            border-color: var(--neon-green);
+            box-shadow: 0 0 20px rgba(48,209,88,0.4);
+            animation: ring-active 1.2s ease-in-out infinite;
+        }
+        #node-media.active .node-core {
+            background: rgba(48,209,88,0.25);
+            box-shadow: 0 0 30px rgba(48,209,88,0.3);
+        }
+
+        /* active 状态 - insight 琥珀色 */
+        #node-insight.active .node-ring {
+            border-color: var(--neon-amber);
+            box-shadow: 0 0 20px rgba(255,159,10,0.4);
+            animation: ring-active 1.2s ease-in-out infinite;
+        }
+        #node-insight.active .node-core {
+            background: rgba(255,159,10,0.25);
+            box-shadow: 0 0 30px rgba(255,159,10,0.3);
+        }
+
+        /* done 状态 */
+        .forum-node.done .node-ring {
+            border-color: var(--neon-green);
+            animation: none;
+        }
+        .forum-node.done .node-core {
+            background: rgba(48,209,88,0.15);
+        }
+
+        @keyframes ring-idle {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+        }
+
+        @keyframes ring-active {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.12); opacity: 1; }
+        }
+
+        .node-label {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-dim);
+            text-align: center;
+        }
+
+        .node-status {
+            font-size: 11px;
+            color: var(--text-ghost);
+            text-align: center;
+        }
+
+        .forum-node.active .node-status {
+            color: var(--neon-blue);
+        }
+        #node-media.active .node-status { color: var(--neon-green); }
+        #node-insight.active .node-status { color: var(--neon-amber); }
+
+        .forum-node.done .node-status {
+            color: var(--neon-green);
+        }
+
+        /* SVG 连接线 */
+        .forum-connectors {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            overflow: visible;
+        }
+
+        .connector-line {
+            stroke: rgba(255,255,255,0.10);
+            stroke-width: 1;
+            stroke-dasharray: 4 4;
+        }
+
+        .connector-pulse {
+            fill: var(--neon-blue);
+            opacity: 0;
+        }
+
+        /* ── 终端区 ── */
+        .forum-terminal {
+            background: rgba(0,0,0,0.6);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--r-lg);
+            overflow: hidden;
+            backdrop-filter: blur(12px);
+        }
+
+        .terminal-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            background: rgba(255,255,255,0.03);
+        }
+
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .terminal-dot.red   { background: #FF5F57; }
+        .terminal-dot.amber { background: #FEBC2E; }
+        .terminal-dot.green { background: #28C840; }
+
+        .terminal-title {
+            font-size: 12px;
+            color: var(--text-ghost);
+            margin-left: 8px;
+            letter-spacing: 1px;
+        }
+
+        .terminal-body {
+            padding: 16px;
+            min-height: 200px;
+            max-height: 280px;
+            overflow-y: auto;
+            font-family: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        .t-line {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            margin-bottom: 4px;
+            animation: fadeIn 0.2s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(4px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .t-ts {
+            color: rgba(235,235,245,0.30);
+            font-size: 10px;
+            flex-shrink: 0;
+        }
+
+        .t-tag {
+            padding: 1px 7px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .t-content {
+            color: var(--text-dim);
+        }
+
+        /* 控制按钮 */
+        .controls {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+
+        .ctrl-btn {
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(255,255,255,0.06);
+            color: var(--text-dim);
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .ctrl-btn:hover {
+            background: rgba(255,255,255,0.10);
+            color: var(--text-silver);
+        }
+
+        .ctrl-btn.primary {
+            background: var(--neon-blue);
+            border-color: var(--neon-blue);
+            color: #fff;
+        }
+
+        .ctrl-btn.primary:hover {
+            background: #0077ED;
+        }
+
+        .note {
+            margin-top: 24px;
+            padding: 16px;
+            background: rgba(255,159,10,0.08);
+            border: 1px solid rgba(255,159,10,0.25);
+            border-radius: var(--r-md);
+            font-size: 13px;
+            color: rgba(255,200,120,0.9);
+            line-height: 1.6;
+            max-width: 900px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-title">页面核查 02 / 06 — FORUM STATE 运算态可视化</div>
+
+    <div class="forum-state" id="forumState">
+
+        <!-- 节点区 + SVG 连接线 -->
+        <div class="forum-nodes-wrapper">
+            <div class="forum-nodes" id="forumNodes">
+
+                <div class="forum-node idle" id="node-query" data-agent="query">
+                    <div class="node-orb">
+                        <div class="node-ring"></div>
+                        <div class="node-core"></div>
+                    </div>
+                    <div class="node-label">全网实时资讯</div>
+                    <div class="node-status" id="node-query-status">待命</div>
+                </div>
+
+                <div class="forum-node active" id="node-media" data-agent="media">
+                    <div class="node-orb">
+                        <div class="node-ring"></div>
+                        <div class="node-core"></div>
+                    </div>
+                    <div class="node-label">权威深度报道</div>
+                    <div class="node-status" id="node-media-status">运行中</div>
+                </div>
+
+                <div class="forum-node done" id="node-insight" data-agent="insight">
+                    <div class="node-orb">
+                        <div class="node-ring"></div>
+                        <div class="node-core"></div>
+                    </div>
+                    <div class="node-label">内部核心智库</div>
+                    <div class="node-status" id="node-insight-status">✅ 完成</div>
+                </div>
+
+            </div>
+
+            <!-- SVG 连接线 -->
+            <svg class="forum-connectors" id="forumConnectors" aria-hidden="true">
+                <line class="connector-line" id="conn-q-m" x1="200" y1="68" x2="450" y2="68"/>
+                <line class="connector-line" id="conn-m-i" x1="450" y1="68" x2="700" y2="68"/>
+                <line class="connector-line" id="conn-q-i" x1="200" y1="68" x2="700" y2="68" stroke-dasharray="2 6" opacity="0.5"/>
+                <circle class="connector-pulse" id="pulse-q-m" r="4" cx="200" cy="68">
+                    <animate attributeName="cx" from="200" to="450" dur="2s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0;1;1;0" dur="2s" repeatCount="indefinite"/>
+                </circle>
+                <circle class="connector-pulse" id="pulse-m-i" r="4" cx="450" cy="68" fill="#30D158">
+                    <animate attributeName="cx" from="450" to="700" dur="2.5s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0;1;1;0" dur="2.5s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+        </div>
+
+        <!-- 终端日志区 -->
+        <div class="forum-terminal">
+            <div class="terminal-header">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot amber"></span>
+                <span class="terminal-dot green"></span>
+                <span class="terminal-title">系统思考流</span>
+            </div>
+            <div class="terminal-body" id="terminalBody">
+                <div class="t-line">
+                    <span class="t-ts">14:23:01</span>
+                    <span class="t-tag" style="color:#FF9F0A;background:rgba(255,159,10,0.18);">内部核心智库</span>
+                    <span class="t-content">正在检索内部知识库，关键词：出海短剧、海外市场...</span>
+                </div>
+                <div class="t-line">
+                    <span class="t-ts">14:23:04</span>
+                    <span class="t-tag" style="color:#FF9F0A;background:rgba(255,159,10,0.18);">内部核心智库</span>
+                    <span class="t-content">语义聚类启动，正在识别主要舆论簇...</span>
+                </div>
+                <div class="t-line">
+                    <span class="t-ts">14:23:08</span>
+                    <span class="t-tag" style="color:#FF9F0A;background:rgba(255,159,10,0.18);">内部核心智库</span>
+                    <span class="t-content">发现争议焦点 4 项，正在进行证据交叉校验...</span>
+                </div>
+                <div class="t-line">
+                    <span class="t-ts">14:23:15</span>
+                    <span class="t-tag" style="color:#FF9F0A;background:rgba(255,159,10,0.18);">内部核心智库</span>
+                    <span class="t-content">✅ 观点碰撞完成，核心结论已收敛</span>
+                </div>
+                <div class="t-line">
+                    <span class="t-ts">14:23:16</span>
+                    <span class="t-tag" style="color:#30D158;background:rgba(48,209,88,0.18);">权威深度报道</span>
+                    <span class="t-content">多模态解析启动，正在提取权威媒体深度报道...</span>
+                </div>
+                <div class="t-line">
+                    <span class="t-ts">14:23:22</span>
+                    <span class="t-tag" style="color:#30D158;background:rgba(48,209,88,0.18);">权威深度报道</span>
+                    <span class="t-content">已解析 23 篇深度报道，正在喂给大模型进行提炼...</span>
+                </div>
+                <div class="t-line t-line--typing">
+                    <span class="t-ts">14:23:31</span>
+                    <span class="t-tag" style="color:#30D158;background:rgba(48,209,88,0.18);">权威深度报道</span>
+                    <span class="t-content" id="typingContent">正在分析市场规模数据<span style="animation:blink 1s step-end infinite;display:inline-block;width:8px;height:12px;background:rgba(48,209,88,0.8);margin-left:2px;vertical-align:middle;"></span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 控制按钮 -->
+    <div class="controls">
+        <button class="ctrl-btn" onclick="resetAll()">重置所有节点</button>
+        <button class="ctrl-btn" onclick="activateNode('query')">激活 Query</button>
+        <button class="ctrl-btn" onclick="activateNode('media')">激活 Media</button>
+        <button class="ctrl-btn" onclick="activateNode('insight')">激活 Insight</button>
+        <button class="ctrl-btn" onclick="completeNode('query')">完成 Query</button>
+        <button class="ctrl-btn primary" onclick="runDemo()">▶ 运行演示</button>
+    </div>
+
+    <div class="note">
+        <strong>📋 核查要点：</strong><br>
+        ✓ 三个 Agent 节点（Query 蓝色 / Media 绿色 / Insight 琥珀色）<br>
+        ✓ 节点状态：idle（呼吸动画）→ active（激活光晕）→ done（绿色完成）<br>
+        ✓ SVG 连接线 + 脉冲动画（小圆点沿线移动）<br>
+        ✓ 打字机终端（带时间戳、Agent 标签、颜色区分）<br>
+        ✓ 终端最多保留 60 行日志（超出移除最旧的）<br>
+        ✓ 点击"运行演示"查看完整动画流程
+    </div>
+
+    <style>
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+
+    <script>
+        const AGENTS = ['query', 'media', 'insight'];
+        const AGENT_META = {
+            query:   { label: '全网实时资讯', color: '#0A84FF', dim: 'rgba(10,132,255,0.18)' },
+            media:   { label: '权威深度报道', color: '#30D158', dim: 'rgba(48,209,88,0.18)' },
+            insight: { label: '内部核心智库', color: '#FF9F0A', dim: 'rgba(255,159,10,0.18)' },
+        };
+
+        function activateNode(agent) {
+            const node = document.getElementById(`node-${agent}`);
+            if (!node) return;
+            node.classList.remove('idle', 'done');
+            node.classList.add('active');
+            document.getElementById(`node-${agent}-status`).textContent = '运行中';
+        }
+
+        function completeNode(agent) {
+            const node = document.getElementById(`node-${agent}`);
+            if (!node) return;
+            node.classList.remove('active', 'idle');
+            node.classList.add('done');
+            document.getElementById(`node-${agent}-status`).textContent = '✅ 完成';
+        }
+
+        function resetAll() {
+            AGENTS.forEach(agent => {
+                const node = document.getElementById(`node-${agent}`);
+                node.classList.remove('active', 'done');
+                node.classList.add('idle');
+                document.getElementById(`node-${agent}-status`).textContent = '待命';
+            });
+            document.getElementById('terminalBody').innerHTML = '';
+        }
+
+        let lineCount = 0;
+        function pushLog(text, agent, timestamp) {
+            const body = document.getElementById('terminalBody');
+            lineCount++;
+            if (lineCount > 60) {
+                const oldest = body.querySelector('.t-line');
+                if (oldest) oldest.remove();
+            }
+            const meta = AGENT_META[agent] || { label: '系统', color: '#EBEBF5', dim: 'rgba(235,235,245,0.12)' };
+            const line = document.createElement('div');
+            line.className = `t-line t-line--${agent}`;
+            line.innerHTML = `
+                <span class="t-ts">${timestamp}</span>
+                <span class="t-tag" style="color:${meta.color};background:${meta.dim};">${meta.label}</span>
+                <span class="t-content">${text}</span>
+            `;
+            body.appendChild(line);
+            body.scrollTop = body.scrollHeight;
+        }
+
+        function now() {
+            const d = new Date();
+            return [d.getHours(), d.getMinutes(), d.getSeconds()]
+                .map(n => String(n).padStart(2, '0')).join(':');
+        }
+
+        function runDemo() {
+            resetAll();
+            const logs = [
+                { delay: 300,  agent: 'query',   text: '正在连接公开信源，目标平台：微博 / 抖音 / 知乎 / 新闻聚合…' },
+                { delay: 800,  agent: 'media',   text: '多模态解析启动，正在提取权威媒体深度报道…' },
+                { delay: 1200, agent: 'insight', text: '正在检索内部知识库，关键词：出海短剧、海外市场…' },
+                { delay: 1800, agent: 'query',   text: '已接入 12 个平台，开始抓取原始数据，预计获取 20,000+ 条…' },
+                { delay: 2400, agent: 'media',   text: '已解析 23 篇深度报道，正在喂给大模型进行提炼…' },
+                { delay: 3000, agent: 'insight', text: '语义聚类启动，正在识别主要舆论簇…' },
+                { delay: 3800, agent: 'query',   text: '数据清洗完成，有效语料 18,342 条，去重率 8.7%' },
+                { delay: 4500, agent: 'media',   text: '图像情感分析完成，检测到 3 类视觉情绪模式' },
+                { delay: 5200, agent: 'insight', text: '发现争议焦点 4 项，正在进行证据交叉校验…' },
+                { delay: 6000, agent: 'insight', text: '✅ 观点碰撞完成，核心结论已收敛' },
+                { delay: 6800, agent: 'query',   text: '✅ 全网资讯采集完毕，共 18,342 条有效数据' },
+                { delay: 7500, agent: 'media',   text: '✅ 权威报道分析完毕，提炼出 47 个核心观点' },
+            ];
+
+            // 激活节点
+            setTimeout(() => activateNode('query'),   200);
+            setTimeout(() => activateNode('media'),   400);
+            setTimeout(() => activateNode('insight'), 600);
+
+            // 推送日志
+            logs.forEach(({ delay, agent, text }) => {
+                setTimeout(() => pushLog(text, agent, now()), delay);
+            });
+
+            // 完成节点
+            setTimeout(() => completeNode('insight'), 6200);
+            setTimeout(() => completeNode('query'),   7000);
+            setTimeout(() => completeNode('media'),   7800);
+        }
+    </script>
+</body>
+</html>

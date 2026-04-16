@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01 - 搜索页面（Spotlight）</title>
+    <link rel="stylesheet" href="../舆情分析系统(AI编程）/BettaFish-main/static/css/space-theme.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --space-void: #0A0A0C;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.10);
+            --text-silver: #EBEBF5;
+            --text-dim: rgba(235, 235, 245, 0.80);
+            --text-ghost: rgba(235, 235, 245, 0.58);
+            --neon-blue: #0A84FF;
+            --neon-green: #30D158;
+            --neon-amber: #FF9F0A;
+            --r-md: 16px;
+            --r-lg: 22px;
+            --r-pill: 999px;
+        }
+
+        body {
+            font-family: -apple-system, 'SF Pro Display', 'PingFang SC', 'Helvetica Neue', sans-serif;
+            background-color: var(--space-void);
+            color: var(--text-silver);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 星空背景 */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 30%, rgba(10, 132, 255, 0.08) 0%, transparent 50%),
+                        radial-gradient(ellipse at 80% 70%, rgba(48, 209, 88, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 14px;
+            color: var(--text-ghost);
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+        }
+
+        /* Spotlight Shell */
+        .space-shell {
+            background: var(--glass-bg);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--r-lg);
+            padding: 32px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Spotlight Bar */
+        .spotlight-bar {
+            display: flex;
+            align-items: stretch;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .spotlight-input-wrapper {
+            flex: 1;
+            position: relative;
+        }
+
+        .spotlight-input {
+            width: 100%;
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: var(--r-md);
+            color: var(--text-silver);
+            font-size: 15px;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        .spotlight-input::placeholder {
+            color: var(--text-ghost);
+        }
+
+        .spotlight-input:focus {
+            background: rgba(255, 255, 255, 0.10);
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 0 3px rgba(10, 132, 255, 0.15);
+        }
+
+        .spotlight-params-btn {
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            border-radius: var(--r-md);
+            color: var(--text-dim);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .spotlight-params-btn:hover {
+            background: rgba(255, 255, 255, 0.10);
+            color: var(--text-silver);
+        }
+
+        .spotlight-submit-btn {
+            padding: 16px 32px;
+            background: var(--neon-blue);
+            border: none;
+            border-radius: var(--r-md);
+            color: #FFFFFF;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .spotlight-submit-btn:hover {
+            background: #0077ED;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(10, 132, 255, 0.3);
+        }
+
+        /* Advanced Panel */
+        .spotlight-panel {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--r-md);
+            padding: 20px;
+            margin-bottom: 16px;
+            display: none;
+        }
+
+        .spotlight-panel.visible {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .panel-row {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .panel-field {
+            flex: 1;
+        }
+
+        .panel-field label {
+            display: block;
+            font-size: 13px;
+            color: var(--text-dim);
+            margin-bottom: 8px;
+        }
+
+        .panel-field select {
+            width: 100%;
+            padding: 10px 14px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            border-radius: 10px;
+            color: var(--text-silver);
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .panel-divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.08);
+            margin: 16px 0;
+        }
+
+        .panel-status-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .panel-status-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .breath-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--neon-green);
+            animation: breathe 2s ease-in-out infinite;
+        }
+
+        .breath-dot.amber {
+            background: var(--neon-amber);
+        }
+
+        @keyframes breathe {
+            0%, 100% {
+                opacity: 0.4;
+                transform: scale(0.9);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+        }
+
+        .panel-upload-label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            border-radius: 10px;
+            font-size: 13px;
+            color: var(--text-dim);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .panel-upload-label:hover {
+            background: rgba(255, 255, 255, 0.10);
+            color: var(--text-silver);
+        }
+
+        .panel-config-btn {
+            padding: 8px 14px;
+            background: var(--neon-blue);
+            border: none;
+            border-radius: 10px;
+            color: #FFFFFF;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .panel-config-btn:hover {
+            background: #0077ED;
+        }
+
+        /* Cache Badge */
+        .cache-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            background: rgba(48, 209, 88, 0.1);
+            border: 1px solid rgba(48, 209, 88, 0.3);
+            border-radius: var(--r-md);
+            font-size: 13px;
+            color: rgba(80, 220, 120, 0.95);
+            margin-bottom: 16px;
+        }
+
+        /* Pipeline Bar */
+        .pipeline-bar {
+            padding: 14px 18px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--r-md);
+            margin-bottom: 16px;
+        }
+
+        .pipeline-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .pipeline-spinner {
+            width: 14px;
+            height: 14px;
+            border: 2px solid rgba(100, 160, 255, 0.3);
+            border-top-color: rgba(100, 160, 255, 0.9);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .pipeline-msg {
+            color: rgba(140, 190, 255, 0.9);
+            font-weight: 500;
+            font-size: 13px;
+        }
+
+        .pipeline-elapsed {
+            margin-left: auto;
+            color: rgba(150, 160, 180, 0.6);
+            font-size: 11px;
+        }
+
+        .pipeline-stages {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .pstage {
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--r-pill);
+            font-size: 12px;
+            color: var(--text-dim);
+            transition: all 0.3s ease;
+        }
+
+        .pstage.active {
+            background: rgba(10, 132, 255, 0.15);
+            border-color: var(--neon-blue);
+            color: var(--neon-blue);
+        }
+
+        .pstage.done {
+            background: rgba(48, 209, 88, 0.15);
+            border-color: var(--neon-green);
+            color: var(--neon-green);
+        }
+
+        /* Search Hints */
+        .search-hint-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .hint-label {
+            font-size: 13px;
+            color: var(--text-ghost);
+        }
+
+        .hint-chip {
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--r-pill);
+            font-size: 12px;
+            color: var(--text-dim);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .hint-chip:hover {
+            background: rgba(255, 255, 255, 0.10);
+            color: var(--text-silver);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .note {
+            margin-top: 24px;
+            padding: 16px;
+            background: rgba(255, 159, 10, 0.1);
+            border: 1px solid rgba(255, 159, 10, 0.3);
+            border-radius: var(--r-md);
+            font-size: 13px;
+            color: rgba(255, 200, 120, 0.9);
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="page-title">页面核查 01 / 06 — SPOTLIGHT 搜索界面</div>
+
+        <div class="space-shell">
+            <!-- Spotlight Bar -->
+            <div class="spotlight-bar">
+                <div class="spotlight-input-wrapper">
+                    <input
+                        type="text"
+                        class="spotlight-input"
+                        id="searchInput"
+                        placeholder="输入舆情主题，开始深度分析…"
+                        value="2026年出海短剧市场现状分析"
+                    >
+                </div>
+                <button class="spotlight-params-btn" id="paramsToggle">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M12 1v6m0 6v6m5.2-13.2l-4.2 4.2m0 6l4.2 4.2M23 12h-6m-6 0H1m18.2 5.2l-4.2-4.2m0-6l4.2-4.2"/>
+                    </svg>
+                    高级参数
+                </button>
+                <button class="spotlight-submit-btn">开始分析</button>
+            </div>
+
+            <!-- Advanced Panel -->
+            <div class="spotlight-panel" id="advancedPanel">
+                <div class="panel-row">
+                    <div class="panel-field">
+                        <label>数据源</label>
+                        <select>
+                            <option value="mindspider">MindSpider（本地数据库）</option>
+                            <option value="private">私有数据源</option>
+                            <option value="hybrid" selected>混合模式</option>
+                        </select>
+                    </div>
+                    <div class="panel-field">
+                        <label>抓取深度</label>
+                        <select>
+                            <option value="light">轻量（快速）</option>
+                            <option value="standard" selected>标准</option>
+                            <option value="deep">深度（耗时较长）</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="panel-divider"></div>
+
+                <div class="panel-status-row">
+                    <div class="panel-status-item">
+                        <span class="breath-dot"></span>
+                        <span>引擎就绪</span>
+                    </div>
+                    <div class="panel-status-item">
+                        <span class="breath-dot amber"></span>
+                        <span>无自定义模板</span>
+                    </div>
+                    <label class="panel-upload-label">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="17 8 12 3 7 8"/>
+                            <line x1="12" y1="3" x2="12" y2="15"/>
+                        </svg>
+                        上传模板
+                        <input type="file" accept=".md,.txt" style="display:none">
+                    </label>
+                    <button class="panel-config-btn">LLM 配置</button>
+                </div>
+            </div>
+
+            <!-- Cache Badge (示例) -->
+            <div class="cache-badge" style="display:none;">
+                <span style="font-size:18px;">⚡</span>
+                <span>秒开：当前为最近缓存的历史报告，点击右侧按钮可重新分析获取最新数据</span>
+            </div>
+
+            <!-- Pipeline Bar (示例) -->
+            <div class="pipeline-bar">
+                <div class="pipeline-header">
+                    <div class="pipeline-spinner"></div>
+                    <span class="pipeline-msg">正在启动分析引擎...</span>
+                    <span class="pipeline-elapsed">已用时 3.2s</span>
+                </div>
+                <div class="pipeline-stages">
+                    <span class="pstage done">🏛 内部核心智库</span>
+                    <span class="pstage active">📰 权威深度报道</span>
+                    <span class="pstage">🌐 全网实时资讯</span>
+                    <span class="pstage">📊 报告生成</span>
+                </div>
+            </div>
+
+            <!-- Search Hints -->
+            <div class="search-hint-row">
+                <span class="hint-label">💡 试试这样搜：</span>
+                <span class="hint-chip">2026年AI大模型行业发展</span>
+                <span class="hint-chip">具身智能赛道头部企业</span>
+                <span class="hint-chip">全球L2高阶辅助驾驶供应链</span>
+                <span class="hint-chip">Agent的发展现状</span>
+            </div>
+        </div>
+
+        <div class="note">
+            <strong>📋 核查要点：</strong><br>
+            ✓ 搜索输入框（placeholder 正确）<br>
+            ✓ 高级参数面板（点击齿轮图标展开/收起）<br>
+            ✓ 引擎状态指示器（绿色呼吸点）<br>
+            ✓ 上传模板按钮<br>
+            ✓ LLM 配置按钮<br>
+            ✓ 缓存命中提示徽章（默认隐藏）<br>
+            ✓ 流水线播报条（四个阶段指示器）<br>
+            ✓ 搜索提示词条
+        </div>
+    </div>
+
+    <script>
+        // Toggle advanced panel
+        document.getElementById('paramsToggle').addEventListener('click', function() {
+            const panel = document.getElementById('advancedPanel');
+            panel.classList.toggle('visible');
+        });
+
+        // Hint chips click
+        document.querySelectorAll('.hint-chip').forEach(chip => {
+            chip.addEventListener('click', function() {
+                document.getElementById('searchInput').value = this.textContent;
+            });
+        });
+    </script>
+</body>
+</html>

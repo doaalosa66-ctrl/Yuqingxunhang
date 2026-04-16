@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BettaFish 舆情分析系统 - 页面核查总览</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --space-void: #0A0A0C;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.10);
+            --text-silver: #EBEBF5;
+            --text-dim: rgba(235, 235, 245, 0.80);
+            --text-ghost: rgba(235, 235, 245, 0.58);
+            --neon-blue: #0A84FF;
+            --neon-green: #30D158;
+            --neon-amber: #FF9F0A;
+            --r-md: 16px;
+            --r-lg: 22px;
+        }
+
+        body {
+            font-family: -apple-system, 'SF Pro Display', 'PingFang SC', 'Helvetica Neue', sans-serif;
+            background: var(--space-void);
+            color: var(--text-silver);
+            min-height: 100vh;
+            padding: 40px 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 30% 20%, rgba(10, 132, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 60%, rgba(48, 209, 88, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 90%, rgba(255, 159, 10, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .logo {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: var(--text-dim);
+            margin-bottom: 8px;
+        }
+
+        .meta {
+            font-size: 13px;
+            color: var(--text-ghost);
+            letter-spacing: 1px;
+        }
+
+        .stats {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+
+        .stat-card {
+            padding: 12px 24px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--neon-blue);
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-ghost);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .page-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(24px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--r-lg);
+            padding: 28px;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(10, 132, 255, 0.05) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .page-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.18);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        .page-card:hover::before {
+            opacity: 1;
+        }
+
+        .page-number {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background: var(--neon-blue);
+            color: #fff;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+
+        .page-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-silver);
+            margin-bottom: 12px;
+        }
+
+        .page-desc {
+            font-size: 14px;
+            color: var(--text-dim);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .page-features {
+            list-style: none;
+            font-size: 13px;
+            color: var(--text-ghost);
+            line-height: 1.8;
+        }
+
+        .page-features li::before {
+            content: '✓ ';
+            color: var(--neon-green);
+            margin-right: 6px;
+        }
+
+        .page-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 16px;
+            padding: 8px 16px;
+            background: rgba(10, 132, 255, 0.15);
+            border: 1px solid rgba(10, 132, 255, 0.3);
+            border-radius: 8px;
+            color: var(--neon-blue);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .page-link:hover {
+            background: rgba(10, 132, 255, 0.25);
+            transform: translateX(2px);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 32px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            margin-top: 48px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--neon-blue);
+        }
+
+        .footer-text {
+            font-size: 13px;
+            color: var(--text-ghost);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            background: rgba(48, 209, 88, 0.15);
+            border: 1px solid rgba(48, 209, 88, 0.3);
+            border-radius: 6px;
+            color: var(--neon-green);
+            font-size: 11px;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        .badge.warning {
+            background: rgba(255, 159, 10, 0.15);
+            border-color: rgba(255, 159, 10, 0.3);
+            color: var(--neon-amber);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">🐟</div>
+            <h1 class="title">BettaFish 舆情分析系统</h1>
+            <p class="subtitle">页面功能拆分核查 — 独立 HTML 页面集合</p>
+            <p class="meta">生成时间：2026-04-16 | 用途：前端页面核查与测试</p>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-value">7</div>
+                    <div class="stat-label">功能页面</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">34</div>
+                    <div class="stat-label">API 接口</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">5</div>
+                    <div class="stat-label">AI 引擎</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid">
+            <!-- Page 01 -->
+            <div class="page-card" onclick="window.location.href='01_搜索页面.html'">
+                <div class="page-number">01</div>
+                <h2 class="page-title">搜索页面 <span class="badge">Spotlight</span></h2>
+                <p class="page-desc">
+                    Spotlight 搜索界面，包含搜索输入框、高级参数面板、引擎状态指示器、流水线播报条等核心功能。
+                </p>
+                <ul class="page-features">
+                    <li>搜索输入框 + 历史下拉</li>
+                    <li>高级参数面板（数据源、抓取深度）</li>
+                    <li>引擎状态指示器（呼吸点）</li>
+                    <li>流水线播报条（四阶段）</li>
+                </ul>
+                <a href="01_搜索页面.html" class="page-link">
+                    查看页面
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"/>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Page 02 -->
+            <div class="page-card" onclick="window.location.href='02_Forum运算态页面.html'">
+                <div class="page-number">02</div>
+                <h2 class="page-title">Forum State 运算态 <span class="badge">可视化</span></h2>
+                <p class="page-desc">
+                    三个 Agent 节点的运算态可视化，包含节点状态机、SVG 连接线、脉冲动画、打字机终端等。
+                </p>
+                <ul class="page-features">
+                    <li>三个 Agent 节点（Query/Media/Insight）</li>
+                    <li>节点状态：idle → active → done</li>
+                    <li>SVG 连接线 + 脉冲动画</li>
+                    <li>打字机终端（带时间戳、颜色区分）</li>
+                </ul>
+                <a href="02_Forum运算态页面.html" class="page-link">
+                    查看页面
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"/>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Page 03 -->
+            <div class="page-card" onclick="window.location.href='03_报告详情页.html'">
+                <div class="page-number">03</div>
+                <h2 class="page-title">报告详情页 <span class="badge">真实数据</span></h2>
+                <p class="page-desc">
+                    报告阅读器，使用真实测试数据（2026年出海短剧市场现状分析），包含 Hero Section、ToC、FAB 导出等。
+                </p>
+                <ul class="page-features">
+                    <li>Hero Section（标题、摘要、KPI 卡片）</li>
+                    <li>左侧目录（ToC，点击跳转）</li>
+                    <li>报告正文（章节、段落）</li>
+                    <li>悬浮操作按钮（PDF/HTML/MD 导出）</li>
+                </ul>
+                <a href="03_报告详情页.html" class="page-link">
+                    查看页面
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"/>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Page 04 -->
+            <div class="page-card" onclick="window.location.href='04_历史报告列表页.html'">
+                <div class="page-number">04</div>
+                <h2 class="page-title">历史报告列表 <span class="badge">抽屉</span></h2>
+                <p class="page-desc">
+                    历史报告抽屉，右侧滑入动画，按时间分组（今天/昨天/更早），支持搜索过滤、操作按钮等。
+                </p>
+                <ul class="page-features">
+                    <li>右侧滑入动画</li>
+                    <li>按时间分组（今天/昨天/更早）</li>
+                    <li>Hover 显示操作按钮（查看/删除）</li>
+                    <li>搜索过滤 + 清空历史</li>
+                </ul>
+                <a href="04_历史报告列表页.html" class="page-link">
+                    查看页面
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"/>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Page 05 -->
+            <div class="page-card" onclick="window.location.href='05_系统配置页.html'">
+                <div class="page-number">05</div>
+                <h2 class="page-title">系统配置页 <span class="badge warning">敏感</span></h2>
+                <p class="page-desc">
+                    LLM 配置弹窗，包含用户配置（LLM API Keys、搜索工具）和运维配置（数据库、系统参数）两个 Tab。
+                </p>
+                <ul class="page-features">
+                    <li>Tab 切换栏（用户配置/运维配置）</li>
+                    <li>配置分组（LLM、搜索工具、数据库）</li>
+                    <li>密码字段显示/隐藏切换</li>
+                    <li>保存按钮 + 配置状态提示</li>
+                </ul>
+                <a href="05_系统配置页.html" class="page-link">
+                    查看页面
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"/>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Page 06 -->
+            <div class="page-card" onclick="window.location.href='06_控制台日志页.html'">
+                <div class="page-number">06</div>
+                <h2 class="page-title">控制台日志页 <span class="badge">实时</span></h2>
+                <p class="page-desc">
+                    引擎控制台输出，包含引擎切换按钮、状态指示器、控制台输出区、控制台状态栏等。
+                </p>
+                <ul class="page-features">
+                    <li>引擎切换按钮（5 个引擎）</li>
+                    <li>状态指示器（绿/红/黄点）</li>
+                    <li>控制台输出区（黑底绿字）</li>
+                    <li>控制台状态栏（顶部悬浮）</li>
+                </ul>
+                <a href="06_控制台日志页.html" class="page-link">
+                    查看页面
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"/>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Page 07 -->
+            <div class="page-card" onclick="window.location.href='07_操作指引页.html'">
+                <div class="page-number">07</div>
+                <h2 class="page-title">操作指引页 <span class="badge">新手引导</span></h2>
+                <p class="page-desc">
+                    右下角悬浮胶囊按钮触发的 5 步操作指引 Modal，含缩放控件、步骤卡片、提示条。
+                </p>
+                <ul class="page-features">
+                    <li>右下角两个悬浮胶囊按钮</li>
+                    <li>5 步引导卡片（弹入动画）</li>
+                    <li>缩放控件（75%～150%，6 档）</li>
+                    <li>ESC / 点击遮罩关闭</li>
+                </ul>
+                <a href="07_操作指引页.html" class="page-link">
+                    查看页面
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-links">
+                <a href="README.md" class="footer-link">📖 README</a>
+                <a href="../系统架构与API接口梳理.md" class="footer-link">🏗️ 系统架构</a>
+                <a href="../PRD产品需求文档.md" class="footer-link">📋 PRD 文档</a>
+                <a href="../舆情分析系统(AI编程）/BettaFish-main/" class="footer-link">💻 源代码</a>
+            </div>
+            <p class="footer-text">
+                BettaFish 舆情分析系统 © 2026 | 页面核查工具集
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // 统计信息动画
+        document.querySelectorAll('.stat-value').forEach(el => {
+            const target = parseInt(el.textContent);
+            let current = 0;
+            const increment = target / 30;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    el.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    el.textContent = Math.floor(current);
+                }
+            }, 30);
+        });
+    </script>
+</body>
+</html>
