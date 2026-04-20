@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find \"c:/Users/Administrator/Desktop/舆情分析系统\\(AI编程）\" -type f -name \"*.py\")",
+      "Bash(find \"c:/Users/Administrator/Desktop/舆情分析系统\\(AI编程）/BettaFish-main\" -type f -name \"*.py\")",
+      "Bash(python -c \":*)",
+      "Bash(ls \"C:/Users/Administrator/Desktop/舆情分析系统\\(AI编程）/BettaFish-main\")",
+      "Bash(ls \"C:/Users/Administrator/Desktop/舆情分析系统\\(AI编程）/BettaFish-main/tests/\")",
+      "Bash(find \"c:/Users/Administrator/Desktop/舆情分析系统\\(AI编程）/BettaFish-main/templates\" -type f)",
+      "Bash(curl -s http://localhost:8501/healthz)",
+      "Bash(curl -s http://localhost:8502/healthz)",
+      "Bash(curl -s http://localhost:8503/healthz)",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); [print\\(k,v[''''status'''']\\) for k,v in d.items\\(\\)]\")"
+    ]
+  }
+}

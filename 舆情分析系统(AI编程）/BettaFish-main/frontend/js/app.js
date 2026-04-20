@@ -1287,7 +1287,7 @@ async function ensureSystemReadyOnLoad() {
     } else {
         applySystemState(status);
         configModalLocked = false;
-        if (!localStorage.getItem('bettafish_config_visited')) {
+        if (!localStorage.getItem('mina_config_visited')) {
             openConfigModal({ lock: false, message: '欢迎使用！请检查并完善以下配置项。' });
         }
     }

@@ -1,0 +1,451 @@
+2026-04-20 11:12:22.128 | DEBUG    | ReportEngine.agent:_setup_logging:309 - 已添加日志handler (ID: 1): ops/logs/report.log
+2026-04-20 11:12:22.131 | ERROR    | ReportEngine.flask_interface:initialize_report_engine:270 - Report Engine初始化失败: Report Engine LLM API key is required.
+Traceback (most recent call last):
+
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000001EBB686B420>
+    └ <Thread(Thread-89 (_do_start), started daemon 25960)>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000001EBB686B100>
+    └ <Thread(Thread-89 (_do_start), started daemon 25960)>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-89 (_do_start), started daemon 25960)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-89 (_do_start), started daemon 25960)>
+    │    └ <function start_system.<locals>._do_start at 0x000001EBBD51C540>
+    └ <Thread(Thread-89 (_do_start), started daemon 25960)>
+
+  File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\app.py", line 1263, in _do_start
+    success, logs, errors = initialize_system_components()
+                            └ <function initialize_system_components at 0x000001EBBD3CB6A0>
+
+  File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\app.py", line 353, in initialize_system_components
+    if initialize_report_engine():
+       └ <function initialize_report_engine at 0x000001EBBD03E660>
+
+> File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\engines\ReportEngine\flask_interface.py", line 257, in initialize_report_engine
+    report_agent = create_agent()
+                   └ <function create_agent at 0x000001EBBB16E5C0>
+
+  File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\engines\ReportEngine\agent.py", line 1713, in create_agent
+    return ReportAgent(config)
+           │           └ Settings(REPORT_ENGINE_API_KEY=None, REPORT_ENGINE_BASE_URL=None, REPORT_ENGINE_MODEL_NAME=None, REPORT_ENGINE_PROVIDER=None,...
+           └ <class 'ReportEngine.agent.ReportAgent'>
+
+  File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\engines\ReportEngine\agent.py", line 212, in __init__
+    self.llm_client = self._initialize_llm()
+    │                 │    └ <function ReportAgent._initialize_llm at 0x000001EBBD03CA40>
+    │                 └ <ReportEngine.agent.ReportAgent object at 0x000001EBBD359820>
+    └ <ReportEngine.agent.ReportAgent object at 0x000001EBBD359820>
+
+  File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\engines\ReportEngine\agent.py", line 341, in _initialize_llm
+    return LLMClient(
+           └ <class 'ReportEngine.llms.base.LLMClient'>
+
+  File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\engines\ReportEngine\llms\base.py", line 53, in __init__
+    raise ValueError("Report Engine LLM API key is required.")
+
+ValueError: Report Engine LLM API key is required.
+2026-04-20 11:12:22.139 | ERROR    | __main__:initialize_system_components:362 - [系统启动] ✗ ReportEngine 初始化失败（返回False）
+2026-04-20 11:12:22.141 | INFO     | __main__:initialize_system_components:373 - [系统启动] ========== 启动完成 总耗时=0.1s, 错误=2 ==========
+2026-04-20 11:12:22.141 | WARNING  | __main__:initialize_system_components:375 - [系统启动] 错误汇总: ['数据库异常: MindSpider 模块不可用，跳过数据库初始化', 'ReportEngine 初始化失败']
+2026-04-20 11:12:22.142 | INFO     | __main__:_do_start:1266 - [系统启动] 全部组件启动成功, 准备发送 system_start_result(success=True)
+2026-04-20 11:12:22.143 | INFO     | __main__:_do_start:1268 - [系统启动] system_start_result(success=True) 已发送
+2026-04-20 11:12:22.144 | INFO     | __main__:_do_start:1280 - [系统启动] 后台启动线程结束
+2026-04-20 11:12:31.921 | INFO     | ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=20260419_154202
+2026-04-20 11:12:31.921 | INFO     | ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-20 11:12:31.923 | INFO     | ReportEngine.flask_interface:get_result:895 - [get_result] base_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\engines, 扫描目录: [WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish_V2/src/engines/outputs/raw_md'), WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish_V2/outputs/raw_md')]
+2026-04-20 11:12:31.924 | INFO     | ReportEngine.flask_interface:get_result:898 - [get_result] 检查目录: C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\engines\outputs\raw_md, exists=False
+2026-04-20 11:12:31.925 | INFO     | ReportEngine.flask_interface:get_result:898 - [get_result] 检查目录: C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\outputs\raw_md, exists=True
+2026-04-20 11:12:31.928 | INFO     | ReportEngine.flask_interface:get_result:902 - [get_result] 找到 22 个 md 文件
+2026-04-20 11:12:31.928 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2025-2026年全球AI大模型行业发展全景盘点与核心技术_20260414_161148.md, 匹配=False
+2026-04-20 11:12:31.930 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年AI产品经理的求职市场如何_20260415_120659.md, 匹配=False
+2026-04-20 11:12:31.930 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年出海短剧市场现状分析_20260416_114915.md, 匹配=False
+2026-04-20 11:12:31.930 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展情况_20260414_221322.md, 匹配=False
+2026-04-20 11:12:31.930 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展现状_20260413_235554.md, 匹配=False
+2026-04-20 11:12:31.930 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国深圳地区AI成熟落地方案_20260419_121534.md, 匹配=False
+2026-04-20 11:12:31.931 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国科技品牌在日韩市场的第二增长曲线_20260419_113325.md, 匹配=False
+2026-04-20 11:12:31.931 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人工智能_20260410_112137.md, 匹配=False
+2026-04-20 11:12:31.931 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人工智能的发展情况_20260419_151336.md, 匹配=False
+2026-04-20 11:12:31.931 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人形机器人核心零部件供应链的国产替代_20260419_114159.md, 匹配=False
+2026-04-20 11:12:31.932 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_低空经济_20260419_154202.md, 匹配=True
+2026-04-20 11:12:31.933 | INFO     | ReportEngine.flask_interface:get_result:907 - [get_result] 文件读取成功, MD长度=7119
+2026-04-20 11:12:32.111 | INFO     | ReportEngine.flask_interface:get_result:909 - [get_result] 转换成功, HTML长度=9390
+2026-04-20 11:12:40.303 | INFO     | __main__:search:990 - [搜索] 任务创建 task_id=b665545e query='2026年Q1具身智能（人形机器人）核心零部件供应链的国产替代趋势与资本市场反馈'
+2026-04-20 11:23:04.865 | INFO     | ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=20260419_154202
+2026-04-20 11:23:04.866 | INFO     | ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-20 11:23:04.869 | INFO     | ReportEngine.flask_interface:get_result:895 - [get_result] base_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\engines, 扫描目录: [WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish_V2/src/engines/outputs/raw_md'), WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish_V2/outputs/raw_md')]
+2026-04-20 11:23:04.869 | INFO     | ReportEngine.flask_interface:get_result:898 - [get_result] 检查目录: C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\engines\outputs\raw_md, exists=False
+2026-04-20 11:23:04.871 | INFO     | ReportEngine.flask_interface:get_result:898 - [get_result] 检查目录: C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\outputs\raw_md, exists=True
+2026-04-20 11:23:04.876 | INFO     | ReportEngine.flask_interface:get_result:902 - [get_result] 找到 22 个 md 文件
+2026-04-20 11:23:04.877 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2025-2026年全球AI大模型行业发展全景盘点与核心技术_20260414_161148.md, 匹配=False
+2026-04-20 11:23:04.878 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年AI产品经理的求职市场如何_20260415_120659.md, 匹配=False
+2026-04-20 11:23:04.878 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年出海短剧市场现状分析_20260416_114915.md, 匹配=False
+2026-04-20 11:23:04.878 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展情况_20260414_221322.md, 匹配=False
+2026-04-20 11:23:04.879 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展现状_20260413_235554.md, 匹配=False
+2026-04-20 11:23:04.879 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国深圳地区AI成熟落地方案_20260419_121534.md, 匹配=False
+2026-04-20 11:23:04.879 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国科技品牌在日韩市场的第二增长曲线_20260419_113325.md, 匹配=False
+2026-04-20 11:23:04.880 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人工智能_20260410_112137.md, 匹配=False
+2026-04-20 11:23:04.880 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人工智能的发展情况_20260419_151336.md, 匹配=False
+2026-04-20 11:23:04.880 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人形机器人核心零部件供应链的国产替代_20260419_114159.md, 匹配=False
+2026-04-20 11:23:04.881 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_低空经济_20260419_154202.md, 匹配=True
+2026-04-20 11:23:04.883 | INFO     | ReportEngine.flask_interface:get_result:907 - [get_result] 文件读取成功, MD长度=7119
+2026-04-20 11:23:04.904 | INFO     | ReportEngine.flask_interface:get_result:909 - [get_result] 转换成功, HTML长度=9390
+2026-04-20 11:34:51.598 | INFO     | __main__:_log_shutdown_step:545 - [Shutdown] 开始清理子进程
+2026-04-20 11:34:51.604 | ERROR    | __main__:stop_forum_engine:422 - ForumEngine: 停止论坛失败: No module named 'ForumEngine'
+Traceback (most recent call last):
+
+  File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\app.py", line 691, in cleanup_processes
+    stop_forum_engine()
+    └ <function stop_forum_engine at 0x000001EBBD3CB880>
+
+> File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\app.py", line 417, in stop_forum_engine
+    from ForumEngine.monitor import stop_forum_monitoring
+
+ModuleNotFoundError: No module named 'ForumEngine'
+2026-04-20 11:34:51.605 | INFO     | __main__:_log_shutdown_step:545 - [Shutdown] 子进程清理完成
+2026-04-20 14:24:15.984 | DEBUG    | engines.ReportEngine.agent:_setup_logging:309 - 已添加日志handler (ID: 1): C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\ops\logs\report.log
+2026-04-20 14:24:26.164 | INFO     | engines.ReportEngine.agent:_initialize_mini_llm:399 - [MiniLLM] 未配置小模型，Map 阶段将降级使用主模型
+2026-04-20 14:24:26.167 | DEBUG    | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:413 - 已添加ReportEngine图表修复函数
+2026-04-20 14:24:26.167 | DEBUG    | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:447 - 已添加ForumEngine图表修复函数
+2026-04-20 14:24:26.168 | DEBUG    | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:481 - 已添加InsightEngine图表修复函数
+2026-04-20 14:24:26.168 | DEBUG    | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:515 - 已添加MediaEngine图表修复函数
+2026-04-20 14:24:26.169 | INFO     | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:520 - 图表API修复功能已启用，共 4 个Engine可用
+2026-04-20 14:24:26.169 | INFO     | engines.ReportEngine.renderers.html_renderer:__init__:126 - HTMLRenderer: 已配置 4 个LLM修复函数
+2026-04-20 14:24:26.173 | INFO     | engines.ReportEngine.agent:initialize_baseline:118 - 文件数量基准已初始化: {'insight': 0, 'media': 0, 'query': 0}
+2026-04-20 14:24:26.176 | INFO     | engines.ReportEngine.agent:__init__:235 - Report Agent已初始化
+2026-04-20 14:24:26.176 | INFO     | engines.ReportEngine.agent:__init__:236 - 使用LLM: {'provider': 'deepseek-chat', 'model': 'deepseek-chat', 'api_base': 'https://api.deepseek.com'}
+2026-04-20 14:24:26.177 | INFO     | engines.ReportEngine.flask_interface:initialize_report_engine:258 - Report Engine初始化成功
+2026-04-20 14:24:26.282 | WARNING  | engines.ReportEngine.utils.dependency_check:log_dependency_status:334 - ⚠ WeasyPrint 未安装
+解决方法: pip install weasyprint
+2026-04-20 14:24:26.283 | INFO     | engines.ReportEngine.utils.dependency_check:log_dependency_status:335 - 💡 提示：PDF 导出功能需要 Pango 库支持，但不影响系统其他功能的正常使用
+2026-04-20 14:24:26.283 | INFO     | engines.ReportEngine.utils.dependency_check:log_dependency_status:336 - 📚 安装说明请参考：static/Partial README for PDF Exporting/README.md
+2026-04-20 14:24:26.284 | INFO     | __main__:initialize_system_components:352 - [系统启动] ✓ ReportEngine 初始化成功
+2026-04-20 14:24:26.285 | INFO     | __main__:initialize_system_components:369 - [系统启动] ========== 启动完成 总耗时=10.3s, 错误=0 ==========
+2026-04-20 14:24:26.285 | INFO     | __main__:_do_start:1112 - [系统启动] 全部组件启动成功, 准备发送 system_start_result(success=True)
+2026-04-20 14:24:26.285 | INFO     | __main__:_do_start:1114 - [系统启动] system_start_result(success=True) 已发送
+2026-04-20 14:24:26.287 | INFO     | __main__:_do_start:1126 - [系统启动] 后台启动线程结束
+2026-04-20 14:29:43.230 | INFO     | engines.ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=3235f3f8
+2026-04-20 14:29:43.230 | INFO     | engines.ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-20 14:29:43.232 | INFO     | engines.ReportEngine.flask_interface:get_result:892 - [get_result] base_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src, reports_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\outputs\raw_md
+2026-04-20 14:29:43.233 | INFO     | engines.ReportEngine.flask_interface:get_result:897 - [get_result] 找到 1 个 md 文件
+2026-04-20 14:29:43.234 | INFO     | engines.ReportEngine.flask_interface:get_result:899 - [get_result] 检查文件: deep_search_report_端侧大模型算力下放对终端定价权影响_20260420_123750.md, 匹配=False
+2026-04-20 14:29:43.234 | WARNING  | engines.ReportEngine.flask_interface:get_result:913 - [get_result] 未找到匹配文件，返回404
+2026-04-20 14:29:48.296 | INFO     | engines.ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=20260419_154202
+2026-04-20 14:29:48.297 | INFO     | engines.ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-20 14:29:48.299 | INFO     | engines.ReportEngine.flask_interface:get_result:892 - [get_result] base_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src, reports_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\outputs\raw_md
+2026-04-20 14:29:48.301 | INFO     | engines.ReportEngine.flask_interface:get_result:897 - [get_result] 找到 1 个 md 文件
+2026-04-20 14:29:48.302 | INFO     | engines.ReportEngine.flask_interface:get_result:899 - [get_result] 检查文件: deep_search_report_端侧大模型算力下放对终端定价权影响_20260420_123750.md, 匹配=False
+2026-04-20 14:29:48.302 | WARNING  | engines.ReportEngine.flask_interface:get_result:913 - [get_result] 未找到匹配文件，返回404
+2026-04-20 14:29:52.467 | INFO     | engines.ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=20260419_121534
+2026-04-20 14:29:52.467 | INFO     | engines.ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-20 14:29:52.469 | INFO     | engines.ReportEngine.flask_interface:get_result:892 - [get_result] base_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src, reports_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\outputs\raw_md
+2026-04-20 14:29:52.470 | INFO     | engines.ReportEngine.flask_interface:get_result:897 - [get_result] 找到 1 个 md 文件
+2026-04-20 14:29:52.471 | INFO     | engines.ReportEngine.flask_interface:get_result:899 - [get_result] 检查文件: deep_search_report_端侧大模型算力下放对终端定价权影响_20260420_123750.md, 匹配=False
+2026-04-20 14:29:52.471 | WARNING  | engines.ReportEngine.flask_interface:get_result:913 - [get_result] 未找到匹配文件，返回404
+2026-04-20 14:29:57.231 | INFO     | engines.ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=20260419_113325
+2026-04-20 14:29:57.232 | INFO     | engines.ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-20 14:29:57.234 | INFO     | engines.ReportEngine.flask_interface:get_result:892 - [get_result] base_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src, reports_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\outputs\raw_md
+2026-04-20 14:29:57.236 | INFO     | engines.ReportEngine.flask_interface:get_result:897 - [get_result] 找到 1 个 md 文件
+2026-04-20 14:29:57.237 | INFO     | engines.ReportEngine.flask_interface:get_result:899 - [get_result] 检查文件: deep_search_report_端侧大模型算力下放对终端定价权影响_20260420_123750.md, 匹配=False
+2026-04-20 14:29:57.238 | WARNING  | engines.ReportEngine.flask_interface:get_result:913 - [get_result] 未找到匹配文件，返回404
+2026-04-20 14:40:55.062 | INFO     | __main__:_log_shutdown_step:539 - [Shutdown] 开始清理子进程
+2026-04-20 14:40:55.062 | ERROR    | __main__:cleanup_processes:687 - 停止ForumEngine失败
+Traceback (most recent call last):
+
+> File "c:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\app.py", line 685, in cleanup_processes
+    stop_forum_engine()
+
+NameError: name 'stop_forum_engine' is not defined
+2026-04-20 14:40:55.065 | INFO     | __main__:_log_shutdown_step:539 - [Shutdown] 子进程清理完成
+2026-04-20 14:42:25.160 | DEBUG    | engines.ReportEngine.agent:_setup_logging:309 - 已添加日志handler (ID: 1): C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\ops\logs\report.log
+2026-04-20 14:42:34.958 | INFO     | engines.ReportEngine.agent:_initialize_mini_llm:399 - [MiniLLM] 未配置小模型，Map 阶段将降级使用主模型
+2026-04-20 14:42:34.960 | DEBUG    | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:413 - 已添加ReportEngine图表修复函数
+2026-04-20 14:42:34.961 | DEBUG    | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:447 - 已添加ForumEngine图表修复函数
+2026-04-20 14:42:34.961 | DEBUG    | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:481 - 已添加InsightEngine图表修复函数
+2026-04-20 14:42:34.961 | DEBUG    | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:515 - 已添加MediaEngine图表修复函数
+2026-04-20 14:42:34.963 | INFO     | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:520 - 图表API修复功能已启用，共 4 个Engine可用
+2026-04-20 14:42:34.963 | INFO     | engines.ReportEngine.renderers.html_renderer:__init__:126 - HTMLRenderer: 已配置 4 个LLM修复函数
+2026-04-20 14:42:34.967 | INFO     | engines.ReportEngine.agent:initialize_baseline:118 - 文件数量基准已初始化: {'insight': 0, 'media': 0, 'query': 0}
+2026-04-20 14:42:34.972 | INFO     | engines.ReportEngine.agent:__init__:235 - Report Agent已初始化
+2026-04-20 14:42:34.972 | INFO     | engines.ReportEngine.agent:__init__:236 - 使用LLM: {'provider': 'deepseek-chat', 'model': 'deepseek-chat', 'api_base': 'https://api.deepseek.com'}
+2026-04-20 14:42:34.973 | INFO     | engines.ReportEngine.flask_interface:initialize_report_engine:258 - Report Engine初始化成功
+2026-04-20 14:42:35.075 | WARNING  | engines.ReportEngine.utils.dependency_check:log_dependency_status:334 - ⚠ WeasyPrint 未安装
+解决方法: pip install weasyprint
+2026-04-20 14:42:35.075 | INFO     | engines.ReportEngine.utils.dependency_check:log_dependency_status:335 - 💡 提示：PDF 导出功能需要 Pango 库支持，但不影响系统其他功能的正常使用
+2026-04-20 14:42:35.076 | INFO     | engines.ReportEngine.utils.dependency_check:log_dependency_status:336 - 📚 安装说明请参考：static/Partial README for PDF Exporting/README.md
+2026-04-20 14:42:35.076 | INFO     | __main__:initialize_system_components:352 - [系统启动] ✓ ReportEngine 初始化成功
+2026-04-20 14:42:35.077 | INFO     | __main__:initialize_system_components:369 - [系统启动] ========== 启动完成 总耗时=10.0s, 错误=0 ==========
+2026-04-20 14:42:35.078 | INFO     | __main__:_do_start:1112 - [系统启动] 全部组件启动成功, 准备发送 system_start_result(success=True)
+2026-04-20 14:42:35.078 | INFO     | __main__:_do_start:1114 - [系统启动] system_start_result(success=True) 已发送
+2026-04-20 14:42:35.079 | INFO     | __main__:_do_start:1126 - [系统启动] 后台启动线程结束
+2026-04-20 14:42:59.695 | INFO     | engines.ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=3235f3f8
+2026-04-20 14:42:59.695 | INFO     | engines.ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-20 14:42:59.698 | INFO     | engines.ReportEngine.flask_interface:get_result:896 - [get_result] project_root=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2, reports_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\outputs\raw_md
+2026-04-20 14:42:59.701 | INFO     | engines.ReportEngine.flask_interface:get_result:901 - [get_result] 找到 23 个 md 文件
+2026-04-20 14:42:59.701 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_2025-2026年全球AI大模型行业发展全景盘点与核心技术_20260414_161148.md, 匹配=False
+2026-04-20 14:42:59.701 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_2026年AI产品经理的求职市场如何_20260415_120659.md, 匹配=False
+2026-04-20 14:42:59.701 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_2026年出海短剧市场现状分析_20260416_114915.md, 匹配=False
+2026-04-20 14:42:59.701 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_Agent的发展情况_20260414_221322.md, 匹配=False
+2026-04-20 14:42:59.701 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_Agent的发展现状_20260413_235554.md, 匹配=False
+2026-04-20 14:42:59.703 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_中国深圳地区AI成熟落地方案_20260419_121534.md, 匹配=False
+2026-04-20 14:42:59.703 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_中国科技品牌在日韩市场的第二增长曲线_20260419_113325.md, 匹配=False
+2026-04-20 14:42:59.703 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_人工智能_20260410_112137.md, 匹配=False
+2026-04-20 14:42:59.704 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_人工智能的发展情况_20260419_151336.md, 匹配=False
+2026-04-20 14:42:59.704 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_人形机器人核心零部件供应链的国产替代_20260419_114159.md, 匹配=False
+2026-04-20 14:42:59.704 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_低空经济_20260419_154202.md, 匹配=False
+2026-04-20 14:42:59.705 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_低空经济的发展趋势_20260419_114230.md, 匹配=False
+2026-04-20 14:42:59.705 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_全球_L2_高阶辅助驾驶核心供应链调研_20260416_095522.md, 匹配=False
+2026-04-20 14:42:59.705 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_具身智能赛道头部企业核心技术栈对比_20260417_180817.md, 匹配=False
+2026-04-20 14:42:59.706 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_分析一下Agent的情况_20260412_020334.md, 匹配=False
+2026-04-20 14:42:59.706 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_北美市场对车载无感互联配件的痛点挖掘_20260418_093023.md, 匹配=False
+2026-04-20 14:42:59.706 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_新一代智能座舱多模态交互演进趋势_20260419_112834.md, 匹配=False
+2026-04-20 14:42:59.706 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_智能车机系统CarPlay等的全球装配率变动_20260414_194051.md, 匹配=False
+2026-04-20 14:42:59.708 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_果_CarPlay_未来战略_20260414_212112.md, 匹配=False
+2026-04-20 14:42:59.708 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_端侧大模型算力下放对终端定价权影响_20260420_123750.md, 匹配=False
+2026-04-20 14:42:59.708 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_脑机接口_20260414_220418.md, 匹配=False
+2026-04-20 14:42:59.708 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_车载智能终端出海欧美的本土化用户洞察_20260417_163254.md, 匹配=False
+2026-04-20 14:42:59.709 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_辅助驾驶L2的市场格局_20260412_114206.md, 匹配=False
+2026-04-20 14:42:59.709 | WARNING  | engines.ReportEngine.flask_interface:get_result:917 - [get_result] 未找到匹配文件，返回404
+2026-04-20 15:01:18.956 | INFO     | __main__:_log_shutdown_step:539 - [Shutdown] 开始清理子进程
+2026-04-20 15:01:18.957 | ERROR    | __main__:cleanup_processes:687 - 停止ForumEngine失败
+Traceback (most recent call last):
+
+> File "c:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\app.py", line 685, in cleanup_processes
+    stop_forum_engine()
+
+NameError: name 'stop_forum_engine' is not defined
+2026-04-20 15:01:18.959 | INFO     | __main__:_log_shutdown_step:539 - [Shutdown] 子进程清理完成
+2026-04-20 15:06:13.563 | DEBUG    | engines.ReportEngine.agent:_setup_logging:309 - 已添加日志handler (ID: 1): C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\ops\logs\report.log
+2026-04-20 15:06:23.965 | INFO     | engines.ReportEngine.agent:_initialize_mini_llm:399 - [MiniLLM] 未配置小模型，Map 阶段将降级使用主模型
+2026-04-20 15:06:23.966 | DEBUG    | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:413 - 已添加ReportEngine图表修复函数
+2026-04-20 15:06:23.968 | DEBUG    | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:447 - 已添加ForumEngine图表修复函数
+2026-04-20 15:06:23.968 | DEBUG    | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:481 - 已添加InsightEngine图表修复函数
+2026-04-20 15:06:23.968 | DEBUG    | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:515 - 已添加MediaEngine图表修复函数
+2026-04-20 15:06:23.968 | INFO     | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:520 - 图表API修复功能已启用，共 4 个Engine可用
+2026-04-20 15:06:23.968 | INFO     | engines.ReportEngine.renderers.html_renderer:__init__:126 - HTMLRenderer: 已配置 4 个LLM修复函数
+2026-04-20 15:06:23.973 | INFO     | engines.ReportEngine.agent:initialize_baseline:118 - 文件数量基准已初始化: {'insight': 0, 'media': 0, 'query': 0}
+2026-04-20 15:06:23.978 | INFO     | engines.ReportEngine.agent:__init__:235 - Report Agent已初始化
+2026-04-20 15:06:23.978 | INFO     | engines.ReportEngine.agent:__init__:236 - 使用LLM: {'provider': 'deepseek-chat', 'model': 'deepseek-chat', 'api_base': 'https://api.deepseek.com'}
+2026-04-20 15:06:23.979 | INFO     | engines.ReportEngine.flask_interface:initialize_report_engine:258 - Report Engine初始化成功
+2026-04-20 15:06:24.072 | WARNING  | engines.ReportEngine.utils.dependency_check:log_dependency_status:334 - ⚠ WeasyPrint 未安装
+解决方法: pip install weasyprint
+2026-04-20 15:06:24.072 | INFO     | engines.ReportEngine.utils.dependency_check:log_dependency_status:335 - 💡 提示：PDF 导出功能需要 Pango 库支持，但不影响系统其他功能的正常使用
+2026-04-20 15:06:24.073 | INFO     | engines.ReportEngine.utils.dependency_check:log_dependency_status:336 - 📚 安装说明请参考：static/Partial README for PDF Exporting/README.md
+2026-04-20 15:06:24.073 | INFO     | __main__:initialize_system_components:352 - [系统启动] ✓ ReportEngine 初始化成功
+2026-04-20 15:06:24.074 | INFO     | __main__:initialize_system_components:369 - [系统启动] ========== 启动完成 总耗时=10.5s, 错误=0 ==========
+2026-04-20 15:06:24.074 | INFO     | __main__:_do_start:1112 - [系统启动] 全部组件启动成功, 准备发送 system_start_result(success=True)
+2026-04-20 15:06:24.075 | INFO     | __main__:_do_start:1114 - [系统启动] system_start_result(success=True) 已发送
+2026-04-20 15:06:24.076 | INFO     | __main__:_do_start:1126 - [系统启动] 后台启动线程结束
+2026-04-20 15:06:33.020 | INFO     | engines.ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=20260420_123750
+2026-04-20 15:06:33.021 | INFO     | engines.ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-20 15:06:33.022 | INFO     | engines.ReportEngine.flask_interface:get_result:896 - [get_result] project_root=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2, reports_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\outputs\raw_md
+2026-04-20 15:06:33.025 | INFO     | engines.ReportEngine.flask_interface:get_result:901 - [get_result] 找到 23 个 md 文件
+2026-04-20 15:06:33.026 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_2025-2026年全球AI大模型行业发展全景盘点与核心技术_20260414_161148.md, 匹配=False
+2026-04-20 15:06:33.027 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_2026年AI产品经理的求职市场如何_20260415_120659.md, 匹配=False
+2026-04-20 15:06:33.027 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_2026年出海短剧市场现状分析_20260416_114915.md, 匹配=False
+2026-04-20 15:06:33.027 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_Agent的发展情况_20260414_221322.md, 匹配=False
+2026-04-20 15:06:33.028 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_Agent的发展现状_20260413_235554.md, 匹配=False
+2026-04-20 15:06:33.028 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_中国深圳地区AI成熟落地方案_20260419_121534.md, 匹配=False
+2026-04-20 15:06:33.028 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_中国科技品牌在日韩市场的第二增长曲线_20260419_113325.md, 匹配=False
+2026-04-20 15:06:33.029 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_人工智能_20260410_112137.md, 匹配=False
+2026-04-20 15:06:33.029 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_人工智能的发展情况_20260419_151336.md, 匹配=False
+2026-04-20 15:06:33.029 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_人形机器人核心零部件供应链的国产替代_20260419_114159.md, 匹配=False
+2026-04-20 15:06:33.030 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_低空经济_20260419_154202.md, 匹配=False
+2026-04-20 15:06:33.030 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_低空经济的发展趋势_20260419_114230.md, 匹配=False
+2026-04-20 15:06:33.030 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_全球_L2_高阶辅助驾驶核心供应链调研_20260416_095522.md, 匹配=False
+2026-04-20 15:06:33.030 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_具身智能赛道头部企业核心技术栈对比_20260417_180817.md, 匹配=False
+2026-04-20 15:06:33.032 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_分析一下Agent的情况_20260412_020334.md, 匹配=False
+2026-04-20 15:06:33.032 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_北美市场对车载无感互联配件的痛点挖掘_20260418_093023.md, 匹配=False
+2026-04-20 15:06:33.032 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_新一代智能座舱多模态交互演进趋势_20260419_112834.md, 匹配=False
+2026-04-20 15:06:33.033 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_智能车机系统CarPlay等的全球装配率变动_20260414_194051.md, 匹配=False
+2026-04-20 15:06:33.033 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_果_CarPlay_未来战略_20260414_212112.md, 匹配=False
+2026-04-20 15:06:33.033 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_端侧大模型算力下放对终端定价权影响_20260420_123750.md, 匹配=True
+2026-04-20 15:06:33.034 | INFO     | engines.ReportEngine.flask_interface:get_result:906 - [get_result] 文件读取成功, MD长度=7160
+2026-04-20 15:06:33.059 | INFO     | engines.ReportEngine.flask_interface:get_result:908 - [get_result] 转换成功, HTML长度=9448
+2026-04-20 15:16:58.602 | INFO     | engines.ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=20260420_123750
+2026-04-20 15:16:58.602 | INFO     | engines.ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-20 15:16:58.605 | INFO     | engines.ReportEngine.flask_interface:get_result:896 - [get_result] project_root=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2, reports_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\outputs\raw_md
+2026-04-20 15:16:58.609 | INFO     | engines.ReportEngine.flask_interface:get_result:901 - [get_result] 找到 23 个 md 文件
+2026-04-20 15:16:58.610 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_2025-2026年全球AI大模型行业发展全景盘点与核心技术_20260414_161148.md, 匹配=False
+2026-04-20 15:16:58.610 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_2026年AI产品经理的求职市场如何_20260415_120659.md, 匹配=False
+2026-04-20 15:16:58.610 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_2026年出海短剧市场现状分析_20260416_114915.md, 匹配=False
+2026-04-20 15:16:58.611 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_Agent的发展情况_20260414_221322.md, 匹配=False
+2026-04-20 15:16:58.611 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_Agent的发展现状_20260413_235554.md, 匹配=False
+2026-04-20 15:16:58.611 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_中国深圳地区AI成熟落地方案_20260419_121534.md, 匹配=False
+2026-04-20 15:16:58.613 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_中国科技品牌在日韩市场的第二增长曲线_20260419_113325.md, 匹配=False
+2026-04-20 15:16:58.613 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_人工智能_20260410_112137.md, 匹配=False
+2026-04-20 15:16:58.613 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_人工智能的发展情况_20260419_151336.md, 匹配=False
+2026-04-20 15:16:58.614 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_人形机器人核心零部件供应链的国产替代_20260419_114159.md, 匹配=False
+2026-04-20 15:16:58.614 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_低空经济_20260419_154202.md, 匹配=False
+2026-04-20 15:16:58.614 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_低空经济的发展趋势_20260419_114230.md, 匹配=False
+2026-04-20 15:16:58.615 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_全球_L2_高阶辅助驾驶核心供应链调研_20260416_095522.md, 匹配=False
+2026-04-20 15:16:58.615 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_具身智能赛道头部企业核心技术栈对比_20260417_180817.md, 匹配=False
+2026-04-20 15:16:58.615 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_分析一下Agent的情况_20260412_020334.md, 匹配=False
+2026-04-20 15:16:58.616 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_北美市场对车载无感互联配件的痛点挖掘_20260418_093023.md, 匹配=False
+2026-04-20 15:16:58.617 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_新一代智能座舱多模态交互演进趋势_20260419_112834.md, 匹配=False
+2026-04-20 15:16:58.618 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_智能车机系统CarPlay等的全球装配率变动_20260414_194051.md, 匹配=False
+2026-04-20 15:16:58.618 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_果_CarPlay_未来战略_20260414_212112.md, 匹配=False
+2026-04-20 15:16:58.618 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_端侧大模型算力下放对终端定价权影响_20260420_123750.md, 匹配=True
+2026-04-20 15:16:58.620 | INFO     | engines.ReportEngine.flask_interface:get_result:906 - [get_result] 文件读取成功, MD长度=7160
+2026-04-20 15:16:58.651 | INFO     | engines.ReportEngine.flask_interface:get_result:908 - [get_result] 转换成功, HTML长度=9448
+2026-04-20 15:34:32.297 | INFO     | engines.ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=20260420_123750
+2026-04-20 15:34:32.297 | INFO     | engines.ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-20 15:34:32.299 | INFO     | engines.ReportEngine.flask_interface:get_result:896 - [get_result] project_root=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2, reports_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\outputs\raw_md
+2026-04-20 15:34:32.303 | INFO     | engines.ReportEngine.flask_interface:get_result:901 - [get_result] 找到 23 个 md 文件
+2026-04-20 15:34:32.304 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_2025-2026年全球AI大模型行业发展全景盘点与核心技术_20260414_161148.md, 匹配=False
+2026-04-20 15:34:32.304 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_2026年AI产品经理的求职市场如何_20260415_120659.md, 匹配=False
+2026-04-20 15:34:32.304 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_2026年出海短剧市场现状分析_20260416_114915.md, 匹配=False
+2026-04-20 15:34:32.304 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_Agent的发展情况_20260414_221322.md, 匹配=False
+2026-04-20 15:34:32.305 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_Agent的发展现状_20260413_235554.md, 匹配=False
+2026-04-20 15:34:32.305 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_中国深圳地区AI成熟落地方案_20260419_121534.md, 匹配=False
+2026-04-20 15:34:32.307 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_中国科技品牌在日韩市场的第二增长曲线_20260419_113325.md, 匹配=False
+2026-04-20 15:34:32.307 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_人工智能_20260410_112137.md, 匹配=False
+2026-04-20 15:34:32.307 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_人工智能的发展情况_20260419_151336.md, 匹配=False
+2026-04-20 15:34:32.307 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_人形机器人核心零部件供应链的国产替代_20260419_114159.md, 匹配=False
+2026-04-20 15:34:32.307 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_低空经济_20260419_154202.md, 匹配=False
+2026-04-20 15:34:32.308 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_低空经济的发展趋势_20260419_114230.md, 匹配=False
+2026-04-20 15:34:32.308 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_全球_L2_高阶辅助驾驶核心供应链调研_20260416_095522.md, 匹配=False
+2026-04-20 15:34:32.309 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_具身智能赛道头部企业核心技术栈对比_20260417_180817.md, 匹配=False
+2026-04-20 15:34:32.309 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_分析一下Agent的情况_20260412_020334.md, 匹配=False
+2026-04-20 15:34:32.309 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_北美市场对车载无感互联配件的痛点挖掘_20260418_093023.md, 匹配=False
+2026-04-20 15:34:32.311 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_新一代智能座舱多模态交互演进趋势_20260419_112834.md, 匹配=False
+2026-04-20 15:34:32.311 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_智能车机系统CarPlay等的全球装配率变动_20260414_194051.md, 匹配=False
+2026-04-20 15:34:32.311 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_果_CarPlay_未来战略_20260414_212112.md, 匹配=False
+2026-04-20 15:34:32.311 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_端侧大模型算力下放对终端定价权影响_20260420_123750.md, 匹配=True
+2026-04-20 15:34:32.313 | INFO     | engines.ReportEngine.flask_interface:get_result:906 - [get_result] 文件读取成功, MD长度=7160
+2026-04-20 15:34:32.340 | INFO     | engines.ReportEngine.flask_interface:get_result:908 - [get_result] 转换成功, HTML长度=9448
+2026-04-20 15:43:54.694 | INFO     | __main__:_log_shutdown_step:539 - [Shutdown] 开始清理子进程
+2026-04-20 15:43:54.694 | ERROR    | __main__:cleanup_processes:687 - 停止ForumEngine失败
+Traceback (most recent call last):
+
+> File "c:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\app.py", line 685, in cleanup_processes
+    stop_forum_engine()
+
+NameError: name 'stop_forum_engine' is not defined
+2026-04-20 15:43:54.696 | INFO     | __main__:_log_shutdown_step:539 - [Shutdown] 子进程清理完成
+2026-04-20 15:45:09.770 | DEBUG    | engines.ReportEngine.agent:_setup_logging:309 - 已添加日志handler (ID: 1): C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\ops\logs\report.log
+2026-04-20 15:45:20.065 | INFO     | engines.ReportEngine.agent:_initialize_mini_llm:399 - [MiniLLM] 未配置小模型，Map 阶段将降级使用主模型
+2026-04-20 15:45:20.067 | DEBUG    | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:413 - 已添加ReportEngine图表修复函数
+2026-04-20 15:45:20.068 | DEBUG    | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:447 - 已添加ForumEngine图表修复函数
+2026-04-20 15:45:20.068 | DEBUG    | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:481 - 已添加InsightEngine图表修复函数
+2026-04-20 15:45:20.070 | DEBUG    | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:515 - 已添加MediaEngine图表修复函数
+2026-04-20 15:45:20.070 | INFO     | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:520 - 图表API修复功能已启用，共 4 个Engine可用
+2026-04-20 15:45:20.071 | INFO     | engines.ReportEngine.renderers.html_renderer:__init__:126 - HTMLRenderer: 已配置 4 个LLM修复函数
+2026-04-20 15:45:20.077 | INFO     | engines.ReportEngine.agent:initialize_baseline:118 - 文件数量基准已初始化: {'insight': 0, 'media': 0, 'query': 0}
+2026-04-20 15:45:20.080 | INFO     | engines.ReportEngine.agent:__init__:235 - Report Agent已初始化
+2026-04-20 15:45:20.081 | INFO     | engines.ReportEngine.agent:__init__:236 - 使用LLM: {'provider': 'deepseek-chat', 'model': 'deepseek-chat', 'api_base': 'https://api.deepseek.com'}
+2026-04-20 15:45:20.082 | INFO     | engines.ReportEngine.flask_interface:initialize_report_engine:258 - Report Engine初始化成功
+2026-04-20 15:45:20.179 | WARNING  | engines.ReportEngine.utils.dependency_check:log_dependency_status:334 - ⚠ WeasyPrint 未安装
+解决方法: pip install weasyprint
+2026-04-20 15:45:20.180 | INFO     | engines.ReportEngine.utils.dependency_check:log_dependency_status:335 - 💡 提示：PDF 导出功能需要 Pango 库支持，但不影响系统其他功能的正常使用
+2026-04-20 15:45:20.180 | INFO     | engines.ReportEngine.utils.dependency_check:log_dependency_status:336 - 📚 安装说明请参考：static/Partial README for PDF Exporting/README.md
+2026-04-20 15:45:20.181 | INFO     | __main__:initialize_system_components:352 - [系统启动] ✓ ReportEngine 初始化成功
+2026-04-20 15:45:20.182 | INFO     | __main__:initialize_system_components:369 - [系统启动] ========== 启动完成 总耗时=10.5s, 错误=0 ==========
+2026-04-20 15:45:20.182 | INFO     | __main__:_do_start:1122 - [系统启动] 全部组件启动成功, 准备发送 system_start_result(success=True)
+2026-04-20 15:45:20.183 | INFO     | __main__:_do_start:1124 - [系统启动] system_start_result(success=True) 已发送
+2026-04-20 15:45:20.183 | INFO     | __main__:_do_start:1136 - [系统启动] 后台启动线程结束
+2026-04-20 15:46:33.333 | INFO     | engines.ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=fd4b29f2
+2026-04-20 15:46:33.334 | INFO     | engines.ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-20 15:46:33.335 | INFO     | engines.ReportEngine.flask_interface:get_result:896 - [get_result] project_root=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2, reports_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\outputs\raw_md
+2026-04-20 15:46:33.339 | INFO     | engines.ReportEngine.flask_interface:get_result:901 - [get_result] 找到 25 个 md 文件
+2026-04-20 15:46:33.340 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_2025-2026年全球AI大模型行业发展全景盘点与核心技术_20260414_161148.md, 匹配=False
+2026-04-20 15:46:33.340 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_2026年AI产品经理的求职市场如何_20260415_120659.md, 匹配=False
+2026-04-20 15:46:33.340 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_2026年出海短剧市场现状分析_20260416_114915.md, 匹配=False
+2026-04-20 15:46:33.341 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_Agent的发展情况_20260414_221322.md, 匹配=False
+2026-04-20 15:46:33.341 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_Agent的发展现状_20260413_235554.md, 匹配=False
+2026-04-20 15:46:33.341 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_ottocast品牌的舆情情况和产品情况_20260420_140333.md, 匹配=False
+2026-04-20 15:46:33.343 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_中国深圳地区AI成熟落地方案_20260419_121534.md, 匹配=False
+2026-04-20 15:46:33.343 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_中国科技品牌在日韩市场的第二增长曲线_20260419_113325.md, 匹配=False
+2026-04-20 15:46:33.343 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_人工智能_20260410_112137.md, 匹配=False
+2026-04-20 15:46:33.343 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_人工智能的发展情况_20260419_151336.md, 匹配=False
+2026-04-20 15:46:33.344 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_人形机器人核心零部件供应链的国产替代_20260419_114159.md, 匹配=False
+2026-04-20 15:46:33.344 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_低空经济_20260419_154202.md, 匹配=False
+2026-04-20 15:46:33.344 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_低空经济的发展趋势_20260419_114230.md, 匹配=False
+2026-04-20 15:46:33.345 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_全球_L2_高阶辅助驾驶核心供应链调研_20260416_095522.md, 匹配=False
+2026-04-20 15:46:33.345 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_具身智能赛道头部企业核心技术栈对比_20260417_180817.md, 匹配=False
+2026-04-20 15:46:33.345 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_分析一下Agent的情况_20260412_020334.md, 匹配=False
+2026-04-20 15:46:33.347 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_北美市场对车载无感互联配件的痛点挖掘_20260418_093023.md, 匹配=False
+2026-04-20 15:46:33.348 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_北美市场对车载无感互联配件的痛点挖掘_20260420_133127.md, 匹配=False
+2026-04-20 15:46:33.348 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_新一代智能座舱多模态交互演进趋势_20260419_112834.md, 匹配=False
+2026-04-20 15:46:33.348 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_智能车机系统CarPlay等的全球装配率变动_20260414_194051.md, 匹配=False
+2026-04-20 15:46:33.349 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_果_CarPlay_未来战略_20260414_212112.md, 匹配=False
+2026-04-20 15:46:33.349 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_端侧大模型算力下放对终端定价权影响_20260420_123750.md, 匹配=False
+2026-04-20 15:46:33.350 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_脑机接口_20260414_220418.md, 匹配=False
+2026-04-20 15:46:33.350 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_车载智能终端出海欧美的本土化用户洞察_20260417_163254.md, 匹配=False
+2026-04-20 15:46:33.351 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_辅助驾驶L2的市场格局_20260412_114206.md, 匹配=False
+2026-04-20 15:46:33.351 | WARNING  | engines.ReportEngine.flask_interface:get_result:917 - [get_result] 未找到匹配文件，返回404
+2026-04-20 15:46:39.418 | INFO     | engines.ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=20260420_140333
+2026-04-20 15:46:39.418 | INFO     | engines.ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-20 15:46:39.419 | INFO     | engines.ReportEngine.flask_interface:get_result:896 - [get_result] project_root=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2, reports_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\outputs\raw_md
+2026-04-20 15:46:39.422 | INFO     | engines.ReportEngine.flask_interface:get_result:901 - [get_result] 找到 25 个 md 文件
+2026-04-20 15:46:39.423 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_2025-2026年全球AI大模型行业发展全景盘点与核心技术_20260414_161148.md, 匹配=False
+2026-04-20 15:46:39.424 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_2026年AI产品经理的求职市场如何_20260415_120659.md, 匹配=False
+2026-04-20 15:46:39.424 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_2026年出海短剧市场现状分析_20260416_114915.md, 匹配=False
+2026-04-20 15:46:39.425 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_Agent的发展情况_20260414_221322.md, 匹配=False
+2026-04-20 15:46:39.425 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_Agent的发展现状_20260413_235554.md, 匹配=False
+2026-04-20 15:46:39.425 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_ottocast品牌的舆情情况和产品情况_20260420_140333.md, 匹配=True
+2026-04-20 15:46:39.426 | INFO     | engines.ReportEngine.flask_interface:get_result:906 - [get_result] 文件读取成功, MD长度=7482
+2026-04-20 15:46:39.595 | INFO     | engines.ReportEngine.flask_interface:get_result:908 - [get_result] 转换成功, HTML长度=9659
+2026-04-20 15:46:45.839 | INFO     | engines.ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=20260420_140333
+2026-04-20 15:46:45.840 | INFO     | engines.ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-20 15:46:45.841 | INFO     | engines.ReportEngine.flask_interface:get_result:896 - [get_result] project_root=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2, reports_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\outputs\raw_md
+2026-04-20 15:46:45.843 | INFO     | engines.ReportEngine.flask_interface:get_result:901 - [get_result] 找到 25 个 md 文件
+2026-04-20 15:46:45.844 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_2025-2026年全球AI大模型行业发展全景盘点与核心技术_20260414_161148.md, 匹配=False
+2026-04-20 15:46:45.844 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_2026年AI产品经理的求职市场如何_20260415_120659.md, 匹配=False
+2026-04-20 15:46:45.844 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_2026年出海短剧市场现状分析_20260416_114915.md, 匹配=False
+2026-04-20 15:46:45.845 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_Agent的发展情况_20260414_221322.md, 匹配=False
+2026-04-20 15:46:45.846 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_Agent的发展现状_20260413_235554.md, 匹配=False
+2026-04-20 15:46:45.846 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_ottocast品牌的舆情情况和产品情况_20260420_140333.md, 匹配=True
+2026-04-20 15:46:45.848 | INFO     | engines.ReportEngine.flask_interface:get_result:906 - [get_result] 文件读取成功, MD长度=7482
+2026-04-20 15:46:45.864 | INFO     | engines.ReportEngine.flask_interface:get_result:908 - [get_result] 转换成功, HTML长度=9659
+2026-04-20 15:46:51.645 | INFO     | engines.ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=20260419_151336
+2026-04-20 15:46:51.645 | INFO     | engines.ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-20 15:46:51.647 | INFO     | engines.ReportEngine.flask_interface:get_result:896 - [get_result] project_root=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2, reports_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\outputs\raw_md
+2026-04-20 15:46:51.649 | INFO     | engines.ReportEngine.flask_interface:get_result:901 - [get_result] 找到 25 个 md 文件
+2026-04-20 15:46:51.650 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_2025-2026年全球AI大模型行业发展全景盘点与核心技术_20260414_161148.md, 匹配=False
+2026-04-20 15:46:51.650 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_2026年AI产品经理的求职市场如何_20260415_120659.md, 匹配=False
+2026-04-20 15:46:51.650 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_2026年出海短剧市场现状分析_20260416_114915.md, 匹配=False
+2026-04-20 15:46:51.651 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_Agent的发展情况_20260414_221322.md, 匹配=False
+2026-04-20 15:46:51.651 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_Agent的发展现状_20260413_235554.md, 匹配=False
+2026-04-20 15:46:51.651 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_ottocast品牌的舆情情况和产品情况_20260420_140333.md, 匹配=False
+2026-04-20 15:46:51.651 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_中国深圳地区AI成熟落地方案_20260419_121534.md, 匹配=False
+2026-04-20 15:46:51.652 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_中国科技品牌在日韩市场的第二增长曲线_20260419_113325.md, 匹配=False
+2026-04-20 15:46:51.653 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_人工智能_20260410_112137.md, 匹配=False
+2026-04-20 15:46:51.653 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_人工智能的发展情况_20260419_151336.md, 匹配=True
+2026-04-20 15:46:51.654 | INFO     | engines.ReportEngine.flask_interface:get_result:906 - [get_result] 文件读取成功, MD长度=6663
+2026-04-20 15:46:51.671 | INFO     | engines.ReportEngine.flask_interface:get_result:908 - [get_result] 转换成功, HTML长度=9365
+2026-04-20 15:46:56.608 | INFO     | engines.ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=20260419_154202
+2026-04-20 15:46:56.608 | INFO     | engines.ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-20 15:46:56.610 | INFO     | engines.ReportEngine.flask_interface:get_result:896 - [get_result] project_root=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2, reports_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\outputs\raw_md
+2026-04-20 15:46:56.613 | INFO     | engines.ReportEngine.flask_interface:get_result:901 - [get_result] 找到 25 个 md 文件
+2026-04-20 15:46:56.613 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_2025-2026年全球AI大模型行业发展全景盘点与核心技术_20260414_161148.md, 匹配=False
+2026-04-20 15:46:56.614 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_2026年AI产品经理的求职市场如何_20260415_120659.md, 匹配=False
+2026-04-20 15:46:56.614 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_2026年出海短剧市场现状分析_20260416_114915.md, 匹配=False
+2026-04-20 15:46:56.614 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_Agent的发展情况_20260414_221322.md, 匹配=False
+2026-04-20 15:46:56.615 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_Agent的发展现状_20260413_235554.md, 匹配=False
+2026-04-20 15:46:56.615 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_ottocast品牌的舆情情况和产品情况_20260420_140333.md, 匹配=False
+2026-04-20 15:46:56.615 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_中国深圳地区AI成熟落地方案_20260419_121534.md, 匹配=False
+2026-04-20 15:46:56.615 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_中国科技品牌在日韩市场的第二增长曲线_20260419_113325.md, 匹配=False
+2026-04-20 15:46:56.617 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_人工智能_20260410_112137.md, 匹配=False
+2026-04-20 15:46:56.617 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_人工智能的发展情况_20260419_151336.md, 匹配=False
+2026-04-20 15:46:56.617 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_人形机器人核心零部件供应链的国产替代_20260419_114159.md, 匹配=False
+2026-04-20 15:46:56.618 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_低空经济_20260419_154202.md, 匹配=True
+2026-04-20 15:46:56.618 | INFO     | engines.ReportEngine.flask_interface:get_result:906 - [get_result] 文件读取成功, MD长度=7119
+2026-04-20 15:46:56.637 | INFO     | engines.ReportEngine.flask_interface:get_result:908 - [get_result] 转换成功, HTML长度=9390
+2026-04-20 15:47:16.336 | INFO     | engines.ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=20260420_140333
+2026-04-20 15:47:16.338 | INFO     | engines.ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-20 15:47:16.339 | INFO     | engines.ReportEngine.flask_interface:get_result:896 - [get_result] project_root=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2, reports_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\outputs\raw_md
+2026-04-20 15:47:16.343 | INFO     | engines.ReportEngine.flask_interface:get_result:901 - [get_result] 找到 25 个 md 文件
+2026-04-20 15:47:16.344 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_2025-2026年全球AI大模型行业发展全景盘点与核心技术_20260414_161148.md, 匹配=False
+2026-04-20 15:47:16.344 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_2026年AI产品经理的求职市场如何_20260415_120659.md, 匹配=False
+2026-04-20 15:47:16.345 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_2026年出海短剧市场现状分析_20260416_114915.md, 匹配=False
+2026-04-20 15:47:16.345 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_Agent的发展情况_20260414_221322.md, 匹配=False
+2026-04-20 15:47:16.345 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_Agent的发展现状_20260413_235554.md, 匹配=False
+2026-04-20 15:47:16.346 | INFO     | engines.ReportEngine.flask_interface:get_result:903 - [get_result] 检查文件: deep_search_report_ottocast品牌的舆情情况和产品情况_20260420_140333.md, 匹配=True
+2026-04-20 15:47:16.347 | INFO     | engines.ReportEngine.flask_interface:get_result:906 - [get_result] 文件读取成功, MD长度=7482
+2026-04-20 15:47:16.372 | INFO     | engines.ReportEngine.flask_interface:get_result:908 - [get_result] 转换成功, HTML长度=9659

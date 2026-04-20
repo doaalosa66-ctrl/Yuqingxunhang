@@ -1,0 +1,943 @@
+2026-04-19 17:17:13.875 | DEBUG    | ReportEngine.agent:_setup_logging:309 - 已添加日志handler (ID: 1): logs/report.log
+2026-04-19 17:17:22.089 | INFO     | ReportEngine.agent:_initialize_mini_llm:399 - [MiniLLM] 未配置小模型，Map 阶段将降级使用主模型
+2026-04-19 17:17:22.091 | WARNING  | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:518 - 未配置任何Engine API，图表API修复功能将不可用
+2026-04-19 17:17:22.091 | WARNING  | ReportEngine.renderers.html_renderer:__init__:124 - HTMLRenderer: 未配置任何LLM API，图表API修复功能不可用
+2026-04-19 17:17:22.094 | INFO     | ReportEngine.agent:initialize_baseline:118 - 文件数量基准已初始化: {'insight': 0, 'media': 0, 'query': 0}
+2026-04-19 17:17:22.097 | INFO     | ReportEngine.agent:__init__:235 - Report Agent已初始化
+2026-04-19 17:17:22.098 | INFO     | ReportEngine.agent:__init__:236 - 使用LLM: {'provider': 'deepseek-chat', 'model': 'deepseek-chat', 'api_base': 'https://api.deepseek.com'}
+2026-04-19 17:17:22.098 | INFO     | ReportEngine.flask_interface:initialize_report_engine:258 - Report Engine初始化成功
+2026-04-19 17:17:22.171 | WARNING  | ReportEngine.utils.dependency_check:log_dependency_status:334 - ⚠ WeasyPrint 未安装
+解决方法: pip install weasyprint
+2026-04-19 17:17:22.171 | INFO     | ReportEngine.utils.dependency_check:log_dependency_status:335 - 💡 提示：PDF 导出功能需要 Pango 库支持，但不影响系统其他功能的正常使用
+2026-04-19 17:17:22.173 | INFO     | ReportEngine.utils.dependency_check:log_dependency_status:336 - 📚 安装说明请参考：static/Partial README for PDF Exporting/README.md
+2026-04-19 17:17:22.173 | INFO     | __main__:initialize_system_components:343 - [系统启动] ✓ ReportEngine 初始化成功
+2026-04-19 17:17:22.173 | INFO     | __main__:initialize_system_components:360 - [系统启动] ========== 启动完成 总耗时=57.4s, 错误=0 ==========
+2026-04-19 17:17:22.173 | INFO     | __main__:_do_start:1253 - [系统启动] 全部组件启动成功, 准备发送 system_start_result(success=True)
+2026-04-19 17:17:22.173 | INFO     | __main__:_do_start:1255 - [系统启动] system_start_result(success=True) 已发送
+2026-04-19 17:17:22.174 | INFO     | __main__:_do_start:1267 - [系统启动] 后台启动线程结束
+2026-04-19 17:21:32.948 | DEBUG    | ReportEngine.agent:_setup_logging:309 - 已添加日志handler (ID: 1): logs/report.log
+2026-04-19 17:21:40.424 | INFO     | ReportEngine.agent:_initialize_mini_llm:399 - [MiniLLM] 未配置小模型，Map 阶段将降级使用主模型
+2026-04-19 17:21:40.432 | WARNING  | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:518 - 未配置任何Engine API，图表API修复功能将不可用
+2026-04-19 17:21:40.432 | WARNING  | ReportEngine.renderers.html_renderer:__init__:124 - HTMLRenderer: 未配置任何LLM API，图表API修复功能不可用
+2026-04-19 17:21:40.437 | INFO     | ReportEngine.agent:initialize_baseline:118 - 文件数量基准已初始化: {'insight': 0, 'media': 0, 'query': 0}
+2026-04-19 17:21:40.440 | INFO     | ReportEngine.agent:__init__:235 - Report Agent已初始化
+2026-04-19 17:21:40.441 | INFO     | ReportEngine.agent:__init__:236 - 使用LLM: {'provider': 'deepseek-chat', 'model': 'deepseek-chat', 'api_base': 'https://api.deepseek.com'}
+2026-04-19 17:21:40.444 | INFO     | ReportEngine.flask_interface:initialize_report_engine:258 - Report Engine初始化成功
+2026-04-19 17:21:40.527 | WARNING  | ReportEngine.utils.dependency_check:log_dependency_status:334 - ⚠ WeasyPrint 未安装
+解决方法: pip install weasyprint
+2026-04-19 17:21:40.528 | INFO     | ReportEngine.utils.dependency_check:log_dependency_status:335 - 💡 提示：PDF 导出功能需要 Pango 库支持，但不影响系统其他功能的正常使用
+2026-04-19 17:21:40.528 | INFO     | ReportEngine.utils.dependency_check:log_dependency_status:336 - 📚 安装说明请参考：static/Partial README for PDF Exporting/README.md
+2026-04-19 17:21:40.528 | INFO     | __main__:initialize_system_components:343 - [系统启动] ✓ ReportEngine 初始化成功
+2026-04-19 17:21:40.529 | INFO     | __main__:initialize_system_components:360 - [系统启动] ========== 启动完成 总耗时=55.3s, 错误=0 ==========
+2026-04-19 17:21:40.529 | INFO     | __main__:_do_start:1253 - [系统启动] 全部组件启动成功, 准备发送 system_start_result(success=True)
+2026-04-19 17:21:40.529 | INFO     | __main__:_do_start:1255 - [系统启动] system_start_result(success=True) 已发送
+2026-04-19 17:21:40.529 | INFO     | __main__:_do_start:1267 - [系统启动] 后台启动线程结束
+2026-04-19 17:33:43.378 | DEBUG    | ReportEngine.agent:_setup_logging:309 - 已添加日志handler (ID: 1): logs/report.log
+2026-04-19 17:33:50.784 | INFO     | ReportEngine.agent:_initialize_mini_llm:399 - [MiniLLM] 未配置小模型，Map 阶段将降级使用主模型
+2026-04-19 17:33:50.785 | WARNING  | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:518 - 未配置任何Engine API，图表API修复功能将不可用
+2026-04-19 17:33:50.785 | WARNING  | ReportEngine.renderers.html_renderer:__init__:124 - HTMLRenderer: 未配置任何LLM API，图表API修复功能不可用
+2026-04-19 17:33:50.787 | INFO     | ReportEngine.agent:initialize_baseline:118 - 文件数量基准已初始化: {'insight': 0, 'media': 0, 'query': 0}
+2026-04-19 17:33:50.788 | INFO     | ReportEngine.agent:__init__:235 - Report Agent已初始化
+2026-04-19 17:33:50.790 | INFO     | ReportEngine.agent:__init__:236 - 使用LLM: {'provider': 'deepseek-chat', 'model': 'deepseek-chat', 'api_base': 'https://api.deepseek.com'}
+2026-04-19 17:33:50.790 | INFO     | ReportEngine.flask_interface:initialize_report_engine:258 - Report Engine初始化成功
+2026-04-19 17:33:50.844 | WARNING  | ReportEngine.utils.dependency_check:log_dependency_status:334 - ⚠ WeasyPrint 未安装
+解决方法: pip install weasyprint
+2026-04-19 17:33:50.844 | INFO     | ReportEngine.utils.dependency_check:log_dependency_status:335 - 💡 提示：PDF 导出功能需要 Pango 库支持，但不影响系统其他功能的正常使用
+2026-04-19 17:33:50.845 | INFO     | ReportEngine.utils.dependency_check:log_dependency_status:336 - 📚 安装说明请参考：static/Partial README for PDF Exporting/README.md
+2026-04-19 17:33:50.845 | INFO     | __main__:initialize_system_components:343 - [系统启动] ✓ ReportEngine 初始化成功
+2026-04-19 17:33:50.845 | INFO     | __main__:initialize_system_components:360 - [系统启动] ========== 启动完成 总耗时=55.5s, 错误=0 ==========
+2026-04-19 17:33:50.846 | INFO     | __main__:_do_start:1253 - [系统启动] 全部组件启动成功, 准备发送 system_start_result(success=True)
+2026-04-19 17:33:50.846 | INFO     | __main__:_do_start:1255 - [系统启动] system_start_result(success=True) 已发送
+2026-04-19 17:33:50.846 | INFO     | __main__:_do_start:1267 - [系统启动] 后台启动线程结束
+2026-04-19 17:47:40.832 | INFO     | __main__:_log_shutdown_step:532 - [Shutdown] 开始清理子进程
+2026-04-19 17:47:40.832 | INFO     | __main__:stop_forum_engine:405 - ForumEngine: 停止论坛...
+2026-04-19 17:47:41.149 | INFO     | __main__:stop_forum_engine:407 - ForumEngine: 论坛已停止
+2026-04-19 17:47:41.149 | INFO     | __main__:_log_shutdown_step:532 - [Shutdown] 子进程清理完成
+2026-04-19 17:50:18.932 | DEBUG    | ReportEngine.agent:_setup_logging:309 - 已添加日志handler (ID: 1): logs/report.log
+2026-04-19 17:50:27.625 | INFO     | ReportEngine.agent:_initialize_mini_llm:399 - [MiniLLM] 未配置小模型，Map 阶段将降级使用主模型
+2026-04-19 17:50:27.627 | WARNING  | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:518 - 未配置任何Engine API，图表API修复功能将不可用
+2026-04-19 17:50:27.627 | WARNING  | ReportEngine.renderers.html_renderer:__init__:124 - HTMLRenderer: 未配置任何LLM API，图表API修复功能不可用
+2026-04-19 17:50:27.632 | INFO     | ReportEngine.agent:initialize_baseline:118 - 文件数量基准已初始化: {'insight': 0, 'media': 0, 'query': 0}
+2026-04-19 17:50:27.635 | INFO     | ReportEngine.agent:__init__:235 - Report Agent已初始化
+2026-04-19 17:50:27.635 | INFO     | ReportEngine.agent:__init__:236 - 使用LLM: {'provider': 'deepseek-chat', 'model': 'deepseek-chat', 'api_base': 'https://api.deepseek.com'}
+2026-04-19 17:50:27.636 | INFO     | ReportEngine.flask_interface:initialize_report_engine:258 - Report Engine初始化成功
+2026-04-19 17:50:27.728 | WARNING  | ReportEngine.utils.dependency_check:log_dependency_status:334 - ⚠ WeasyPrint 未安装
+解决方法: pip install weasyprint
+2026-04-19 17:50:27.730 | INFO     | ReportEngine.utils.dependency_check:log_dependency_status:335 - 💡 提示：PDF 导出功能需要 Pango 库支持，但不影响系统其他功能的正常使用
+2026-04-19 17:50:27.730 | INFO     | ReportEngine.utils.dependency_check:log_dependency_status:336 - 📚 安装说明请参考：static/Partial README for PDF Exporting/README.md
+2026-04-19 17:50:27.731 | INFO     | __main__:initialize_system_components:343 - [系统启动] ✓ ReportEngine 初始化成功
+2026-04-19 17:50:27.731 | INFO     | __main__:initialize_system_components:360 - [系统启动] ========== 启动完成 总耗时=58.2s, 错误=0 ==========
+2026-04-19 17:50:27.732 | INFO     | __main__:_do_start:1253 - [系统启动] 全部组件启动成功, 准备发送 system_start_result(success=True)
+2026-04-19 17:50:27.732 | INFO     | __main__:_do_start:1255 - [系统启动] system_start_result(success=True) 已发送
+2026-04-19 17:50:27.732 | INFO     | __main__:_do_start:1267 - [系统启动] 后台启动线程结束
+2026-04-19 17:50:45.870 | INFO     | utils.report_cache:_ensure_db:80 - [ReportCache] 初始化完成 db=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish-main\data\report_cache.db
+2026-04-19 18:13:54.762 | INFO     | __main__:_log_shutdown_step:532 - [Shutdown] 开始清理子进程
+2026-04-19 18:13:54.765 | INFO     | __main__:stop_forum_engine:405 - ForumEngine: 停止论坛...
+2026-04-19 18:13:55.561 | INFO     | __main__:stop_forum_engine:407 - ForumEngine: 论坛已停止
+2026-04-19 18:13:55.561 | INFO     | __main__:_log_shutdown_step:532 - [Shutdown] 子进程清理完成
+2026-04-19 18:19:35.899 | DEBUG    | ReportEngine.agent:_setup_logging:309 - 已添加日志handler (ID: 1): logs/report.log
+2026-04-19 18:19:46.532 | INFO     | ReportEngine.agent:_initialize_mini_llm:399 - [MiniLLM] 未配置小模型，Map 阶段将降级使用主模型
+2026-04-19 18:19:46.535 | WARNING  | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:518 - 未配置任何Engine API，图表API修复功能将不可用
+2026-04-19 18:19:46.535 | WARNING  | ReportEngine.renderers.html_renderer:__init__:124 - HTMLRenderer: 未配置任何LLM API，图表API修复功能不可用
+2026-04-19 18:19:46.541 | INFO     | ReportEngine.agent:initialize_baseline:118 - 文件数量基准已初始化: {'insight': 0, 'media': 0, 'query': 0}
+2026-04-19 18:19:46.544 | INFO     | ReportEngine.agent:__init__:235 - Report Agent已初始化
+2026-04-19 18:19:46.545 | INFO     | ReportEngine.agent:__init__:236 - 使用LLM: {'provider': 'deepseek-chat', 'model': 'deepseek-chat', 'api_base': 'https://api.deepseek.com'}
+2026-04-19 18:19:46.546 | INFO     | ReportEngine.flask_interface:initialize_report_engine:258 - Report Engine初始化成功
+2026-04-19 18:19:46.680 | WARNING  | ReportEngine.utils.dependency_check:log_dependency_status:334 - ⚠ WeasyPrint 未安装
+解决方法: pip install weasyprint
+2026-04-19 18:19:46.683 | INFO     | ReportEngine.utils.dependency_check:log_dependency_status:335 - 💡 提示：PDF 导出功能需要 Pango 库支持，但不影响系统其他功能的正常使用
+2026-04-19 18:19:46.683 | INFO     | ReportEngine.utils.dependency_check:log_dependency_status:336 - 📚 安装说明请参考：static/Partial README for PDF Exporting/README.md
+2026-04-19 18:19:46.685 | INFO     | __main__:initialize_system_components:343 - [系统启动] ✓ ReportEngine 初始化成功
+2026-04-19 18:19:46.687 | INFO     | __main__:initialize_system_components:360 - [系统启动] ========== 启动完成 总耗时=60.9s, 错误=0 ==========
+2026-04-19 18:19:46.687 | INFO     | __main__:_do_start:1253 - [系统启动] 全部组件启动成功, 准备发送 system_start_result(success=True)
+2026-04-19 18:19:46.689 | INFO     | __main__:_do_start:1255 - [系统启动] system_start_result(success=True) 已发送
+2026-04-19 18:19:46.691 | INFO     | __main__:_do_start:1267 - [系统启动] 后台启动线程结束
+2026-04-19 18:19:53.499 | INFO     | utils.report_cache:_ensure_db:80 - [ReportCache] 初始化完成 db=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish-main\data\report_cache.db
+2026-04-19 18:29:41.270 | INFO     | __main__:_log_shutdown_step:532 - [Shutdown] 开始清理子进程
+2026-04-19 18:29:41.271 | INFO     | __main__:stop_forum_engine:405 - ForumEngine: 停止论坛...
+2026-04-19 18:29:41.533 | INFO     | __main__:stop_forum_engine:407 - ForumEngine: 论坛已停止
+2026-04-19 18:29:41.533 | INFO     | __main__:_log_shutdown_step:532 - [Shutdown] 子进程清理完成
+2026-04-19 18:31:21.850 | DEBUG    | ReportEngine.agent:_setup_logging:309 - 已添加日志handler (ID: 1): logs/report.log
+2026-04-19 18:31:31.967 | INFO     | ReportEngine.agent:_initialize_mini_llm:399 - [MiniLLM] 未配置小模型，Map 阶段将降级使用主模型
+2026-04-19 18:31:31.969 | WARNING  | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:518 - 未配置任何Engine API，图表API修复功能将不可用
+2026-04-19 18:31:31.969 | WARNING  | ReportEngine.renderers.html_renderer:__init__:124 - HTMLRenderer: 未配置任何LLM API，图表API修复功能不可用
+2026-04-19 18:31:31.974 | INFO     | ReportEngine.agent:initialize_baseline:118 - 文件数量基准已初始化: {'insight': 0, 'media': 0, 'query': 0}
+2026-04-19 18:31:31.977 | INFO     | ReportEngine.agent:__init__:235 - Report Agent已初始化
+2026-04-19 18:31:31.978 | INFO     | ReportEngine.agent:__init__:236 - 使用LLM: {'provider': 'deepseek-chat', 'model': 'deepseek-chat', 'api_base': 'https://api.deepseek.com'}
+2026-04-19 18:31:31.979 | INFO     | ReportEngine.flask_interface:initialize_report_engine:258 - Report Engine初始化成功
+2026-04-19 18:31:32.090 | WARNING  | ReportEngine.utils.dependency_check:log_dependency_status:334 - ⚠ WeasyPrint 未安装
+解决方法: pip install weasyprint
+2026-04-19 18:31:32.090 | INFO     | ReportEngine.utils.dependency_check:log_dependency_status:335 - 💡 提示：PDF 导出功能需要 Pango 库支持，但不影响系统其他功能的正常使用
+2026-04-19 18:31:32.091 | INFO     | ReportEngine.utils.dependency_check:log_dependency_status:336 - 📚 安装说明请参考：static/Partial README for PDF Exporting/README.md
+2026-04-19 18:31:32.091 | INFO     | __main__:initialize_system_components:343 - [系统启动] ✓ ReportEngine 初始化成功
+2026-04-19 18:31:32.093 | INFO     | __main__:initialize_system_components:360 - [系统启动] ========== 启动完成 总耗时=59.9s, 错误=0 ==========
+2026-04-19 18:31:32.094 | INFO     | __main__:_do_start:1253 - [系统启动] 全部组件启动成功, 准备发送 system_start_result(success=True)
+2026-04-19 18:31:32.095 | INFO     | __main__:_do_start:1255 - [系统启动] system_start_result(success=True) 已发送
+2026-04-19 18:31:32.096 | INFO     | __main__:_do_start:1267 - [系统启动] 后台启动线程结束
+2026-04-19 18:37:07.902 | ERROR    | ReportEngine.flask_interface:internal_error:1099 - 服务器内部错误: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+Traceback (most recent call last):
+
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000001CFB920B420>
+    └ <Thread(Thread-435 (process_request_thread), started daemon 4624)>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000001CFB920B100>
+    └ <Thread(Thread-435 (process_request_thread), started daemon 4624)>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-435 (process_request_thread), started daemon 4624)>
+    │    │        │    └ (<socket.socket fd=584, family=2, type=1, proto=0, laddr=('127.0.0.1', 8080), raddr=('127.0.0.1', 57743)>, ('127.0.0.1', 57743))
+    │    │        └ <Thread(Thread-435 (process_request_thread), started daemon 4624)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x000001CFC0A8F5F0>>
+    └ <Thread(Thread-435 (process_request_thread), started daemon 4624)>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 57743)
+    │    │              └ <socket.socket fd=584, family=2, type=1, proto=0, laddr=('127.0.0.1', 8080), raddr=('127.0.0.1', 57743)>
+    │    └ <function BaseServer.finish_request at 0x000001CFB92BBE20>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x000001CFC0A8F5F0>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x000001CFC0A8F5F0>
+    │    │                   │        └ ('127.0.0.1', 57743)
+    │    │                   └ <socket.socket fd=584, family=2, type=1, proto=0, laddr=('127.0.0.1', 8080), raddr=('127.0.0.1', 57743)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x000001CFC0A8F5F0>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 766, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x000001CFBAE73A60>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000001CFC0AF9FA0>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\serving.py", line 399, in handle
+    super().handle()
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\http\server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x000001CFB94BDEE0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000001CFC0AF9FA0>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\http\server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x000001CFC0AF9FA0>>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\serving.py", line 371, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <Flask 'app'>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x000001CFC0A8F5F0>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x000001CFC0AF9FA0>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x000001CFC0CA1C60>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\serving.py", line 332, in execute
+    application_iter = app(environ, start_response)
+                       │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001CFC0AA1A80>
+                       │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=584>, 'wsgi.errors': <_io.TextIOWr...
+                       └ <Flask 'app'>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001CFC0AA1A80>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=584>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <flask_socketio._SocketIOMiddleware object at 0x000001CFC06CE150>
+           └ <Flask 'app'>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_socketio\__init__.py", line 43, in __call__
+    return super(_SocketIOMiddleware, self).__call__(environ,
+                 │                    │              └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=584>, 'wsgi.errors': <_io.TextIOWr...
+                 │                    └ <flask_socketio._SocketIOMiddleware object at 0x000001CFC06CE150>
+                 └ <class 'flask_socketio._SocketIOMiddleware'>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\engineio\middleware.py", line 74, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001CFC0AA1A80>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=584>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <bound method Flask.wsgi_app of <Flask 'app'>>
+           └ <flask_socketio._SocketIOMiddleware object at 0x000001CFC06CE150>
+> File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x000001CFBBB4E480>
+               └ <Flask 'app'>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         │    └ <function Flask.handle_user_exception at 0x000001CFBBB4E160>
+         └ <Flask 'app'>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x000001CFBBB4E3E0>
+         └ <Flask 'app'>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {'task_id': '20260419_114159'}
+           │    │           │    │              │    └ 'report_engine.get_result'
+           │    │           │    │              └ <Rule '/api/report/result/<task_id>' (OPTIONS, GET, HEAD) -> report_engine.get_result>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x000001CFBE7E9B20>, 'report_engine.get_status': <function get_statu...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x000001CFBBB4E700>
+           └ <Flask 'app'>
+
+  File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish-main\ReportEngine\flask_interface.py", line 872, in get_result
+    import markdown
+
+ModuleNotFoundError: No module named 'markdown'
+2026-04-19 18:37:44.945 | ERROR    | ReportEngine.flask_interface:internal_error:1099 - 服务器内部错误: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+Traceback (most recent call last):
+
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000001CFB920B420>
+    └ <Thread(Thread-451 (process_request_thread), started daemon 320)>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000001CFB920B100>
+    └ <Thread(Thread-451 (process_request_thread), started daemon 320)>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-451 (process_request_thread), started daemon 320)>
+    │    │        │    └ (<socket.socket fd=1800, family=2, type=1, proto=0, laddr=('127.0.0.1', 8080), raddr=('127.0.0.1', 61651)>, ('127.0.0.1', 616...
+    │    │        └ <Thread(Thread-451 (process_request_thread), started daemon 320)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x000001CFC0A8F5F0>>
+    └ <Thread(Thread-451 (process_request_thread), started daemon 320)>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 61651)
+    │    │              └ <socket.socket fd=1800, family=2, type=1, proto=0, laddr=('127.0.0.1', 8080), raddr=('127.0.0.1', 61651)>
+    │    └ <function BaseServer.finish_request at 0x000001CFB92BBE20>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x000001CFC0A8F5F0>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x000001CFC0A8F5F0>
+    │    │                   │        └ ('127.0.0.1', 61651)
+    │    │                   └ <socket.socket fd=1800, family=2, type=1, proto=0, laddr=('127.0.0.1', 8080), raddr=('127.0.0.1', 61651)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x000001CFC0A8F5F0>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 766, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x000001CFBAE73A60>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000001CFC0CBD130>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\serving.py", line 399, in handle
+    super().handle()
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\http\server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x000001CFB94BDEE0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000001CFC0CBD130>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\http\server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x000001CFC0CBD130>>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\serving.py", line 371, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <Flask 'app'>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x000001CFC0A8F5F0>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x000001CFC0CBD130>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x000001CFC0AA0E00>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\serving.py", line 332, in execute
+    application_iter = app(environ, start_response)
+                       │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001CFC0AA1580>
+                       │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1800>, 'wsgi.errors': <_io.TextIOW...
+                       └ <Flask 'app'>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001CFC0AA1580>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1800>, 'wsgi.errors': <_io.TextIOW...
+           │    └ <flask_socketio._SocketIOMiddleware object at 0x000001CFC06CE150>
+           └ <Flask 'app'>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_socketio\__init__.py", line 43, in __call__
+    return super(_SocketIOMiddleware, self).__call__(environ,
+                 │                    │              └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1800>, 'wsgi.errors': <_io.TextIOW...
+                 │                    └ <flask_socketio._SocketIOMiddleware object at 0x000001CFC06CE150>
+                 └ <class 'flask_socketio._SocketIOMiddleware'>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\engineio\middleware.py", line 74, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001CFC0AA1580>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1800>, 'wsgi.errors': <_io.TextIOW...
+           │    └ <bound method Flask.wsgi_app of <Flask 'app'>>
+           └ <flask_socketio._SocketIOMiddleware object at 0x000001CFC06CE150>
+> File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x000001CFBBB4E480>
+               └ <Flask 'app'>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         │    └ <function Flask.handle_user_exception at 0x000001CFBBB4E160>
+         └ <Flask 'app'>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x000001CFBBB4E3E0>
+         └ <Flask 'app'>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {'task_id': '20260419_114159'}
+           │    │           │    │              │    └ 'report_engine.get_result'
+           │    │           │    │              └ <Rule '/api/report/result/<task_id>' (OPTIONS, GET, HEAD) -> report_engine.get_result>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x000001CFBE7E9B20>, 'report_engine.get_status': <function get_statu...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x000001CFBBB4E700>
+           └ <Flask 'app'>
+
+  File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish-main\ReportEngine\flask_interface.py", line 872, in get_result
+    import markdown
+
+ModuleNotFoundError: No module named 'markdown'
+2026-04-19 18:37:57.826 | ERROR    | ReportEngine.flask_interface:internal_error:1099 - 服务器内部错误: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+Traceback (most recent call last):
+
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000001CFB920B420>
+    └ <Thread(Thread-455 (process_request_thread), started daemon 33508)>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000001CFB920B100>
+    └ <Thread(Thread-455 (process_request_thread), started daemon 33508)>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-455 (process_request_thread), started daemon 33508)>
+    │    │        │    └ (<socket.socket fd=1292, family=2, type=1, proto=0, laddr=('127.0.0.1', 8080), raddr=('127.0.0.1', 64857)>, ('127.0.0.1', 648...
+    │    │        └ <Thread(Thread-455 (process_request_thread), started daemon 33508)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x000001CFC0A8F5F0>>
+    └ <Thread(Thread-455 (process_request_thread), started daemon 33508)>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 64857)
+    │    │              └ <socket.socket fd=1292, family=2, type=1, proto=0, laddr=('127.0.0.1', 8080), raddr=('127.0.0.1', 64857)>
+    │    └ <function BaseServer.finish_request at 0x000001CFB92BBE20>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x000001CFC0A8F5F0>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x000001CFC0A8F5F0>
+    │    │                   │        └ ('127.0.0.1', 64857)
+    │    │                   └ <socket.socket fd=1292, family=2, type=1, proto=0, laddr=('127.0.0.1', 8080), raddr=('127.0.0.1', 64857)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x000001CFC0A8F5F0>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 766, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x000001CFBAE73A60>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000001CFC0AFA630>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\serving.py", line 399, in handle
+    super().handle()
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\http\server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x000001CFB94BDEE0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000001CFC0AFA630>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\http\server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x000001CFC0AFA630>>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\serving.py", line 371, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <Flask 'app'>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x000001CFC0A8F5F0>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x000001CFC0AFA630>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x000001CFC0CA2700>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\serving.py", line 332, in execute
+    application_iter = app(environ, start_response)
+                       │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001CFC0CA0EA0>
+                       │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1292>, 'wsgi.errors': <_io.TextIOW...
+                       └ <Flask 'app'>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001CFC0CA0EA0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1292>, 'wsgi.errors': <_io.TextIOW...
+           │    └ <flask_socketio._SocketIOMiddleware object at 0x000001CFC06CE150>
+           └ <Flask 'app'>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_socketio\__init__.py", line 43, in __call__
+    return super(_SocketIOMiddleware, self).__call__(environ,
+                 │                    │              └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1292>, 'wsgi.errors': <_io.TextIOW...
+                 │                    └ <flask_socketio._SocketIOMiddleware object at 0x000001CFC06CE150>
+                 └ <class 'flask_socketio._SocketIOMiddleware'>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\engineio\middleware.py", line 74, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001CFC0CA0EA0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1292>, 'wsgi.errors': <_io.TextIOW...
+           │    └ <bound method Flask.wsgi_app of <Flask 'app'>>
+           └ <flask_socketio._SocketIOMiddleware object at 0x000001CFC06CE150>
+> File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x000001CFBBB4E480>
+               └ <Flask 'app'>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         │    └ <function Flask.handle_user_exception at 0x000001CFBBB4E160>
+         └ <Flask 'app'>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x000001CFBBB4E3E0>
+         └ <Flask 'app'>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {'task_id': '20260419_114159'}
+           │    │           │    │              │    └ 'report_engine.get_result'
+           │    │           │    │              └ <Rule '/api/report/result/<task_id>' (OPTIONS, GET, HEAD) -> report_engine.get_result>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x000001CFBE7E9B20>, 'report_engine.get_status': <function get_statu...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x000001CFBBB4E700>
+           └ <Flask 'app'>
+
+  File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish-main\ReportEngine\flask_interface.py", line 872, in get_result
+    import markdown
+
+ModuleNotFoundError: No module named 'markdown'
+2026-04-19 18:39:39.994 | INFO     | __main__:_log_shutdown_step:532 - [Shutdown] 开始清理子进程
+2026-04-19 18:39:39.995 | INFO     | __main__:stop_forum_engine:405 - ForumEngine: 停止论坛...
+2026-04-19 18:39:40.502 | INFO     | __main__:stop_forum_engine:407 - ForumEngine: 论坛已停止
+2026-04-19 18:39:40.502 | INFO     | __main__:_log_shutdown_step:532 - [Shutdown] 子进程清理完成
+2026-04-19 18:41:08.924 | DEBUG    | ReportEngine.agent:_setup_logging:309 - 已添加日志handler (ID: 1): logs/report.log
+2026-04-19 18:41:23.846 | INFO     | ReportEngine.agent:_initialize_mini_llm:399 - [MiniLLM] 未配置小模型，Map 阶段将降级使用主模型
+2026-04-19 18:41:23.849 | WARNING  | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:518 - 未配置任何Engine API，图表API修复功能将不可用
+2026-04-19 18:41:23.850 | WARNING  | ReportEngine.renderers.html_renderer:__init__:124 - HTMLRenderer: 未配置任何LLM API，图表API修复功能不可用
+2026-04-19 18:41:23.855 | INFO     | ReportEngine.agent:initialize_baseline:118 - 文件数量基准已初始化: {'insight': 0, 'media': 0, 'query': 0}
+2026-04-19 18:41:23.858 | INFO     | ReportEngine.agent:__init__:235 - Report Agent已初始化
+2026-04-19 18:41:23.859 | INFO     | ReportEngine.agent:__init__:236 - 使用LLM: {'provider': 'deepseek-chat', 'model': 'deepseek-chat', 'api_base': 'https://api.deepseek.com'}
+2026-04-19 18:41:23.859 | INFO     | ReportEngine.flask_interface:initialize_report_engine:258 - Report Engine初始化成功
+2026-04-19 18:41:23.975 | WARNING  | ReportEngine.utils.dependency_check:log_dependency_status:334 - ⚠ WeasyPrint 未安装
+解决方法: pip install weasyprint
+2026-04-19 18:41:23.976 | INFO     | ReportEngine.utils.dependency_check:log_dependency_status:335 - 💡 提示：PDF 导出功能需要 Pango 库支持，但不影响系统其他功能的正常使用
+2026-04-19 18:41:23.976 | INFO     | ReportEngine.utils.dependency_check:log_dependency_status:336 - 📚 安装说明请参考：static/Partial README for PDF Exporting/README.md
+2026-04-19 18:41:23.976 | INFO     | __main__:initialize_system_components:343 - [系统启动] ✓ ReportEngine 初始化成功
+2026-04-19 18:41:23.977 | INFO     | __main__:initialize_system_components:360 - [系统启动] ========== 启动完成 总耗时=66.1s, 错误=0 ==========
+2026-04-19 18:41:23.977 | INFO     | __main__:_do_start:1253 - [系统启动] 全部组件启动成功, 准备发送 system_start_result(success=True)
+2026-04-19 18:41:23.978 | INFO     | __main__:_do_start:1255 - [系统启动] system_start_result(success=True) 已发送
+2026-04-19 18:41:23.978 | INFO     | __main__:_do_start:1267 - [系统启动] 后台启动线程结束
+2026-04-19 18:41:56.496 | ERROR    | ReportEngine.flask_interface:internal_error:1097 - 服务器内部错误: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+Traceback (most recent call last):
+
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000001CF0A07B420>
+    └ <Thread(Thread-173 (process_request_thread), started daemon 27540)>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000001CF0A07B100>
+    └ <Thread(Thread-173 (process_request_thread), started daemon 27540)>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-173 (process_request_thread), started daemon 27540)>
+    │    │        │    └ (<socket.socket fd=1228, family=2, type=1, proto=0, laddr=('127.0.0.1', 8080), raddr=('127.0.0.1', 60656)>, ('127.0.0.1', 606...
+    │    │        └ <Thread(Thread-173 (process_request_thread), started daemon 27540)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x000001CF1196FEF0>>
+    └ <Thread(Thread-173 (process_request_thread), started daemon 27540)>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 60656)
+    │    │              └ <socket.socket fd=1228, family=2, type=1, proto=0, laddr=('127.0.0.1', 8080), raddr=('127.0.0.1', 60656)>
+    │    └ <function BaseServer.finish_request at 0x000001CF0A12BE20>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x000001CF1196FEF0>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x000001CF1196FEF0>
+    │    │                   │        └ ('127.0.0.1', 60656)
+    │    │                   └ <socket.socket fd=1228, family=2, type=1, proto=0, laddr=('127.0.0.1', 8080), raddr=('127.0.0.1', 60656)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x000001CF1196FEF0>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 766, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x000001CF0BD53A60>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000001CF1196F740>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\serving.py", line 399, in handle
+    super().handle()
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\http\server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x000001CF0A37DEE0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000001CF1196F740>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\http\server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x000001CF1196F740>>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\serving.py", line 371, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <Flask 'app'>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x000001CF1196FEF0>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x000001CF1196F740>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x000001CF11B3DB20>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\serving.py", line 332, in execute
+    application_iter = app(environ, start_response)
+                       │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001CF11B3ECA0>
+                       │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1228>, 'wsgi.errors': <_io.TextIOW...
+                       └ <Flask 'app'>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001CF11B3ECA0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1228>, 'wsgi.errors': <_io.TextIOW...
+           │    └ <flask_socketio._SocketIOMiddleware object at 0x000001CF115AE0C0>
+           └ <Flask 'app'>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_socketio\__init__.py", line 43, in __call__
+    return super(_SocketIOMiddleware, self).__call__(environ,
+                 │                    │              └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1228>, 'wsgi.errors': <_io.TextIOW...
+                 │                    └ <flask_socketio._SocketIOMiddleware object at 0x000001CF115AE0C0>
+                 └ <class 'flask_socketio._SocketIOMiddleware'>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\engineio\middleware.py", line 74, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001CF11B3ECA0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1228>, 'wsgi.errors': <_io.TextIOW...
+           │    └ <bound method Flask.wsgi_app of <Flask 'app'>>
+           └ <flask_socketio._SocketIOMiddleware object at 0x000001CF115AE0C0>
+> File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x000001CF0CA2E480>
+               └ <Flask 'app'>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         │    └ <function Flask.handle_user_exception at 0x000001CF0CA2E160>
+         └ <Flask 'app'>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x000001CF0CA2E3E0>
+         └ <Flask 'app'>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {'task_id': '20260419_154202'}
+           │    │           │    │              │    └ 'report_engine.get_result'
+           │    │           │    │              └ <Rule '/api/report/result/<task_id>' (OPTIONS, HEAD, GET) -> report_engine.get_result>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x000001CF0F6C9B20>, 'report_engine.get_status': <function get_statu...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x000001CF0CA2E700>
+           └ <Flask 'app'>
+
+  File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish-main\ReportEngine\flask_interface.py", line 872, in get_result
+    import markdown
+
+ModuleNotFoundError: No module named 'markdown'
+2026-04-19 18:44:11.201 | INFO     | __main__:_log_shutdown_step:532 - [Shutdown] 开始清理子进程
+2026-04-19 18:44:11.202 | INFO     | __main__:stop_forum_engine:405 - ForumEngine: 停止论坛...
+2026-04-19 18:44:11.225 | INFO     | __main__:stop_forum_engine:407 - ForumEngine: 论坛已停止
+2026-04-19 18:44:11.225 | INFO     | __main__:_log_shutdown_step:532 - [Shutdown] 子进程清理完成
+2026-04-19 18:45:50.497 | DEBUG    | ReportEngine.agent:_setup_logging:309 - 已添加日志handler (ID: 1): logs/report.log
+2026-04-19 18:46:00.529 | INFO     | ReportEngine.agent:_initialize_mini_llm:399 - [MiniLLM] 未配置小模型，Map 阶段将降级使用主模型
+2026-04-19 18:46:00.531 | WARNING  | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:518 - 未配置任何Engine API，图表API修复功能将不可用
+2026-04-19 18:46:00.532 | WARNING  | ReportEngine.renderers.html_renderer:__init__:124 - HTMLRenderer: 未配置任何LLM API，图表API修复功能不可用
+2026-04-19 18:46:00.536 | INFO     | ReportEngine.agent:initialize_baseline:118 - 文件数量基准已初始化: {'insight': 0, 'media': 0, 'query': 0}
+2026-04-19 18:46:00.538 | INFO     | ReportEngine.agent:__init__:235 - Report Agent已初始化
+2026-04-19 18:46:00.538 | INFO     | ReportEngine.agent:__init__:236 - 使用LLM: {'provider': 'deepseek-chat', 'model': 'deepseek-chat', 'api_base': 'https://api.deepseek.com'}
+2026-04-19 18:46:00.540 | INFO     | ReportEngine.flask_interface:initialize_report_engine:258 - Report Engine初始化成功
+2026-04-19 18:46:00.630 | WARNING  | ReportEngine.utils.dependency_check:log_dependency_status:334 - ⚠ WeasyPrint 未安装
+解决方法: pip install weasyprint
+2026-04-19 18:46:00.631 | INFO     | ReportEngine.utils.dependency_check:log_dependency_status:335 - 💡 提示：PDF 导出功能需要 Pango 库支持，但不影响系统其他功能的正常使用
+2026-04-19 18:46:00.632 | INFO     | ReportEngine.utils.dependency_check:log_dependency_status:336 - 📚 安装说明请参考：static/Partial README for PDF Exporting/README.md
+2026-04-19 18:46:00.633 | INFO     | __main__:initialize_system_components:343 - [系统启动] ✓ ReportEngine 初始化成功
+2026-04-19 18:46:00.634 | INFO     | __main__:initialize_system_components:360 - [系统启动] ========== 启动完成 总耗时=60.2s, 错误=0 ==========
+2026-04-19 18:46:00.634 | INFO     | __main__:_do_start:1253 - [系统启动] 全部组件启动成功, 准备发送 system_start_result(success=True)
+2026-04-19 18:46:00.636 | INFO     | __main__:_do_start:1255 - [系统启动] system_start_result(success=True) 已发送
+2026-04-19 18:46:00.636 | INFO     | __main__:_do_start:1267 - [系统启动] 后台启动线程结束
+2026-04-19 18:46:30.994 | ERROR    | ReportEngine.flask_interface:internal_error:1110 - 服务器内部错误: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+Traceback (most recent call last):
+
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x0000026EB683B420>
+    └ <Thread(Thread-164 (process_request_thread), started daemon 33140)>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x0000026EB683B100>
+    └ <Thread(Thread-164 (process_request_thread), started daemon 33140)>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-164 (process_request_thread), started daemon 33140)>
+    │    │        │    └ (<socket.socket fd=1948, family=2, type=1, proto=0, laddr=('127.0.0.1', 8080), raddr=('127.0.0.1', 55194)>, ('127.0.0.1', 551...
+    │    │        └ <Thread(Thread-164 (process_request_thread), started daemon 33140)>
+    │    └ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x0000026EBE0BFF20>>
+    └ <Thread(Thread-164 (process_request_thread), started daemon 33140)>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 697, in process_request_thread
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 55194)
+    │    │              └ <socket.socket fd=1948, family=2, type=1, proto=0, laddr=('127.0.0.1', 8080), raddr=('127.0.0.1', 55194)>
+    │    └ <function BaseServer.finish_request at 0x0000026EB68EBE20>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000026EBE0BFF20>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000026EBE0BFF20>
+    │    │                   │        └ ('127.0.0.1', 55194)
+    │    │                   └ <socket.socket fd=1948, family=2, type=1, proto=0, laddr=('127.0.0.1', 8080), raddr=('127.0.0.1', 55194)>
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000026EBE0BFF20>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 766, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x0000026EB84A3A60>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000026EBE0DCD10>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\serving.py", line 399, in handle
+    super().handle()
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\http\server.py", line 436, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x0000026EB6AEDEE0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000026EBE0DCD10>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\http\server.py", line 424, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x0000026EBE0DCD10>>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\serving.py", line 371, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <Flask 'app'>
+    │       │    └ <werkzeug.serving.ThreadedWSGIServer object at 0x0000026EBE0BFF20>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x0000026EBE0DCD10>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x0000026EBE0D3240>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\serving.py", line 332, in execute
+    application_iter = app(environ, start_response)
+                       │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000026EBE0D31A0>
+                       │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1948>, 'wsgi.errors': <_io.TextIOW...
+                       └ <Flask 'app'>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000026EBE0D31A0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1948>, 'wsgi.errors': <_io.TextIOW...
+           │    └ <flask_socketio._SocketIOMiddleware object at 0x0000026EBDCFE0F0>
+           └ <Flask 'app'>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_socketio\__init__.py", line 43, in __call__
+    return super(_SocketIOMiddleware, self).__call__(environ,
+                 │                    │              └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1948>, 'wsgi.errors': <_io.TextIOW...
+                 │                    └ <flask_socketio._SocketIOMiddleware object at 0x0000026EBDCFE0F0>
+                 └ <class 'flask_socketio._SocketIOMiddleware'>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\engineio\middleware.py", line 74, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000026EBE0D31A0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1948>, 'wsgi.errors': <_io.TextIOW...
+           │    └ <bound method Flask.wsgi_app of <Flask 'app'>>
+           └ <flask_socketio._SocketIOMiddleware object at 0x0000026EBDCFE0F0>
+> File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x0000026EB917E480>
+               └ <Flask 'app'>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         │    └ <function Flask.handle_user_exception at 0x0000026EB917E160>
+         └ <Flask 'app'>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x0000026EB917E3E0>
+         └ <Flask 'app'>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {'task_id': '20260419_121534'}
+           │    │           │    │              │    └ 'report_engine.get_result'
+           │    │           │    │              └ <Rule '/api/report/result/<task_id>' (GET, OPTIONS, HEAD) -> report_engine.get_result>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x0000026EBBE19B20>, 'report_engine.get_status': <function get_statu...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x0000026EB917E700>
+           └ <Flask 'app'>
+
+  File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish-main\ReportEngine\flask_interface.py", line 872, in get_result
+    import markdown
+
+ModuleNotFoundError: No module named 'markdown'
+2026-04-19 18:48:56.383 | INFO     | __main__:_log_shutdown_step:532 - [Shutdown] 开始清理子进程
+2026-04-19 18:48:56.383 | INFO     | __main__:stop_forum_engine:405 - ForumEngine: 停止论坛...
+2026-04-19 18:48:56.714 | INFO     | __main__:stop_forum_engine:407 - ForumEngine: 论坛已停止
+2026-04-19 18:48:56.714 | INFO     | __main__:_log_shutdown_step:532 - [Shutdown] 子进程清理完成
+2026-04-19 18:51:25.443 | DEBUG    | ReportEngine.agent:_setup_logging:309 - 已添加日志handler (ID: 1): logs/report.log
+2026-04-19 18:51:35.415 | INFO     | ReportEngine.agent:_initialize_mini_llm:399 - [MiniLLM] 未配置小模型，Map 阶段将降级使用主模型
+2026-04-19 18:51:35.416 | WARNING  | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:518 - 未配置任何Engine API，图表API修复功能将不可用
+2026-04-19 18:51:35.417 | WARNING  | ReportEngine.renderers.html_renderer:__init__:124 - HTMLRenderer: 未配置任何LLM API，图表API修复功能不可用
+2026-04-19 18:51:35.425 | INFO     | ReportEngine.agent:initialize_baseline:118 - 文件数量基准已初始化: {'insight': 0, 'media': 0, 'query': 0}
+2026-04-19 18:51:35.431 | INFO     | ReportEngine.agent:__init__:235 - Report Agent已初始化
+2026-04-19 18:51:35.432 | INFO     | ReportEngine.agent:__init__:236 - 使用LLM: {'provider': 'deepseek-chat', 'model': 'deepseek-chat', 'api_base': 'https://api.deepseek.com'}
+2026-04-19 18:51:35.432 | INFO     | ReportEngine.flask_interface:initialize_report_engine:258 - Report Engine初始化成功
+2026-04-19 18:51:35.562 | WARNING  | ReportEngine.utils.dependency_check:log_dependency_status:334 - ⚠ WeasyPrint 未安装
+解决方法: pip install weasyprint
+2026-04-19 18:51:35.563 | INFO     | ReportEngine.utils.dependency_check:log_dependency_status:335 - 💡 提示：PDF 导出功能需要 Pango 库支持，但不影响系统其他功能的正常使用
+2026-04-19 18:51:35.563 | INFO     | ReportEngine.utils.dependency_check:log_dependency_status:336 - 📚 安装说明请参考：static/Partial README for PDF Exporting/README.md
+2026-04-19 18:51:35.564 | INFO     | __main__:initialize_system_components:343 - [系统启动] ✓ ReportEngine 初始化成功
+2026-04-19 18:51:35.564 | INFO     | __main__:initialize_system_components:360 - [系统启动] ========== 启动完成 总耗时=60.3s, 错误=0 ==========
+2026-04-19 18:51:35.565 | INFO     | __main__:_do_start:1253 - [系统启动] 全部组件启动成功, 准备发送 system_start_result(success=True)
+2026-04-19 18:51:35.566 | INFO     | __main__:_do_start:1255 - [系统启动] system_start_result(success=True) 已发送
+2026-04-19 18:51:35.567 | INFO     | __main__:_do_start:1267 - [系统启动] 后台启动线程结束
+2026-04-19 18:51:41.532 | INFO     | ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=20260419_151336
+2026-04-19 18:51:41.532 | INFO     | ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-19 18:51:41.534 | INFO     | ReportEngine.flask_interface:get_result:895 - [get_result] base_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish-main, 扫描目录: [WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish-main/reports'), WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish-main/backend/reports')]
+2026-04-19 18:51:41.534 | INFO     | ReportEngine.flask_interface:get_result:898 - [get_result] 检查目录: C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish-main\reports, exists=True
+2026-04-19 18:51:41.537 | INFO     | ReportEngine.flask_interface:get_result:902 - [get_result] 找到 26 个 md 文件
+2026-04-19 18:51:41.539 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2025-2026年全球AI大模型行业发展全景盘点与核心技术_20260414_161148.md, 匹配=False
+2026-04-19 18:51:41.539 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年AI产品经理的求职市场如何_20260415_120659.md, 匹配=False
+2026-04-19 18:51:41.540 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年出海短剧市场现状分析_20260416_114915.md, 匹配=False
+2026-04-19 18:51:41.540 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展情况_20260414_221322.md, 匹配=False
+2026-04-19 18:51:41.541 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展现状_20260413_235554.md, 匹配=False
+2026-04-19 18:51:41.541 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_test_20260417_124142.md, 匹配=False
+2026-04-19 18:51:41.541 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国深圳地区AI成熟落地方案_20260419_121534.md, 匹配=False
+2026-04-19 18:51:41.541 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国科技品牌在日韩市场的第二增长曲线_20260419_113325.md, 匹配=False
+2026-04-19 18:51:41.541 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人工智能_20260410_112137.md, 匹配=False
+2026-04-19 18:51:41.542 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人工智能的发展情况_20260419_151336.md, 匹配=True
+2026-04-19 18:51:41.543 | INFO     | ReportEngine.flask_interface:get_result:907 - [get_result] 文件读取成功, MD长度=7063
+2026-04-19 18:51:41.712 | INFO     | ReportEngine.flask_interface:get_result:909 - [get_result] 转换成功, HTML长度=9804
+2026-04-19 18:53:57.352 | INFO     | ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=20260419_151336
+2026-04-19 18:53:57.353 | INFO     | ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-19 18:53:57.355 | INFO     | ReportEngine.flask_interface:get_result:895 - [get_result] base_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish-main, 扫描目录: [WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish-main/reports'), WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish-main/backend/reports')]
+2026-04-19 18:53:57.357 | INFO     | ReportEngine.flask_interface:get_result:898 - [get_result] 检查目录: C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish-main\reports, exists=True
+2026-04-19 18:53:57.360 | INFO     | ReportEngine.flask_interface:get_result:902 - [get_result] 找到 26 个 md 文件
+2026-04-19 18:53:57.360 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2025-2026年全球AI大模型行业发展全景盘点与核心技术_20260414_161148.md, 匹配=False
+2026-04-19 18:53:57.360 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年AI产品经理的求职市场如何_20260415_120659.md, 匹配=False
+2026-04-19 18:53:57.362 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年出海短剧市场现状分析_20260416_114915.md, 匹配=False
+2026-04-19 18:53:57.362 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展情况_20260414_221322.md, 匹配=False
+2026-04-19 18:53:57.363 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展现状_20260413_235554.md, 匹配=False
+2026-04-19 18:53:57.363 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_test_20260417_124142.md, 匹配=False
+2026-04-19 18:53:57.364 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国深圳地区AI成熟落地方案_20260419_121534.md, 匹配=False
+2026-04-19 18:53:57.364 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国科技品牌在日韩市场的第二增长曲线_20260419_113325.md, 匹配=False
+2026-04-19 18:53:57.364 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人工智能_20260410_112137.md, 匹配=False
+2026-04-19 18:53:57.366 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人工智能的发展情况_20260419_151336.md, 匹配=True
+2026-04-19 18:53:57.367 | INFO     | ReportEngine.flask_interface:get_result:907 - [get_result] 文件读取成功, MD长度=7063
+2026-04-19 18:53:57.402 | INFO     | ReportEngine.flask_interface:get_result:909 - [get_result] 转换成功, HTML长度=9804
+2026-04-19 18:54:20.021 | INFO     | __main__:_log_shutdown_step:532 - [Shutdown] 开始清理子进程
+2026-04-19 18:54:20.022 | INFO     | __main__:stop_forum_engine:405 - ForumEngine: 停止论坛...
+2026-04-19 18:54:20.649 | INFO     | __main__:stop_forum_engine:407 - ForumEngine: 论坛已停止
+2026-04-19 18:54:20.649 | INFO     | __main__:_log_shutdown_step:532 - [Shutdown] 子进程清理完成
+2026-04-19 18:56:32.761 | DEBUG    | ReportEngine.agent:_setup_logging:309 - 已添加日志handler (ID: 1): logs/report.log
+2026-04-19 18:56:42.781 | INFO     | ReportEngine.agent:_initialize_mini_llm:399 - [MiniLLM] 未配置小模型，Map 阶段将降级使用主模型
+2026-04-19 18:56:42.783 | WARNING  | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:518 - 未配置任何Engine API，图表API修复功能将不可用
+2026-04-19 18:56:42.784 | WARNING  | ReportEngine.renderers.html_renderer:__init__:124 - HTMLRenderer: 未配置任何LLM API，图表API修复功能不可用
+2026-04-19 18:56:42.788 | INFO     | ReportEngine.agent:initialize_baseline:118 - 文件数量基准已初始化: {'insight': 0, 'media': 0, 'query': 0}
+2026-04-19 18:56:42.792 | INFO     | ReportEngine.agent:__init__:235 - Report Agent已初始化
+2026-04-19 18:56:42.792 | INFO     | ReportEngine.agent:__init__:236 - 使用LLM: {'provider': 'deepseek-chat', 'model': 'deepseek-chat', 'api_base': 'https://api.deepseek.com'}
+2026-04-19 18:56:42.793 | INFO     | ReportEngine.flask_interface:initialize_report_engine:258 - Report Engine初始化成功
+2026-04-19 18:56:42.884 | WARNING  | ReportEngine.utils.dependency_check:log_dependency_status:334 - ⚠ WeasyPrint 未安装
+解决方法: pip install weasyprint
+2026-04-19 18:56:42.884 | INFO     | ReportEngine.utils.dependency_check:log_dependency_status:335 - 💡 提示：PDF 导出功能需要 Pango 库支持，但不影响系统其他功能的正常使用
+2026-04-19 18:56:42.886 | INFO     | ReportEngine.utils.dependency_check:log_dependency_status:336 - 📚 安装说明请参考：static/Partial README for PDF Exporting/README.md
+2026-04-19 18:56:42.886 | INFO     | __main__:initialize_system_components:343 - [系统启动] ✓ ReportEngine 初始化成功
+2026-04-19 18:56:42.887 | INFO     | __main__:initialize_system_components:360 - [系统启动] ========== 启动完成 总耗时=60.1s, 错误=0 ==========
+2026-04-19 18:56:42.888 | INFO     | __main__:_do_start:1253 - [系统启动] 全部组件启动成功, 准备发送 system_start_result(success=True)
+2026-04-19 18:56:42.889 | INFO     | __main__:_do_start:1255 - [系统启动] system_start_result(success=True) 已发送
+2026-04-19 18:56:42.890 | INFO     | __main__:_do_start:1267 - [系统启动] 后台启动线程结束
+2026-04-19 18:57:12.046 | INFO     | ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=20260419_154202
+2026-04-19 18:57:12.046 | INFO     | ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-19 18:57:12.048 | INFO     | ReportEngine.flask_interface:get_result:895 - [get_result] base_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish-main, 扫描目录: [WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish-main/reports'), WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish-main/backend/reports')]
+2026-04-19 18:57:12.048 | INFO     | ReportEngine.flask_interface:get_result:898 - [get_result] 检查目录: C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish-main\reports, exists=True
+2026-04-19 18:57:12.051 | INFO     | ReportEngine.flask_interface:get_result:902 - [get_result] 找到 26 个 md 文件
+2026-04-19 18:57:12.052 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2025-2026年全球AI大模型行业发展全景盘点与核心技术_20260414_161148.md, 匹配=False
+2026-04-19 18:57:12.052 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年AI产品经理的求职市场如何_20260415_120659.md, 匹配=False
+2026-04-19 18:57:12.052 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年出海短剧市场现状分析_20260416_114915.md, 匹配=False
+2026-04-19 18:57:12.053 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展情况_20260414_221322.md, 匹配=False
+2026-04-19 18:57:12.053 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展现状_20260413_235554.md, 匹配=False
+2026-04-19 18:57:12.053 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_test_20260417_124142.md, 匹配=False
+2026-04-19 18:57:12.054 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国深圳地区AI成熟落地方案_20260419_121534.md, 匹配=False
+2026-04-19 18:57:12.054 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国科技品牌在日韩市场的第二增长曲线_20260419_113325.md, 匹配=False
+2026-04-19 18:57:12.054 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人工智能_20260410_112137.md, 匹配=False
+2026-04-19 18:57:12.055 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人工智能的发展情况_20260419_151336.md, 匹配=False
+2026-04-19 18:57:12.055 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人形机器人核心零部件供应链的国产替代_20260419_114159.md, 匹配=False
+2026-04-19 18:57:12.055 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_低空经济_20260419_154059.md, 匹配=False
+2026-04-19 18:57:12.055 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_低空经济_20260419_154135.md, 匹配=False
+2026-04-19 18:57:12.055 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_低空经济_20260419_154202.md, 匹配=True
+2026-04-19 18:57:12.058 | INFO     | ReportEngine.flask_interface:get_result:907 - [get_result] 文件读取成功, MD长度=7223
+2026-04-19 18:57:12.210 | INFO     | ReportEngine.flask_interface:get_result:909 - [get_result] 转换成功, HTML长度=9508
+2026-04-19 18:59:50.104 | INFO     | ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=20260419_154202
+2026-04-19 18:59:50.105 | INFO     | ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-19 18:59:50.106 | INFO     | ReportEngine.flask_interface:get_result:895 - [get_result] base_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish-main, 扫描目录: [WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish-main/reports'), WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish-main/backend/reports')]
+2026-04-19 18:59:50.107 | INFO     | ReportEngine.flask_interface:get_result:898 - [get_result] 检查目录: C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish-main\reports, exists=True
+2026-04-19 18:59:50.110 | INFO     | ReportEngine.flask_interface:get_result:902 - [get_result] 找到 26 个 md 文件
+2026-04-19 18:59:50.110 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2025-2026年全球AI大模型行业发展全景盘点与核心技术_20260414_161148.md, 匹配=False
+2026-04-19 18:59:50.111 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年AI产品经理的求职市场如何_20260415_120659.md, 匹配=False
+2026-04-19 18:59:50.111 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年出海短剧市场现状分析_20260416_114915.md, 匹配=False
+2026-04-19 18:59:50.112 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展情况_20260414_221322.md, 匹配=False
+2026-04-19 18:59:50.112 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展现状_20260413_235554.md, 匹配=False
+2026-04-19 18:59:50.112 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_test_20260417_124142.md, 匹配=False
+2026-04-19 18:59:50.112 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国深圳地区AI成熟落地方案_20260419_121534.md, 匹配=False
+2026-04-19 18:59:50.113 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国科技品牌在日韩市场的第二增长曲线_20260419_113325.md, 匹配=False
+2026-04-19 18:59:50.113 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人工智能_20260410_112137.md, 匹配=False
+2026-04-19 18:59:50.114 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人工智能的发展情况_20260419_151336.md, 匹配=False
+2026-04-19 18:59:50.114 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人形机器人核心零部件供应链的国产替代_20260419_114159.md, 匹配=False
+2026-04-19 18:59:50.114 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_低空经济_20260419_154059.md, 匹配=False
+2026-04-19 18:59:50.115 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_低空经济_20260419_154135.md, 匹配=False
+2026-04-19 18:59:50.115 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_低空经济_20260419_154202.md, 匹配=True
+2026-04-19 18:59:50.115 | INFO     | ReportEngine.flask_interface:get_result:907 - [get_result] 文件读取成功, MD长度=7223
+2026-04-19 18:59:50.139 | INFO     | ReportEngine.flask_interface:get_result:909 - [get_result] 转换成功, HTML长度=9508
+2026-04-19 19:01:27.986 | INFO     | ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=20260419_114159
+2026-04-19 19:01:27.987 | INFO     | ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-19 19:01:27.989 | INFO     | ReportEngine.flask_interface:get_result:895 - [get_result] base_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish-main, 扫描目录: [WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish-main/reports'), WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish-main/backend/reports')]
+2026-04-19 19:01:27.990 | INFO     | ReportEngine.flask_interface:get_result:898 - [get_result] 检查目录: C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish-main\reports, exists=True
+2026-04-19 19:01:27.994 | INFO     | ReportEngine.flask_interface:get_result:902 - [get_result] 找到 26 个 md 文件
+2026-04-19 19:01:27.994 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2025-2026年全球AI大模型行业发展全景盘点与核心技术_20260414_161148.md, 匹配=False
+2026-04-19 19:01:27.995 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年AI产品经理的求职市场如何_20260415_120659.md, 匹配=False
+2026-04-19 19:01:27.996 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年出海短剧市场现状分析_20260416_114915.md, 匹配=False
+2026-04-19 19:01:27.996 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展情况_20260414_221322.md, 匹配=False
+2026-04-19 19:01:27.997 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展现状_20260413_235554.md, 匹配=False
+2026-04-19 19:01:27.997 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_test_20260417_124142.md, 匹配=False
+2026-04-19 19:01:27.997 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国深圳地区AI成熟落地方案_20260419_121534.md, 匹配=False
+2026-04-19 19:01:27.998 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国科技品牌在日韩市场的第二增长曲线_20260419_113325.md, 匹配=False
+2026-04-19 19:01:27.998 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人工智能_20260410_112137.md, 匹配=False
+2026-04-19 19:01:27.998 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人工智能的发展情况_20260419_151336.md, 匹配=False
+2026-04-19 19:01:27.998 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人形机器人核心零部件供应链的国产替代_20260419_114159.md, 匹配=True
+2026-04-19 19:01:28.008 | INFO     | ReportEngine.flask_interface:get_result:907 - [get_result] 文件读取成功, MD长度=7046
+2026-04-19 19:01:28.029 | INFO     | ReportEngine.flask_interface:get_result:909 - [get_result] 转换成功, HTML长度=8911
+2026-04-19 19:01:50.487 | INFO     | ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=20260419_154202
+2026-04-19 19:01:50.488 | INFO     | ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-19 19:01:50.490 | INFO     | ReportEngine.flask_interface:get_result:895 - [get_result] base_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish-main, 扫描目录: [WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish-main/reports'), WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish-main/backend/reports')]
+2026-04-19 19:01:50.492 | INFO     | ReportEngine.flask_interface:get_result:898 - [get_result] 检查目录: C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish-main\reports, exists=True
+2026-04-19 19:01:50.494 | INFO     | ReportEngine.flask_interface:get_result:902 - [get_result] 找到 26 个 md 文件
+2026-04-19 19:01:50.494 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2025-2026年全球AI大模型行业发展全景盘点与核心技术_20260414_161148.md, 匹配=False
+2026-04-19 19:01:50.494 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年AI产品经理的求职市场如何_20260415_120659.md, 匹配=False
+2026-04-19 19:01:50.494 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年出海短剧市场现状分析_20260416_114915.md, 匹配=False
+2026-04-19 19:01:50.494 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展情况_20260414_221322.md, 匹配=False
+2026-04-19 19:01:50.494 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展现状_20260413_235554.md, 匹配=False
+2026-04-19 19:01:50.494 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_test_20260417_124142.md, 匹配=False
+2026-04-19 19:01:50.496 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国深圳地区AI成熟落地方案_20260419_121534.md, 匹配=False
+2026-04-19 19:01:50.496 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国科技品牌在日韩市场的第二增长曲线_20260419_113325.md, 匹配=False
+2026-04-19 19:01:50.496 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人工智能_20260410_112137.md, 匹配=False
+2026-04-19 19:01:50.497 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人工智能的发展情况_20260419_151336.md, 匹配=False
+2026-04-19 19:01:50.497 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人形机器人核心零部件供应链的国产替代_20260419_114159.md, 匹配=False
+2026-04-19 19:01:50.497 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_低空经济_20260419_154059.md, 匹配=False
+2026-04-19 19:01:50.498 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_低空经济_20260419_154135.md, 匹配=False
+2026-04-19 19:01:50.498 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_低空经济_20260419_154202.md, 匹配=True
+2026-04-19 19:01:50.499 | INFO     | ReportEngine.flask_interface:get_result:907 - [get_result] 文件读取成功, MD长度=7223
+2026-04-19 19:01:50.534 | INFO     | ReportEngine.flask_interface:get_result:909 - [get_result] 转换成功, HTML长度=9508
+2026-04-19 19:14:11.883 | INFO     | ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=20260419_154202
+2026-04-19 19:14:11.883 | INFO     | ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-19 19:14:11.886 | INFO     | ReportEngine.flask_interface:get_result:895 - [get_result] base_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish-main, 扫描目录: [WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish-main/reports'), WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish-main/backend/reports')]
+2026-04-19 19:14:11.888 | INFO     | ReportEngine.flask_interface:get_result:898 - [get_result] 检查目录: C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish-main\reports, exists=True
+2026-04-19 19:14:11.890 | INFO     | ReportEngine.flask_interface:get_result:902 - [get_result] 找到 26 个 md 文件
+2026-04-19 19:14:11.891 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2025-2026年全球AI大模型行业发展全景盘点与核心技术_20260414_161148.md, 匹配=False
+2026-04-19 19:14:11.891 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年AI产品经理的求职市场如何_20260415_120659.md, 匹配=False
+2026-04-19 19:14:11.892 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年出海短剧市场现状分析_20260416_114915.md, 匹配=False
+2026-04-19 19:14:11.892 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展情况_20260414_221322.md, 匹配=False
+2026-04-19 19:14:11.893 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展现状_20260413_235554.md, 匹配=False
+2026-04-19 19:14:11.893 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_test_20260417_124142.md, 匹配=False
+2026-04-19 19:14:11.894 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国深圳地区AI成熟落地方案_20260419_121534.md, 匹配=False
+2026-04-19 19:14:11.894 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国科技品牌在日韩市场的第二增长曲线_20260419_113325.md, 匹配=False
+2026-04-19 19:14:11.894 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人工智能_20260410_112137.md, 匹配=False
+2026-04-19 19:14:11.895 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人工智能的发展情况_20260419_151336.md, 匹配=False
+2026-04-19 19:14:11.895 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人形机器人核心零部件供应链的国产替代_20260419_114159.md, 匹配=False
+2026-04-19 19:14:11.896 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_低空经济_20260419_154059.md, 匹配=False
+2026-04-19 19:14:11.896 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_低空经济_20260419_154135.md, 匹配=False
+2026-04-19 19:14:11.896 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_低空经济_20260419_154202.md, 匹配=True
+2026-04-19 19:14:11.900 | INFO     | ReportEngine.flask_interface:get_result:907 - [get_result] 文件读取成功, MD长度=7223
+2026-04-19 19:14:11.939 | INFO     | ReportEngine.flask_interface:get_result:909 - [get_result] 转换成功, HTML长度=9508
+2026-04-19 19:14:50.637 | INFO     | ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=20260419_151336
+2026-04-19 19:14:50.638 | INFO     | ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-19 19:14:50.640 | INFO     | ReportEngine.flask_interface:get_result:895 - [get_result] base_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish-main, 扫描目录: [WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish-main/reports'), WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish-main/backend/reports')]
+2026-04-19 19:14:50.640 | INFO     | ReportEngine.flask_interface:get_result:898 - [get_result] 检查目录: C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish-main\reports, exists=True
+2026-04-19 19:14:50.643 | INFO     | ReportEngine.flask_interface:get_result:902 - [get_result] 找到 26 个 md 文件
+2026-04-19 19:14:50.643 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2025-2026年全球AI大模型行业发展全景盘点与核心技术_20260414_161148.md, 匹配=False
+2026-04-19 19:14:50.643 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年AI产品经理的求职市场如何_20260415_120659.md, 匹配=False
+2026-04-19 19:14:50.644 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年出海短剧市场现状分析_20260416_114915.md, 匹配=False
+2026-04-19 19:14:50.644 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展情况_20260414_221322.md, 匹配=False
+2026-04-19 19:14:50.645 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展现状_20260413_235554.md, 匹配=False
+2026-04-19 19:14:50.645 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_test_20260417_124142.md, 匹配=False
+2026-04-19 19:14:50.645 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国深圳地区AI成熟落地方案_20260419_121534.md, 匹配=False
+2026-04-19 19:14:50.646 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国科技品牌在日韩市场的第二增长曲线_20260419_113325.md, 匹配=False
+2026-04-19 19:14:50.646 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人工智能_20260410_112137.md, 匹配=False
+2026-04-19 19:14:50.646 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人工智能的发展情况_20260419_151336.md, 匹配=True
+2026-04-19 19:14:50.648 | INFO     | ReportEngine.flask_interface:get_result:907 - [get_result] 文件读取成功, MD长度=7063
+2026-04-19 19:14:50.676 | INFO     | ReportEngine.flask_interface:get_result:909 - [get_result] 转换成功, HTML长度=9804
+2026-04-20 09:46:49.483 | INFO     | ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=20260419_151336
+2026-04-20 09:46:49.555 | INFO     | ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-20 09:46:49.584 | INFO     | ReportEngine.flask_interface:get_result:895 - [get_result] base_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish-main, 扫描目录: [WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish-main/reports'), WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish-main/backend/reports')]
+2026-04-20 09:46:49.592 | INFO     | ReportEngine.flask_interface:get_result:898 - [get_result] 检查目录: C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish-main\reports, exists=True
+2026-04-20 09:46:49.614 | INFO     | ReportEngine.flask_interface:get_result:902 - [get_result] 找到 26 个 md 文件
+2026-04-20 09:46:49.616 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2025-2026年全球AI大模型行业发展全景盘点与核心技术_20260414_161148.md, 匹配=False
+2026-04-20 09:46:49.618 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年AI产品经理的求职市场如何_20260415_120659.md, 匹配=False
+2026-04-20 09:46:49.621 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年出海短剧市场现状分析_20260416_114915.md, 匹配=False
+2026-04-20 09:46:49.625 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展情况_20260414_221322.md, 匹配=False
+2026-04-20 09:46:49.625 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展现状_20260413_235554.md, 匹配=False
+2026-04-20 09:46:49.625 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_test_20260417_124142.md, 匹配=False
+2026-04-20 09:46:49.626 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国深圳地区AI成熟落地方案_20260419_121534.md, 匹配=False
+2026-04-20 09:46:49.628 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国科技品牌在日韩市场的第二增长曲线_20260419_113325.md, 匹配=False
+2026-04-20 09:46:49.628 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人工智能_20260410_112137.md, 匹配=False
+2026-04-20 09:46:49.628 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人工智能的发展情况_20260419_151336.md, 匹配=True
+2026-04-20 09:46:49.638 | INFO     | ReportEngine.flask_interface:get_result:907 - [get_result] 文件读取成功, MD长度=7063
+2026-04-20 09:46:49.894 | INFO     | ReportEngine.flask_interface:get_result:909 - [get_result] 转换成功, HTML长度=9804
+2026-04-20 10:03:19.441 | INFO     | ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=20260419_154202
+2026-04-20 10:03:19.443 | INFO     | ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-20 10:03:19.445 | INFO     | ReportEngine.flask_interface:get_result:895 - [get_result] base_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish-main, 扫描目录: [WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish-main/reports'), WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish-main/backend/reports')]
+2026-04-20 10:03:19.448 | INFO     | ReportEngine.flask_interface:get_result:898 - [get_result] 检查目录: C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish-main\reports, exists=True
+2026-04-20 10:03:19.450 | INFO     | ReportEngine.flask_interface:get_result:902 - [get_result] 找到 24 个 md 文件
+2026-04-20 10:03:19.451 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2025-2026年全球AI大模型行业发展全景盘点与核心技术_20260414_161148.md, 匹配=False
+2026-04-20 10:03:19.452 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年AI产品经理的求职市场如何_20260415_120659.md, 匹配=False
+2026-04-20 10:03:19.452 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年出海短剧市场现状分析_20260416_114915.md, 匹配=False
+2026-04-20 10:03:19.453 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展情况_20260414_221322.md, 匹配=False
+2026-04-20 10:03:19.453 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展现状_20260413_235554.md, 匹配=False
+2026-04-20 10:03:19.453 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_test_20260417_124142.md, 匹配=False
+2026-04-20 10:03:19.454 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国深圳地区AI成熟落地方案_20260419_121534.md, 匹配=False
+2026-04-20 10:03:19.454 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国科技品牌在日韩市场的第二增长曲线_20260419_113325.md, 匹配=False
+2026-04-20 10:03:19.455 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人工智能_20260410_112137.md, 匹配=False
+2026-04-20 10:03:19.455 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人工智能的发展情况_20260419_151336.md, 匹配=False
+2026-04-20 10:03:19.456 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人形机器人核心零部件供应链的国产替代_20260419_114159.md, 匹配=False
+2026-04-20 10:03:19.456 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_低空经济_20260419_154202.md, 匹配=True
+2026-04-20 10:03:19.458 | INFO     | ReportEngine.flask_interface:get_result:907 - [get_result] 文件读取成功, MD长度=7119
+2026-04-20 10:03:19.516 | INFO     | ReportEngine.flask_interface:get_result:909 - [get_result] 转换成功, HTML长度=9390
+2026-04-20 10:03:39.007 | INFO     | ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=20260419_151336
+2026-04-20 10:03:39.008 | INFO     | ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-20 10:03:39.010 | INFO     | ReportEngine.flask_interface:get_result:895 - [get_result] base_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish-main, 扫描目录: [WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish-main/reports'), WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish-main/backend/reports')]
+2026-04-20 10:03:39.011 | INFO     | ReportEngine.flask_interface:get_result:898 - [get_result] 检查目录: C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish-main\reports, exists=True
+2026-04-20 10:03:39.015 | INFO     | ReportEngine.flask_interface:get_result:902 - [get_result] 找到 24 个 md 文件
+2026-04-20 10:03:39.015 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2025-2026年全球AI大模型行业发展全景盘点与核心技术_20260414_161148.md, 匹配=False
+2026-04-20 10:03:39.016 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年AI产品经理的求职市场如何_20260415_120659.md, 匹配=False
+2026-04-20 10:03:39.016 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年出海短剧市场现状分析_20260416_114915.md, 匹配=False
+2026-04-20 10:03:39.017 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展情况_20260414_221322.md, 匹配=False
+2026-04-20 10:03:39.018 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展现状_20260413_235554.md, 匹配=False
+2026-04-20 10:03:39.018 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_test_20260417_124142.md, 匹配=False
+2026-04-20 10:03:39.018 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国深圳地区AI成熟落地方案_20260419_121534.md, 匹配=False
+2026-04-20 10:03:39.018 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国科技品牌在日韩市场的第二增长曲线_20260419_113325.md, 匹配=False
+2026-04-20 10:03:39.018 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人工智能_20260410_112137.md, 匹配=False
+2026-04-20 10:03:39.019 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人工智能的发展情况_20260419_151336.md, 匹配=True
+2026-04-20 10:03:39.020 | INFO     | ReportEngine.flask_interface:get_result:907 - [get_result] 文件读取成功, MD长度=6663
+2026-04-20 10:03:39.061 | INFO     | ReportEngine.flask_interface:get_result:909 - [get_result] 转换成功, HTML长度=9365
+2026-04-20 10:03:53.903 | INFO     | ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=20260417_124142
+2026-04-20 10:03:53.903 | INFO     | ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-20 10:03:53.904 | INFO     | ReportEngine.flask_interface:get_result:895 - [get_result] base_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish-main, 扫描目录: [WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish-main/reports'), WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish-main/backend/reports')]
+2026-04-20 10:03:53.905 | INFO     | ReportEngine.flask_interface:get_result:898 - [get_result] 检查目录: C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish-main\reports, exists=True
+2026-04-20 10:03:53.907 | INFO     | ReportEngine.flask_interface:get_result:902 - [get_result] 找到 24 个 md 文件
+2026-04-20 10:03:53.909 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2025-2026年全球AI大模型行业发展全景盘点与核心技术_20260414_161148.md, 匹配=False
+2026-04-20 10:03:53.909 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年AI产品经理的求职市场如何_20260415_120659.md, 匹配=False
+2026-04-20 10:03:53.910 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年出海短剧市场现状分析_20260416_114915.md, 匹配=False
+2026-04-20 10:03:53.910 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展情况_20260414_221322.md, 匹配=False
+2026-04-20 10:03:53.911 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展现状_20260413_235554.md, 匹配=False
+2026-04-20 10:03:53.911 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_test_20260417_124142.md, 匹配=True
+2026-04-20 10:03:53.920 | INFO     | ReportEngine.flask_interface:get_result:907 - [get_result] 文件读取成功, MD长度=7063
+2026-04-20 10:03:53.949 | INFO     | ReportEngine.flask_interface:get_result:909 - [get_result] 转换成功, HTML长度=10876
+2026-04-20 10:04:29.748 | INFO     | ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=20260415_120659
+2026-04-20 10:04:29.748 | INFO     | ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-20 10:04:29.750 | INFO     | ReportEngine.flask_interface:get_result:895 - [get_result] base_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish-main, 扫描目录: [WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish-main/reports'), WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish-main/backend/reports')]
+2026-04-20 10:04:29.750 | INFO     | ReportEngine.flask_interface:get_result:898 - [get_result] 检查目录: C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish-main\reports, exists=True
+2026-04-20 10:04:29.752 | INFO     | ReportEngine.flask_interface:get_result:902 - [get_result] 找到 24 个 md 文件
+2026-04-20 10:04:29.752 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2025-2026年全球AI大模型行业发展全景盘点与核心技术_20260414_161148.md, 匹配=False
+2026-04-20 10:04:29.752 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年AI产品经理的求职市场如何_20260415_120659.md, 匹配=True
+2026-04-20 10:04:29.756 | INFO     | ReportEngine.flask_interface:get_result:907 - [get_result] 文件读取成功, MD长度=7285
+2026-04-20 10:04:29.773 | INFO     | ReportEngine.flask_interface:get_result:909 - [get_result] 转换成功, HTML长度=9136
+2026-04-20 10:06:09.844 | INFO     | ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=20260410_112137
+2026-04-20 10:06:09.845 | INFO     | ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-20 10:06:09.855 | INFO     | ReportEngine.flask_interface:get_result:895 - [get_result] base_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish-main, 扫描目录: [WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish-main/reports'), WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish-main/backend/reports')]
+2026-04-20 10:06:09.855 | INFO     | ReportEngine.flask_interface:get_result:898 - [get_result] 检查目录: C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish-main\reports, exists=True
+2026-04-20 10:06:09.860 | INFO     | ReportEngine.flask_interface:get_result:902 - [get_result] 找到 24 个 md 文件
+2026-04-20 10:06:09.860 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2025-2026年全球AI大模型行业发展全景盘点与核心技术_20260414_161148.md, 匹配=False
+2026-04-20 10:06:09.861 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年AI产品经理的求职市场如何_20260415_120659.md, 匹配=False
+2026-04-20 10:06:09.862 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年出海短剧市场现状分析_20260416_114915.md, 匹配=False
+2026-04-20 10:06:09.862 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展情况_20260414_221322.md, 匹配=False
+2026-04-20 10:06:09.863 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展现状_20260413_235554.md, 匹配=False
+2026-04-20 10:06:09.863 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_test_20260417_124142.md, 匹配=False
+2026-04-20 10:06:09.863 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国深圳地区AI成熟落地方案_20260419_121534.md, 匹配=False
+2026-04-20 10:06:09.865 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国科技品牌在日韩市场的第二增长曲线_20260419_113325.md, 匹配=False
+2026-04-20 10:06:09.865 | INFO     | ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人工智能_20260410_112137.md, 匹配=True
+2026-04-20 10:06:09.868 | INFO     | ReportEngine.flask_interface:get_result:907 - [get_result] 文件读取成功, MD长度=6730
+2026-04-20 10:06:09.903 | INFO     | ReportEngine.flask_interface:get_result:909 - [get_result] 转换成功, HTML长度=9439
+2026-04-20 10:49:27.851 | INFO     | __main__:_log_shutdown_step:532 - [Shutdown] 开始清理子进程
+2026-04-20 10:49:27.856 | INFO     | __main__:stop_forum_engine:405 - ForumEngine: 停止论坛...
+2026-04-20 10:49:28.024 | INFO     | __main__:stop_forum_engine:407 - ForumEngine: 论坛已停止
+2026-04-20 10:49:28.024 | INFO     | __main__:_log_shutdown_step:532 - [Shutdown] 子进程清理完成

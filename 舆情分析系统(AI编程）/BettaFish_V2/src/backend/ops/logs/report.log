@@ -1,0 +1,355 @@
+2026-04-20 13:12:34.055 | DEBUG    | engines.ReportEngine.agent:_setup_logging:309 - 已添加日志handler (ID: 1): ops/logs/report.log
+2026-04-20 13:12:46.121 | INFO     | engines.ReportEngine.agent:_initialize_mini_llm:399 - [MiniLLM] 未配置小模型，Map 阶段将降级使用主模型
+2026-04-20 13:12:46.126 | WARNING  | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:518 - 未配置任何Engine API，图表API修复功能将不可用
+2026-04-20 13:12:46.127 | WARNING  | engines.ReportEngine.renderers.html_renderer:__init__:124 - HTMLRenderer: 未配置任何LLM API，图表API修复功能不可用
+2026-04-20 13:12:46.132 | INFO     | engines.ReportEngine.agent:initialize_baseline:118 - 文件数量基准已初始化: {'insight': 0, 'media': 0, 'query': 0}
+2026-04-20 13:12:46.136 | INFO     | engines.ReportEngine.agent:__init__:235 - Report Agent已初始化
+2026-04-20 13:12:46.137 | INFO     | engines.ReportEngine.agent:__init__:236 - 使用LLM: {'provider': 'deepseek-chat', 'model': 'deepseek-chat', 'api_base': 'https://api.deepseek.com'}
+2026-04-20 13:12:46.137 | INFO     | engines.ReportEngine.flask_interface:initialize_report_engine:258 - Report Engine初始化成功
+2026-04-20 13:12:46.241 | WARNING  | engines.ReportEngine.utils.dependency_check:log_dependency_status:334 - ⚠ WeasyPrint 未安装
+解决方法: pip install weasyprint
+2026-04-20 13:12:46.241 | INFO     | engines.ReportEngine.utils.dependency_check:log_dependency_status:335 - 💡 提示：PDF 导出功能需要 Pango 库支持，但不影响系统其他功能的正常使用
+2026-04-20 13:12:46.242 | INFO     | engines.ReportEngine.utils.dependency_check:log_dependency_status:336 - 📚 安装说明请参考：static/Partial README for PDF Exporting/README.md
+2026-04-20 13:12:46.242 | INFO     | __main__:initialize_system_components:352 - [系统启动] ✓ ReportEngine 初始化成功
+2026-04-20 13:12:46.242 | INFO     | __main__:initialize_system_components:369 - [系统启动] ========== 启动完成 总耗时=12.2s, 错误=0 ==========
+2026-04-20 13:12:46.244 | INFO     | __main__:_do_start:1107 - [系统启动] 全部组件启动成功, 准备发送 system_start_result(success=True)
+2026-04-20 13:12:46.244 | INFO     | __main__:_do_start:1109 - [系统启动] system_start_result(success=True) 已发送
+2026-04-20 13:12:46.244 | INFO     | __main__:_do_start:1121 - [系统启动] 后台启动线程结束
+2026-04-20 13:12:53.310 | INFO     | engines.ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=3235f3f8
+2026-04-20 13:12:53.310 | INFO     | engines.ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-20 13:12:53.312 | INFO     | engines.ReportEngine.flask_interface:get_result:895 - [get_result] base_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2, 扫描目录: [WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish_V2/outputs/raw_md'), WindowsPath('c:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish_V2/src/backend/outputs/raw_md')]
+2026-04-20 13:12:53.313 | INFO     | engines.ReportEngine.flask_interface:get_result:898 - [get_result] 检查目录: C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\outputs\raw_md, exists=True
+2026-04-20 13:12:53.318 | INFO     | engines.ReportEngine.flask_interface:get_result:902 - [get_result] 找到 22 个 md 文件
+2026-04-20 13:12:53.318 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2025-2026年全球AI大模型行业发展全景盘点与核心技术_20260414_161148.md, 匹配=False
+2026-04-20 13:12:53.318 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年AI产品经理的求职市场如何_20260415_120659.md, 匹配=False
+2026-04-20 13:12:53.318 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年出海短剧市场现状分析_20260416_114915.md, 匹配=False
+2026-04-20 13:12:53.319 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展情况_20260414_221322.md, 匹配=False
+2026-04-20 13:12:53.320 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展现状_20260413_235554.md, 匹配=False
+2026-04-20 13:12:53.320 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国深圳地区AI成熟落地方案_20260419_121534.md, 匹配=False
+2026-04-20 13:12:53.320 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国科技品牌在日韩市场的第二增长曲线_20260419_113325.md, 匹配=False
+2026-04-20 13:12:53.320 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人工智能_20260410_112137.md, 匹配=False
+2026-04-20 13:12:53.320 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人工智能的发展情况_20260419_151336.md, 匹配=False
+2026-04-20 13:12:53.320 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人形机器人核心零部件供应链的国产替代_20260419_114159.md, 匹配=False
+2026-04-20 13:12:53.321 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_低空经济_20260419_154202.md, 匹配=False
+2026-04-20 13:12:53.321 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_低空经济的发展趋势_20260419_114230.md, 匹配=False
+2026-04-20 13:12:53.322 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_全球_L2_高阶辅助驾驶核心供应链调研_20260416_095522.md, 匹配=False
+2026-04-20 13:12:53.322 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_具身智能赛道头部企业核心技术栈对比_20260417_180817.md, 匹配=False
+2026-04-20 13:12:53.322 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_分析一下Agent的情况_20260412_020334.md, 匹配=False
+2026-04-20 13:12:53.323 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_北美市场对车载无感互联配件的痛点挖掘_20260418_093023.md, 匹配=False
+2026-04-20 13:12:53.323 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_新一代智能座舱多模态交互演进趋势_20260419_112834.md, 匹配=False
+2026-04-20 13:12:53.323 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_智能车机系统CarPlay等的全球装配率变动_20260414_194051.md, 匹配=False
+2026-04-20 13:12:53.324 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_果_CarPlay_未来战略_20260414_212112.md, 匹配=False
+2026-04-20 13:12:53.324 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_脑机接口_20260414_220418.md, 匹配=False
+2026-04-20 13:12:53.324 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_车载智能终端出海欧美的本土化用户洞察_20260417_163254.md, 匹配=False
+2026-04-20 13:12:53.325 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_辅助驾驶L2的市场格局_20260412_114206.md, 匹配=False
+2026-04-20 13:12:53.326 | INFO     | engines.ReportEngine.flask_interface:get_result:898 - [get_result] 检查目录: c:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\outputs\raw_md, exists=False
+2026-04-20 13:12:53.327 | WARNING  | engines.ReportEngine.flask_interface:get_result:918 - [get_result] 未找到匹配文件，返回404
+2026-04-20 13:13:00.770 | INFO     | engines.ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=20260419_154202
+2026-04-20 13:13:00.771 | INFO     | engines.ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-20 13:13:00.773 | INFO     | engines.ReportEngine.flask_interface:get_result:895 - [get_result] base_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2, 扫描目录: [WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish_V2/outputs/raw_md'), WindowsPath('c:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish_V2/src/backend/outputs/raw_md')]
+2026-04-20 13:13:00.773 | INFO     | engines.ReportEngine.flask_interface:get_result:898 - [get_result] 检查目录: C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\outputs\raw_md, exists=True
+2026-04-20 13:13:00.775 | INFO     | engines.ReportEngine.flask_interface:get_result:902 - [get_result] 找到 22 个 md 文件
+2026-04-20 13:13:00.777 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2025-2026年全球AI大模型行业发展全景盘点与核心技术_20260414_161148.md, 匹配=False
+2026-04-20 13:13:00.777 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年AI产品经理的求职市场如何_20260415_120659.md, 匹配=False
+2026-04-20 13:13:00.777 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年出海短剧市场现状分析_20260416_114915.md, 匹配=False
+2026-04-20 13:13:00.777 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展情况_20260414_221322.md, 匹配=False
+2026-04-20 13:13:00.778 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展现状_20260413_235554.md, 匹配=False
+2026-04-20 13:13:00.778 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国深圳地区AI成熟落地方案_20260419_121534.md, 匹配=False
+2026-04-20 13:13:00.779 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国科技品牌在日韩市场的第二增长曲线_20260419_113325.md, 匹配=False
+2026-04-20 13:13:00.779 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人工智能_20260410_112137.md, 匹配=False
+2026-04-20 13:13:00.780 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人工智能的发展情况_20260419_151336.md, 匹配=False
+2026-04-20 13:13:00.780 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人形机器人核心零部件供应链的国产替代_20260419_114159.md, 匹配=False
+2026-04-20 13:13:00.780 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_低空经济_20260419_154202.md, 匹配=True
+2026-04-20 13:13:00.782 | INFO     | engines.ReportEngine.flask_interface:get_result:907 - [get_result] 文件读取成功, MD长度=7119
+2026-04-20 13:13:00.914 | INFO     | engines.ReportEngine.flask_interface:get_result:909 - [get_result] 转换成功, HTML长度=9390
+2026-04-20 13:14:29.101 | INFO     | __main__:search:889 - [搜索] 任务创建 task_id=3763dfd2 query='北美市场对车载无感互联配件的痛点挖掘'
+2026-04-20 13:14:29.121 | INFO     | __main__:_do_search:896 - [搜索] 任务开始执行 task_id=3763dfd2
+2026-04-20 13:14:29.152 | INFO     | utils.report_cache:_ensure_db:80 - [ReportCache] 初始化完成 db=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\data\report_cache.db
+2026-04-20 13:14:29.159 | INFO     | utils.report_cache:_ensure_db:80 - [ReportCache] 初始化完成 db=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\data\report_cache.db
+2026-04-20 13:14:29.160 | INFO     | __main__:cb:900 - [搜索] [3763dfd2] [pipeline] 启动三引擎并发采集... (已用时 0.0s)
+2026-04-20 13:14:29.313 | ERROR    | src.backend.runner:_run:102 - [runner] MediaEngine 执行异常: No module named 'utils.config'
+2026-04-20 13:14:29.375 | INFO     | __main__:cb:900 - [搜索] [3763dfd2] [query] QueryEngine 启动中... (已用时 0.3s)
+2026-04-20 13:14:45.658 | ERROR    | src.backend.runner:_run:102 - [runner] InsightEngine 执行异常: No module named 'utils.config'
+2026-04-20 13:14:55.798 | DEBUG    | utils.forum_reader:get_latest_host_speech:45 - 未找到HOST发言
+2026-04-20 13:16:14.674 | DEBUG    | utils.forum_reader:get_latest_host_speech:45 - 未找到HOST发言
+2026-04-20 13:17:28.353 | INFO     | __main__:cb:900 - [搜索] [3763dfd2] [query] QueryEngine 段落 1/5 完成 (已用时 179.2s)
+2026-04-20 13:17:36.989 | DEBUG    | utils.forum_reader:get_latest_host_speech:45 - 未找到HOST发言
+2026-04-20 13:18:55.645 | DEBUG    | utils.forum_reader:get_latest_host_speech:45 - 未找到HOST发言
+2026-04-20 13:20:02.843 | INFO     | __main__:cb:900 - [搜索] [3763dfd2] [query] QueryEngine 段落 2/5 完成 (已用时 333.7s)
+2026-04-20 13:20:13.186 | DEBUG    | utils.forum_reader:get_latest_host_speech:45 - 未找到HOST发言
+2026-04-20 13:21:48.071 | DEBUG    | utils.forum_reader:get_latest_host_speech:45 - 未找到HOST发言
+2026-04-20 13:23:01.578 | INFO     | __main__:cb:900 - [搜索] [3763dfd2] [query] QueryEngine 段落 3/5 完成 (已用时 512.5s)
+2026-04-20 13:23:10.496 | DEBUG    | utils.forum_reader:get_latest_host_speech:45 - 未找到HOST发言
+2026-04-20 13:24:35.365 | DEBUG    | utils.forum_reader:get_latest_host_speech:45 - 未找到HOST发言
+2026-04-20 13:26:11.664 | INFO     | __main__:cb:900 - [搜索] [3763dfd2] [query] QueryEngine 段落 4/5 完成 (已用时 702.5s)
+2026-04-20 13:26:20.284 | DEBUG    | utils.forum_reader:get_latest_host_speech:45 - 未找到HOST发言
+2026-04-20 13:27:49.661 | DEBUG    | utils.forum_reader:get_latest_host_speech:45 - 未找到HOST发言
+2026-04-20 13:28:56.688 | INFO     | __main__:cb:900 - [搜索] [3763dfd2] [query] QueryEngine 段落 5/5 完成 (已用时 867.6s)
+2026-04-20 13:31:27.924 | INFO     | __main__:cb:900 - [搜索] [3763dfd2] [query] QueryEngine 完成 (已用时 1018.8s)
+2026-04-20 13:31:27.931 | INFO     | __main__:cb:900 - [搜索] [3763dfd2] [pipeline] 采集完成，共 1 份报告，启动 ReportEngine... (已用时 1018.8s)
+2026-04-20 13:31:27.931 | INFO     | __main__:cb:900 - [搜索] [3763dfd2] [report] ReportEngine 启动中... (已用时 1018.8s)
+2026-04-20 13:31:27.946 | DEBUG    | ReportEngine.agent:_setup_logging:309 - 已添加日志handler (ID: 3): ops/logs/report.log
+2026-04-20 13:31:27.946 | DEBUG    | ReportEngine.agent:_setup_logging:309 - 已添加日志handler (ID: 3): ops/logs/report.log
+2026-04-20 13:31:42.540 | INFO     | ReportEngine.agent:_initialize_mini_llm:399 - [MiniLLM] 未配置小模型，Map 阶段将降级使用主模型
+2026-04-20 13:31:42.540 | INFO     | ReportEngine.agent:_initialize_mini_llm:399 - [MiniLLM] 未配置小模型，Map 阶段将降级使用主模型
+2026-04-20 13:31:42.541 | WARNING  | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:518 - 未配置任何Engine API，图表API修复功能将不可用
+2026-04-20 13:31:42.541 | WARNING  | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:518 - 未配置任何Engine API，图表API修复功能将不可用
+2026-04-20 13:31:42.542 | WARNING  | ReportEngine.renderers.html_renderer:__init__:124 - HTMLRenderer: 未配置任何LLM API，图表API修复功能不可用
+2026-04-20 13:31:42.542 | WARNING  | ReportEngine.renderers.html_renderer:__init__:124 - HTMLRenderer: 未配置任何LLM API，图表API修复功能不可用
+2026-04-20 13:31:42.547 | INFO     | ReportEngine.agent:initialize_baseline:118 - 文件数量基准已初始化: {'insight': 0, 'media': 0, 'query': 0}
+2026-04-20 13:31:42.547 | INFO     | ReportEngine.agent:initialize_baseline:118 - 文件数量基准已初始化: {'insight': 0, 'media': 0, 'query': 0}
+2026-04-20 13:31:42.548 | INFO     | ReportEngine.agent:__init__:235 - Report Agent已初始化
+2026-04-20 13:31:42.548 | INFO     | ReportEngine.agent:__init__:235 - Report Agent已初始化
+2026-04-20 13:31:42.549 | INFO     | ReportEngine.agent:__init__:236 - 使用LLM: {'provider': 'deepseek-chat', 'model': 'deepseek-chat', 'api_base': 'https://api.deepseek.com'}
+2026-04-20 13:31:42.549 | INFO     | ReportEngine.agent:__init__:236 - 使用LLM: {'provider': 'deepseek-chat', 'model': 'deepseek-chat', 'api_base': 'https://api.deepseek.com'}
+2026-04-20 13:31:42.549 | INFO     | ReportEngine.agent:_map_reduce_reports:1033 - [MapReduce] query_engine 长度=7461，超过阈值2500，开始分块压缩
+2026-04-20 13:31:42.549 | INFO     | ReportEngine.agent:_map_reduce_reports:1033 - [MapReduce] query_engine 长度=7461，超过阈值2500，开始分块压缩
+2026-04-20 13:31:42.550 | INFO     | ReportEngine.agent:_map_reduce_reports:1039 - [MapReduce] query_engine 分为 2 块，逐块提炼 Fact-sheet...
+2026-04-20 13:31:42.550 | INFO     | ReportEngine.agent:_map_reduce_reports:1039 - [MapReduce] query_engine 分为 2 块，逐块提炼 Fact-sheet...
+2026-04-20 13:32:36.693 | INFO     | backend.utils.token_tracker:record_usage:89 - [TokenTracker] 本次消耗: 4368 tokens (prompt=2812, completion=1556) | 累计: 4368/200000 tokens, 第 1 次调用
+2026-04-20 13:32:36.693 | INFO     | backend.utils.token_tracker:record_usage:89 - [TokenTracker] 本次消耗: 4368 tokens (prompt=2812, completion=1556) | 累计: 4368/200000 tokens, 第 1 次调用
+2026-04-20 13:32:36.693 | INFO     | ReportEngine.agent:_map_reduce_reports:1057 - [MapReduce] query_engine 第1块 Fact-sheet 完成（小模型），长度=2993
+2026-04-20 13:32:36.693 | INFO     | ReportEngine.agent:_map_reduce_reports:1057 - [MapReduce] query_engine 第1块 Fact-sheet 完成（小模型），长度=2993
+2026-04-20 13:32:36.847 | WARNING  | backend.utils.retry_helper:wrapper:112 - 函数 invoke 第 1 次尝试失败: Error code: 400 - {'error': {'message': "Prompt must contain the word 'json' in some form to use 'response_format' of type 'json_object'.", 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_request_error'}}
+2026-04-20 13:32:36.847 | WARNING  | backend.utils.retry_helper:wrapper:112 - 函数 invoke 第 1 次尝试失败: Error code: 400 - {'error': {'message': "Prompt must contain the word 'json' in some form to use 'response_format' of type 'json_object'.", 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_request_error'}}
+2026-04-20 13:32:36.848 | INFO     | backend.utils.retry_helper:wrapper:113 - 将在 60.0 秒后进行第 2 次尝试...
+2026-04-20 13:32:36.848 | INFO     | backend.utils.retry_helper:wrapper:113 - 将在 60.0 秒后进行第 2 次尝试...
+2026-04-20 13:33:37.107 | WARNING  | backend.utils.retry_helper:wrapper:112 - 函数 invoke 第 2 次尝试失败: Error code: 400 - {'error': {'message': "Prompt must contain the word 'json' in some form to use 'response_format' of type 'json_object'.", 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_request_error'}}
+2026-04-20 13:33:37.107 | WARNING  | backend.utils.retry_helper:wrapper:112 - 函数 invoke 第 2 次尝试失败: Error code: 400 - {'error': {'message': "Prompt must contain the word 'json' in some form to use 'response_format' of type 'json_object'.", 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_request_error'}}
+2026-04-20 13:33:37.107 | INFO     | backend.utils.retry_helper:wrapper:113 - 将在 120.0 秒后进行第 3 次尝试...
+2026-04-20 13:33:37.107 | INFO     | backend.utils.retry_helper:wrapper:113 - 将在 120.0 秒后进行第 3 次尝试...
+2026-04-20 13:35:37.259 | WARNING  | backend.utils.retry_helper:wrapper:112 - 函数 invoke 第 3 次尝试失败: Error code: 400 - {'error': {'message': "Prompt must contain the word 'json' in some form to use 'response_format' of type 'json_object'.", 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_request_error'}}
+2026-04-20 13:35:37.259 | WARNING  | backend.utils.retry_helper:wrapper:112 - 函数 invoke 第 3 次尝试失败: Error code: 400 - {'error': {'message': "Prompt must contain the word 'json' in some form to use 'response_format' of type 'json_object'.", 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_request_error'}}
+2026-04-20 13:35:37.260 | INFO     | backend.utils.retry_helper:wrapper:113 - 将在 240.0 秒后进行第 4 次尝试...
+2026-04-20 13:35:37.260 | INFO     | backend.utils.retry_helper:wrapper:113 - 将在 240.0 秒后进行第 4 次尝试...
+2026-04-20 13:39:21.271 | INFO     | __main__:_log_shutdown_step:539 - [Shutdown] 开始清理子进程
+2026-04-20 13:39:21.271 | INFO     | __main__:_log_shutdown_step:539 - [Shutdown] 开始清理子进程
+2026-04-20 13:39:21.272 | ERROR    | __main__:cleanup_processes:687 - 停止ForumEngine失败
+Traceback (most recent call last):
+
+> File "c:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\app.py", line 685, in cleanup_processes
+    stop_forum_engine()
+
+NameError: name 'stop_forum_engine' is not defined
+2026-04-20 13:39:21.272 | ERROR    | __main__:cleanup_processes:687 - 停止ForumEngine失败
+Traceback (most recent call last):
+
+> File "c:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\app.py", line 685, in cleanup_processes
+    stop_forum_engine()
+
+NameError: name 'stop_forum_engine' is not defined
+2026-04-20 13:39:21.274 | INFO     | __main__:_log_shutdown_step:539 - [Shutdown] 子进程清理完成
+2026-04-20 13:39:21.274 | INFO     | __main__:_log_shutdown_step:539 - [Shutdown] 子进程清理完成
+2026-04-20 13:40:33.556 | DEBUG    | engines.ReportEngine.agent:_setup_logging:309 - 已添加日志handler (ID: 1): ops/logs/report.log
+2026-04-20 13:40:44.611 | INFO     | engines.ReportEngine.agent:_initialize_mini_llm:399 - [MiniLLM] 未配置小模型，Map 阶段将降级使用主模型
+2026-04-20 13:40:44.613 | WARNING  | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:518 - 未配置任何Engine API，图表API修复功能将不可用
+2026-04-20 13:40:44.613 | WARNING  | engines.ReportEngine.renderers.html_renderer:__init__:124 - HTMLRenderer: 未配置任何LLM API，图表API修复功能不可用
+2026-04-20 13:40:44.619 | INFO     | engines.ReportEngine.agent:initialize_baseline:118 - 文件数量基准已初始化: {'insight': 0, 'media': 0, 'query': 0}
+2026-04-20 13:40:44.623 | INFO     | engines.ReportEngine.agent:__init__:235 - Report Agent已初始化
+2026-04-20 13:40:44.623 | INFO     | engines.ReportEngine.agent:__init__:236 - 使用LLM: {'provider': 'deepseek-chat', 'model': 'deepseek-chat', 'api_base': 'https://api.deepseek.com'}
+2026-04-20 13:40:44.623 | INFO     | engines.ReportEngine.flask_interface:initialize_report_engine:258 - Report Engine初始化成功
+2026-04-20 13:40:44.714 | WARNING  | engines.ReportEngine.utils.dependency_check:log_dependency_status:334 - ⚠ WeasyPrint 未安装
+解决方法: pip install weasyprint
+2026-04-20 13:40:44.715 | INFO     | engines.ReportEngine.utils.dependency_check:log_dependency_status:335 - 💡 提示：PDF 导出功能需要 Pango 库支持，但不影响系统其他功能的正常使用
+2026-04-20 13:40:44.715 | INFO     | engines.ReportEngine.utils.dependency_check:log_dependency_status:336 - 📚 安装说明请参考：static/Partial README for PDF Exporting/README.md
+2026-04-20 13:40:44.716 | INFO     | __main__:initialize_system_components:352 - [系统启动] ✓ ReportEngine 初始化成功
+2026-04-20 13:40:44.716 | INFO     | __main__:initialize_system_components:369 - [系统启动] ========== 启动完成 总耗时=11.2s, 错误=0 ==========
+2026-04-20 13:40:44.717 | INFO     | __main__:_do_start:1109 - [系统启动] 全部组件启动成功, 准备发送 system_start_result(success=True)
+2026-04-20 13:40:44.717 | INFO     | __main__:_do_start:1111 - [系统启动] system_start_result(success=True) 已发送
+2026-04-20 13:40:44.718 | INFO     | __main__:_do_start:1123 - [系统启动] 后台启动线程结束
+2026-04-20 13:43:08.825 | INFO     | __main__:_log_shutdown_step:539 - [Shutdown] 开始清理子进程
+2026-04-20 13:43:08.825 | ERROR    | __main__:cleanup_processes:687 - 停止ForumEngine失败
+Traceback (most recent call last):
+
+> File "c:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\app.py", line 685, in cleanup_processes
+    stop_forum_engine()
+
+NameError: name 'stop_forum_engine' is not defined
+2026-04-20 13:43:08.830 | INFO     | __main__:_log_shutdown_step:539 - [Shutdown] 子进程清理完成
+2026-04-20 13:44:38.832 | DEBUG    | engines.ReportEngine.agent:_setup_logging:309 - 已添加日志handler (ID: 1): ops/logs/report.log
+2026-04-20 13:44:49.992 | INFO     | engines.ReportEngine.agent:_initialize_mini_llm:399 - [MiniLLM] 未配置小模型，Map 阶段将降级使用主模型
+2026-04-20 13:44:49.994 | WARNING  | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:518 - 未配置任何Engine API，图表API修复功能将不可用
+2026-04-20 13:44:49.994 | WARNING  | engines.ReportEngine.renderers.html_renderer:__init__:124 - HTMLRenderer: 未配置任何LLM API，图表API修复功能不可用
+2026-04-20 13:44:49.999 | INFO     | engines.ReportEngine.agent:initialize_baseline:118 - 文件数量基准已初始化: {'insight': 0, 'media': 0, 'query': 0}
+2026-04-20 13:44:50.002 | INFO     | engines.ReportEngine.agent:__init__:235 - Report Agent已初始化
+2026-04-20 13:44:50.002 | INFO     | engines.ReportEngine.agent:__init__:236 - 使用LLM: {'provider': 'deepseek-chat', 'model': 'deepseek-chat', 'api_base': 'https://api.deepseek.com'}
+2026-04-20 13:44:50.003 | INFO     | engines.ReportEngine.flask_interface:initialize_report_engine:258 - Report Engine初始化成功
+2026-04-20 13:44:50.105 | WARNING  | engines.ReportEngine.utils.dependency_check:log_dependency_status:334 - ⚠ WeasyPrint 未安装
+解决方法: pip install weasyprint
+2026-04-20 13:44:50.106 | INFO     | engines.ReportEngine.utils.dependency_check:log_dependency_status:335 - 💡 提示：PDF 导出功能需要 Pango 库支持，但不影响系统其他功能的正常使用
+2026-04-20 13:44:50.106 | INFO     | engines.ReportEngine.utils.dependency_check:log_dependency_status:336 - 📚 安装说明请参考：static/Partial README for PDF Exporting/README.md
+2026-04-20 13:44:50.107 | INFO     | __main__:initialize_system_components:352 - [系统启动] ✓ ReportEngine 初始化成功
+2026-04-20 13:44:50.107 | INFO     | __main__:initialize_system_components:369 - [系统启动] ========== 启动完成 总耗时=11.3s, 错误=0 ==========
+2026-04-20 13:44:50.109 | INFO     | __main__:_do_start:1117 - [系统启动] 全部组件启动成功, 准备发送 system_start_result(success=True)
+2026-04-20 13:44:50.109 | INFO     | __main__:_do_start:1119 - [系统启动] system_start_result(success=True) 已发送
+2026-04-20 13:44:50.109 | INFO     | __main__:_do_start:1131 - [系统启动] 后台启动线程结束
+2026-04-20 13:45:02.473 | INFO     | engines.ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=20260419_154202
+2026-04-20 13:45:02.474 | INFO     | engines.ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-20 13:45:02.475 | INFO     | engines.ReportEngine.flask_interface:get_result:895 - [get_result] base_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2, 扫描目录: [WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish_V2/outputs/raw_md'), WindowsPath('c:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish_V2/src/backend/outputs/raw_md')]
+2026-04-20 13:45:02.476 | INFO     | engines.ReportEngine.flask_interface:get_result:898 - [get_result] 检查目录: C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\outputs\raw_md, exists=True
+2026-04-20 13:45:02.479 | INFO     | engines.ReportEngine.flask_interface:get_result:902 - [get_result] 找到 22 个 md 文件
+2026-04-20 13:45:02.480 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2025-2026年全球AI大模型行业发展全景盘点与核心技术_20260414_161148.md, 匹配=False
+2026-04-20 13:45:02.480 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年AI产品经理的求职市场如何_20260415_120659.md, 匹配=False
+2026-04-20 13:45:02.481 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年出海短剧市场现状分析_20260416_114915.md, 匹配=False
+2026-04-20 13:45:02.481 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展情况_20260414_221322.md, 匹配=False
+2026-04-20 13:45:02.481 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展现状_20260413_235554.md, 匹配=False
+2026-04-20 13:45:02.481 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国深圳地区AI成熟落地方案_20260419_121534.md, 匹配=False
+2026-04-20 13:45:02.482 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国科技品牌在日韩市场的第二增长曲线_20260419_113325.md, 匹配=False
+2026-04-20 13:45:02.482 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人工智能_20260410_112137.md, 匹配=False
+2026-04-20 13:45:02.482 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人工智能的发展情况_20260419_151336.md, 匹配=False
+2026-04-20 13:45:02.483 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人形机器人核心零部件供应链的国产替代_20260419_114159.md, 匹配=False
+2026-04-20 13:45:02.483 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_低空经济_20260419_154202.md, 匹配=True
+2026-04-20 13:45:02.485 | INFO     | engines.ReportEngine.flask_interface:get_result:907 - [get_result] 文件读取成功, MD长度=7119
+2026-04-20 13:45:02.619 | INFO     | engines.ReportEngine.flask_interface:get_result:909 - [get_result] 转换成功, HTML长度=9390
+2026-04-20 13:45:58.260 | INFO     | __main__:search:889 - [搜索] 任务创建 task_id=fd4b29f2 query='ottocast品牌的舆情情况和产品情况'
+2026-04-20 13:45:58.273 | INFO     | __main__:_do_search:896 - [搜索] 任务开始执行 task_id=fd4b29f2
+2026-04-20 13:45:58.295 | INFO     | utils.report_cache:_ensure_db:80 - [ReportCache] 初始化完成 db=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\data\report_cache.db
+2026-04-20 13:45:58.300 | INFO     | utils.report_cache:_ensure_db:80 - [ReportCache] 初始化完成 db=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\data\report_cache.db
+2026-04-20 13:45:58.300 | INFO     | __main__:cb:900 - [搜索] [fd4b29f2] [pipeline] 启动三引擎并发采集... (已用时 0.0s)
+2026-04-20 13:45:58.446 | ERROR    | src.backend.runner:_run:102 - [runner] MediaEngine 执行异常: No module named 'utils.config'
+2026-04-20 13:45:58.490 | INFO     | __main__:cb:900 - [搜索] [fd4b29f2] [query] QueryEngine 启动中... (已用时 0.2s)
+2026-04-20 13:46:11.174 | ERROR    | src.backend.runner:_run:102 - [runner] InsightEngine 执行异常: No module named 'utils.config'
+2026-04-20 13:46:26.488 | DEBUG    | utils.forum_reader:get_latest_host_speech:45 - 未找到HOST发言
+2026-04-20 13:47:50.046 | DEBUG    | utils.forum_reader:get_latest_host_speech:45 - 未找到HOST发言
+2026-04-20 13:48:58.748 | INFO     | __main__:cb:900 - [搜索] [fd4b29f2] [query] QueryEngine 段落 1/5 完成 (已用时 180.5s)
+2026-04-20 13:49:07.398 | DEBUG    | utils.forum_reader:get_latest_host_speech:45 - 未找到HOST发言
+2026-04-20 13:50:22.034 | DEBUG    | utils.forum_reader:get_latest_host_speech:45 - 未找到HOST发言
+2026-04-20 13:51:10.420 | INFO     | __main__:cb:900 - [搜索] [fd4b29f2] [query] QueryEngine 段落 2/5 完成 (已用时 312.1s)
+2026-04-20 13:51:19.587 | DEBUG    | utils.forum_reader:get_latest_host_speech:45 - 未找到HOST发言
+2026-04-20 13:52:48.780 | DEBUG    | utils.forum_reader:get_latest_host_speech:45 - 未找到HOST发言
+2026-04-20 13:53:57.188 | INFO     | __main__:cb:900 - [搜索] [fd4b29f2] [query] QueryEngine 段落 3/5 完成 (已用时 478.9s)
+2026-04-20 13:54:10.748 | DEBUG    | utils.forum_reader:get_latest_host_speech:45 - 未找到HOST发言
+2026-04-20 13:56:11.350 | DEBUG    | utils.forum_reader:get_latest_host_speech:45 - 未找到HOST发言
+2026-04-20 13:57:46.105 | INFO     | __main__:cb:900 - [搜索] [fd4b29f2] [query] QueryEngine 段落 4/5 完成 (已用时 707.8s)
+2026-04-20 13:57:55.463 | DEBUG    | utils.forum_reader:get_latest_host_speech:45 - 未找到HOST发言
+2026-04-20 13:59:21.257 | DEBUG    | utils.forum_reader:get_latest_host_speech:45 - 未找到HOST发言
+2026-04-20 14:00:35.187 | INFO     | __main__:cb:900 - [搜索] [fd4b29f2] [query] QueryEngine 段落 5/5 完成 (已用时 876.9s)
+2026-04-20 14:03:33.260 | INFO     | __main__:cb:900 - [搜索] [fd4b29f2] [query] QueryEngine 完成 (已用时 1055.0s)
+2026-04-20 14:03:33.263 | INFO     | __main__:cb:900 - [搜索] [fd4b29f2] [pipeline] 采集完成，共 1 份报告，启动 ReportEngine... (已用时 1055.0s)
+2026-04-20 14:03:33.264 | INFO     | __main__:cb:900 - [搜索] [fd4b29f2] [report] ReportEngine 启动中... (已用时 1055.0s)
+2026-04-20 14:03:33.271 | DEBUG    | ReportEngine.agent:_setup_logging:309 - 已添加日志handler (ID: 3): ops/logs/report.log
+2026-04-20 14:03:33.271 | DEBUG    | ReportEngine.agent:_setup_logging:309 - 已添加日志handler (ID: 3): ops/logs/report.log
+2026-04-20 14:03:47.166 | INFO     | ReportEngine.agent:_initialize_mini_llm:399 - [MiniLLM] 未配置小模型，Map 阶段将降级使用主模型
+2026-04-20 14:03:47.166 | INFO     | ReportEngine.agent:_initialize_mini_llm:399 - [MiniLLM] 未配置小模型，Map 阶段将降级使用主模型
+2026-04-20 14:03:47.167 | WARNING  | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:518 - 未配置任何Engine API，图表API修复功能将不可用
+2026-04-20 14:03:47.167 | WARNING  | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:518 - 未配置任何Engine API，图表API修复功能将不可用
+2026-04-20 14:03:47.168 | WARNING  | ReportEngine.renderers.html_renderer:__init__:124 - HTMLRenderer: 未配置任何LLM API，图表API修复功能不可用
+2026-04-20 14:03:47.168 | WARNING  | ReportEngine.renderers.html_renderer:__init__:124 - HTMLRenderer: 未配置任何LLM API，图表API修复功能不可用
+2026-04-20 14:03:47.170 | INFO     | ReportEngine.agent:initialize_baseline:118 - 文件数量基准已初始化: {'insight': 0, 'media': 0, 'query': 0}
+2026-04-20 14:03:47.170 | INFO     | ReportEngine.agent:initialize_baseline:118 - 文件数量基准已初始化: {'insight': 0, 'media': 0, 'query': 0}
+2026-04-20 14:03:47.172 | INFO     | ReportEngine.agent:__init__:235 - Report Agent已初始化
+2026-04-20 14:03:47.172 | INFO     | ReportEngine.agent:__init__:235 - Report Agent已初始化
+2026-04-20 14:03:47.172 | INFO     | ReportEngine.agent:__init__:236 - 使用LLM: {'provider': 'deepseek-chat', 'model': 'deepseek-chat', 'api_base': 'https://api.deepseek.com'}
+2026-04-20 14:03:47.172 | INFO     | ReportEngine.agent:__init__:236 - 使用LLM: {'provider': 'deepseek-chat', 'model': 'deepseek-chat', 'api_base': 'https://api.deepseek.com'}
+2026-04-20 14:03:47.174 | INFO     | ReportEngine.agent:_map_reduce_reports:1035 - [MapReduce] query_engine 长度=7482，超过阈值2500，开始分块压缩
+2026-04-20 14:03:47.174 | INFO     | ReportEngine.agent:_map_reduce_reports:1035 - [MapReduce] query_engine 长度=7482，超过阈值2500，开始分块压缩
+2026-04-20 14:03:47.174 | INFO     | ReportEngine.agent:_map_reduce_reports:1041 - [MapReduce] query_engine 分为 2 块，逐块提炼 Fact-sheet...
+2026-04-20 14:03:47.174 | INFO     | ReportEngine.agent:_map_reduce_reports:1041 - [MapReduce] query_engine 分为 2 块，逐块提炼 Fact-sheet...
+2026-04-20 14:04:16.106 | INFO     | backend.utils.token_tracker:record_usage:89 - [TokenTracker] 本次消耗: 3599 tokens (prompt=2874, completion=725) | 累计: 3599/200000 tokens, 第 1 次调用
+2026-04-20 14:04:16.106 | INFO     | backend.utils.token_tracker:record_usage:89 - [TokenTracker] 本次消耗: 3599 tokens (prompt=2874, completion=725) | 累计: 3599/200000 tokens, 第 1 次调用
+2026-04-20 14:04:16.107 | INFO     | ReportEngine.agent:_map_reduce_reports:1059 - [MapReduce] query_engine 第1块 Fact-sheet 完成（小模型），长度=1379
+2026-04-20 14:04:16.107 | INFO     | ReportEngine.agent:_map_reduce_reports:1059 - [MapReduce] query_engine 第1块 Fact-sheet 完成（小模型），长度=1379
+2026-04-20 14:04:53.703 | INFO     | backend.utils.token_tracker:record_usage:89 - [TokenTracker] 本次消耗: 2466 tokens (prompt=1537, completion=929) | 累计: 6065/200000 tokens, 第 2 次调用
+2026-04-20 14:04:53.703 | INFO     | backend.utils.token_tracker:record_usage:89 - [TokenTracker] 本次消耗: 2466 tokens (prompt=1537, completion=929) | 累计: 6065/200000 tokens, 第 2 次调用
+2026-04-20 14:04:53.703 | INFO     | ReportEngine.agent:_map_reduce_reports:1059 - [MapReduce] query_engine 第2块 Fact-sheet 完成（小模型），长度=1723
+2026-04-20 14:04:53.703 | INFO     | ReportEngine.agent:_map_reduce_reports:1059 - [MapReduce] query_engine 第2块 Fact-sheet 完成（小模型），长度=1723
+2026-04-20 14:05:22.655 | INFO     | backend.utils.token_tracker:record_usage:89 - [TokenTracker] 本次消耗: 2530 tokens (prompt=1790, completion=740) | 累计: 8595/200000 tokens, 第 3 次调用
+2026-04-20 14:05:22.655 | INFO     | backend.utils.token_tracker:record_usage:89 - [TokenTracker] 本次消耗: 2530 tokens (prompt=1790, completion=740) | 累计: 8595/200000 tokens, 第 3 次调用
+2026-04-20 14:05:22.655 | INFO     | ReportEngine.agent:_map_reduce_reports:1098 - [MapReduce] query_engine Reduce完成，压缩前=7482，压缩后=1368
+2026-04-20 14:05:22.655 | INFO     | ReportEngine.agent:_map_reduce_reports:1098 - [MapReduce] query_engine Reduce完成，压缩前=7482，压缩后=1368
+2026-04-20 14:05:22.656 | INFO     | ReportEngine.agent:_map_reduce_reports:1029 - [MapReduce] media_engine 长度=0，未超阈值，跳过压缩
+2026-04-20 14:05:22.656 | INFO     | ReportEngine.agent:_map_reduce_reports:1029 - [MapReduce] media_engine 长度=0，未超阈值，跳过压缩
+2026-04-20 14:05:22.656 | INFO     | ReportEngine.agent:_map_reduce_reports:1029 - [MapReduce] insight_engine 长度=0，未超阈值，跳过压缩
+2026-04-20 14:05:22.656 | INFO     | ReportEngine.agent:_map_reduce_reports:1029 - [MapReduce] insight_engine 长度=0，未超阈值，跳过压缩
+2026-04-20 14:05:22.656 | INFO     | ReportEngine.agent:generate_report:477 - 开始生成报告 report-02e0dcfe: ottocast品牌的舆情情况和产品情况
+2026-04-20 14:05:22.656 | INFO     | ReportEngine.agent:generate_report:477 - 开始生成报告 report-02e0dcfe: ottocast品牌的舆情情况和产品情况
+2026-04-20 14:05:22.656 | INFO     | ReportEngine.agent:generate_report:478 - 输入数据 - 报告数量: 1, 论坛日志长度: 0
+2026-04-20 14:05:22.656 | INFO     | ReportEngine.agent:generate_report:478 - 输入数据 - 报告数量: 1, 论坛日志长度: 0
+2026-04-20 14:05:22.657 | INFO     | ReportEngine.agent:_select_template:837 - 选择报告模板...
+2026-04-20 14:05:22.657 | INFO     | ReportEngine.agent:_select_template:837 - 选择报告模板...
+2026-04-20 14:05:22.657 | INFO     | ReportEngine.nodes.template_selection_node:run:56 - 开始模板选择...
+2026-04-20 14:05:22.657 | INFO     | ReportEngine.nodes.template_selection_node:run:56 - 开始模板选择...
+2026-04-20 14:05:22.657 | ERROR    | ReportEngine.nodes.template_selection_node:_get_available_templates:229 - 模板目录不存在: src/engines/ReportEngine/report_template
+2026-04-20 14:05:22.657 | ERROR    | ReportEngine.nodes.template_selection_node:_get_available_templates:229 - 模板目录不存在: src/engines/ReportEngine/report_template
+2026-04-20 14:05:22.657 | INFO     | ReportEngine.nodes.template_selection_node:run:66 - 未找到预设模板，使用内置默认模板
+2026-04-20 14:05:22.657 | INFO     | ReportEngine.nodes.template_selection_node:run:66 - 未找到预设模板，使用内置默认模板
+2026-04-20 14:05:22.658 | INFO     | ReportEngine.nodes.template_selection_node:_get_fallback_template:280 - 未找到合适模板，使用空模板让LLM自行发挥
+2026-04-20 14:05:22.658 | INFO     | ReportEngine.nodes.template_selection_node:_get_fallback_template:280 - 未找到合适模板，使用空模板让LLM自行发挥
+2026-04-20 14:05:22.658 | INFO     | ReportEngine.agent:_select_template:860 - 选择模板: 自由发挥模板
+2026-04-20 14:05:22.658 | INFO     | ReportEngine.agent:_select_template:860 - 选择模板: 自由发挥模板
+2026-04-20 14:05:22.658 | INFO     | ReportEngine.agent:_select_template:861 - 选择理由: 未找到合适的预设模板，让LLM根据内容自行设计报告结构
+2026-04-20 14:05:22.658 | INFO     | ReportEngine.agent:_select_template:861 - 选择理由: 未找到合适的预设模板，让LLM根据内容自行设计报告结构
+2026-04-20 14:05:22.658 | WARNING  | ReportEngine.agent:_slice_template:892 - 模板未解析出章节，使用默认章节骨架
+2026-04-20 14:05:22.658 | WARNING  | ReportEngine.agent:_slice_template:892 - 模板未解析出章节，使用默认章节骨架
+2026-04-20 14:06:08.923 | DEBUG    | ReportEngine.utils.json_parser:parse:122 - 文档设计 JSON解析成功（候选1/1）
+2026-04-20 14:06:08.923 | DEBUG    | ReportEngine.utils.json_parser:parse:122 - 文档设计 JSON解析成功（候选1/1）
+2026-04-20 14:06:08.923 | INFO     | ReportEngine.nodes.document_layout_node:run:85 - 文档标题/目录设计已生成
+2026-04-20 14:06:08.923 | INFO     | ReportEngine.nodes.document_layout_node:run:85 - 文档标题/目录设计已生成
+2026-04-20 14:07:57.707 | DEBUG    | ReportEngine.utils.json_parser:parse:122 - 篇幅规划 JSON解析成功（候选1/1）
+2026-04-20 14:07:57.707 | DEBUG    | ReportEngine.utils.json_parser:parse:122 - 篇幅规划 JSON解析成功（候选1/1）
+2026-04-20 14:07:57.707 | INFO     | ReportEngine.nodes.word_budget_node:run:82 - 章节字数规划已生成
+2026-04-20 14:07:57.707 | INFO     | ReportEngine.nodes.word_budget_node:run:82 - 章节字数规划已生成
+2026-04-20 14:07:57.724 | INFO     | ReportEngine.agent:generate_report:764 - 并发生成 1 个章节，max_workers=1
+2026-04-20 14:07:57.724 | INFO     | ReportEngine.agent:generate_report:764 - 并发生成 1 个章节，max_workers=1
+2026-04-20 14:07:57.726 | INFO     | ReportEngine.agent:_generate_one_chapter:598 - 生成章节: 1.0 综合分析
+2026-04-20 14:07:57.726 | INFO     | ReportEngine.agent:_generate_one_chapter:598 - 生成章节: 1.0 综合分析
+2026-04-20 14:11:12.733 | WARNING  | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:518 - 未配置任何Engine API，图表API修复功能将不可用
+2026-04-20 14:11:12.733 | WARNING  | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:518 - 未配置任何Engine API，图表API修复功能将不可用
+2026-04-20 14:11:12.733 | WARNING  | ReportEngine.utils.chart_review_service:__init__:109 - ChartReviewService: 未配置任何 LLM API，图表 API 修复功能不可用
+2026-04-20 14:11:12.733 | WARNING  | ReportEngine.utils.chart_review_service:__init__:109 - ChartReviewService: 未配置任何 LLM API，图表 API 修复功能不可用
+2026-04-20 14:11:12.734 | INFO     | ReportEngine.utils.chart_review_service:__init__:118 - ChartReviewService 初始化完成
+2026-04-20 14:11:12.734 | INFO     | ReportEngine.utils.chart_review_service:__init__:118 - ChartReviewService 初始化完成
+2026-04-20 14:11:12.735 | INFO     | ReportEngine.utils.chart_review_service:_log_stats:496 - ChartReviewService 图表审查完成: 总计 1 个, 有效 1 个, 修复 0 个 (本地 0, API 0), 失败 0 个
+2026-04-20 14:11:12.735 | INFO     | ReportEngine.utils.chart_review_service:_log_stats:496 - ChartReviewService 图表审查完成: 总计 1 个, 有效 1 个, 修复 0 个 (本地 0, API 0), 失败 0 个
+2026-04-20 14:11:12.737 | WARNING  | ReportEngine.renderers.html_renderer:_collect_toc_entries:705 - 目录项 '二、多维深度洞察' 的anchor 'multi-dimensional-insights' 在文档中未找到对应的章节
+2026-04-20 14:11:12.737 | WARNING  | ReportEngine.renderers.html_renderer:_collect_toc_entries:705 - 目录项 '二、多维深度洞察' 的anchor 'multi-dimensional-insights' 在文档中未找到对应的章节
+2026-04-20 14:11:12.737 | WARNING  | ReportEngine.renderers.html_renderer:_collect_toc_entries:705 - 目录项 '三、战略预测与行动建议' 的anchor 'strategic-recommendations' 在文档中未找到对应的章节
+2026-04-20 14:11:12.737 | WARNING  | ReportEngine.renderers.html_renderer:_collect_toc_entries:705 - 目录项 '三、战略预测与行动建议' 的anchor 'strategic-recommendations' 在文档中未找到对应的章节
+2026-04-20 14:11:12.737 | WARNING  | ReportEngine.renderers.html_renderer:_collect_toc_entries:705 - 目录项 '四、数据溯源矩阵' 的anchor 'data-traceability' 在文档中未找到对应的章节
+2026-04-20 14:11:12.737 | WARNING  | ReportEngine.renderers.html_renderer:_collect_toc_entries:705 - 目录项 '四、数据溯源矩阵' 的anchor 'data-traceability' 在文档中未找到对应的章节
+2026-04-20 14:11:12.750 | INFO     | ReportEngine.renderers.html_renderer:_log_chart_validation_stats:2918 - ============================================================
+2026-04-20 14:11:12.750 | INFO     | ReportEngine.renderers.html_renderer:_log_chart_validation_stats:2918 - ============================================================
+2026-04-20 14:11:12.750 | INFO     | ReportEngine.renderers.html_renderer:_log_chart_validation_stats:2919 - 图表验证统计
+2026-04-20 14:11:12.750 | INFO     | ReportEngine.renderers.html_renderer:_log_chart_validation_stats:2919 - 图表验证统计
+2026-04-20 14:11:12.750 | INFO     | ReportEngine.renderers.html_renderer:_log_chart_validation_stats:2920 - ============================================================
+2026-04-20 14:11:12.750 | INFO     | ReportEngine.renderers.html_renderer:_log_chart_validation_stats:2920 - ============================================================
+2026-04-20 14:11:12.751 | INFO     | ReportEngine.renderers.html_renderer:_log_chart_validation_stats:2921 - 总图表数量: 1
+2026-04-20 14:11:12.751 | INFO     | ReportEngine.renderers.html_renderer:_log_chart_validation_stats:2921 - 总图表数量: 1
+2026-04-20 14:11:12.751 | INFO     | ReportEngine.renderers.html_renderer:_log_chart_validation_stats:2922 -   ✓ 验证通过: 1 (100.0%)
+2026-04-20 14:11:12.751 | INFO     | ReportEngine.renderers.html_renderer:_log_chart_validation_stats:2922 -   ✓ 验证通过: 1 (100.0%)
+2026-04-20 14:11:12.751 | INFO     | ReportEngine.renderers.html_renderer:_log_chart_validation_stats:2943 - ============================================================
+2026-04-20 14:11:12.751 | INFO     | ReportEngine.renderers.html_renderer:_log_chart_validation_stats:2943 - ============================================================
+2026-04-20 14:11:12.766 | INFO     | ReportEngine.agent:_save_report:1513 - HTML报告已保存: outputs\final_exports\final_report_ottocast品牌的舆情情况和产品情况_20260420_141112.html
+2026-04-20 14:11:12.766 | INFO     | ReportEngine.agent:_save_report:1513 - HTML报告已保存: outputs\final_exports\final_report_ottocast品牌的舆情情况和产品情况_20260420_141112.html
+2026-04-20 14:11:12.767 | INFO     | ReportEngine.agent:_save_report:1514 - Document IR已保存: outputs\final_exports\ir\report_ir_ottocast品牌的舆情情况和产品情况_20260420_141112.json
+2026-04-20 14:11:12.767 | INFO     | ReportEngine.agent:_save_report:1514 - Document IR已保存: outputs\final_exports\ir\report_ir_ottocast品牌的舆情情况和产品情况_20260420_141112.json
+2026-04-20 14:11:12.768 | INFO     | ReportEngine.agent:_save_report:1515 - 状态已保存到: outputs\final_exports\report_state_ottocast品牌的舆情情况和产品情况_20260420_141112.json
+2026-04-20 14:11:12.768 | INFO     | ReportEngine.agent:_save_report:1515 - 状态已保存到: outputs\final_exports\report_state_ottocast品牌的舆情情况和产品情况_20260420_141112.json
+2026-04-20 14:11:12.768 | INFO     | ReportEngine.agent:generate_report:806 - 报告生成完成，耗时: 445.59 秒
+2026-04-20 14:11:12.768 | INFO     | ReportEngine.agent:generate_report:806 - 报告生成完成，耗时: 445.59 秒
+2026-04-20 14:11:12.768 | INFO     | __main__:cb:900 - [搜索] [fd4b29f2] [report] ReportEngine 完成 (已用时 1514.5s)
+2026-04-20 14:11:12.768 | INFO     | __main__:cb:900 - [搜索] [fd4b29f2] [report] ReportEngine 完成 (已用时 1514.5s)
+2026-04-20 14:11:12.780 | INFO     | utils.report_cache:_ensure_db:80 - [ReportCache] 初始化完成 db=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\data\report_cache.db
+2026-04-20 14:11:12.780 | INFO     | utils.report_cache:_ensure_db:80 - [ReportCache] 初始化完成 db=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\data\report_cache.db
+2026-04-20 14:11:12.800 | INFO     | utils.report_cache:put:223 - [ReportCache] 已缓存 query='ottocast品牌的舆情情况和产品情况' task_id=None report_task_id=None
+2026-04-20 14:11:12.800 | INFO     | utils.report_cache:put:223 - [ReportCache] 已缓存 query='ottocast品牌的舆情情况和产品情况' task_id=None report_task_id=None
+2026-04-20 14:11:12.801 | INFO     | __main__:_do_search:911 - [搜索] 任务完成 task_id=fd4b29f2 report_task_id='fd4b29f2' 耗时=1514.5s report='C:\\Users\\59849\\Desktop\\舆情分析系统(AI编程） (1)\\舆情分析系统(AI编程）\\BettaFish_V2\\src\\backend\\outputs\\final_exports\\final_report_ottocast品牌的舆情情况和产品情况_20260420_141112.html' warnings=[]
+2026-04-20 14:11:12.801 | INFO     | __main__:_do_search:911 - [搜索] 任务完成 task_id=fd4b29f2 report_task_id='fd4b29f2' 耗时=1514.5s report='C:\\Users\\59849\\Desktop\\舆情分析系统(AI编程） (1)\\舆情分析系统(AI编程）\\BettaFish_V2\\src\\backend\\outputs\\final_exports\\final_report_ottocast品牌的舆情情况和产品情况_20260420_141112.html' warnings=[]
+2026-04-20 14:23:48.587 | INFO     | __main__:_log_shutdown_step:539 - [Shutdown] 开始清理子进程
+2026-04-20 14:23:48.587 | INFO     | __main__:_log_shutdown_step:539 - [Shutdown] 开始清理子进程
+2026-04-20 14:23:48.587 | ERROR    | __main__:cleanup_processes:687 - 停止ForumEngine失败
+Traceback (most recent call last):
+
+> File "c:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\app.py", line 685, in cleanup_processes
+    stop_forum_engine()
+
+NameError: name 'stop_forum_engine' is not defined
+2026-04-20 14:23:48.587 | ERROR    | __main__:cleanup_processes:687 - 停止ForumEngine失败
+Traceback (most recent call last):
+
+> File "c:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\app.py", line 685, in cleanup_processes
+    stop_forum_engine()
+
+NameError: name 'stop_forum_engine' is not defined
+2026-04-20 14:23:48.591 | INFO     | __main__:_log_shutdown_step:539 - [Shutdown] 子进程清理完成
+2026-04-20 14:23:48.591 | INFO     | __main__:_log_shutdown_step:539 - [Shutdown] 子进程清理完成

@@ -1,0 +1,538 @@
+2026-04-20 11:35:45.416 | DEBUG    | ReportEngine.agent:_setup_logging:309 - 已添加日志handler (ID: 1): ops/logs/report.log
+2026-04-20 11:35:56.003 | INFO     | ReportEngine.agent:_initialize_mini_llm:399 - [MiniLLM] 未配置小模型，Map 阶段将降级使用主模型
+2026-04-20 11:35:56.009 | WARNING  | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:518 - 未配置任何Engine API，图表API修复功能将不可用
+2026-04-20 11:35:56.010 | WARNING  | ReportEngine.renderers.html_renderer:__init__:124 - HTMLRenderer: 未配置任何LLM API，图表API修复功能不可用
+2026-04-20 11:35:56.015 | INFO     | ReportEngine.agent:initialize_baseline:118 - 文件数量基准已初始化: {'insight': 0, 'media': 0, 'query': 0}
+2026-04-20 11:35:56.020 | INFO     | ReportEngine.agent:__init__:235 - Report Agent已初始化
+2026-04-20 11:35:56.022 | INFO     | ReportEngine.agent:__init__:236 - 使用LLM: {'provider': 'deepseek-chat', 'model': 'deepseek-chat', 'api_base': 'https://api.deepseek.com'}
+2026-04-20 11:35:56.022 | INFO     | ReportEngine.flask_interface:initialize_report_engine:258 - Report Engine初始化成功
+2026-04-20 11:35:56.114 | WARNING  | ReportEngine.utils.dependency_check:log_dependency_status:334 - ⚠ WeasyPrint 未安装
+解决方法: pip install weasyprint
+2026-04-20 11:35:56.115 | INFO     | ReportEngine.utils.dependency_check:log_dependency_status:335 - 💡 提示：PDF 导出功能需要 Pango 库支持，但不影响系统其他功能的正常使用
+2026-04-20 11:35:56.116 | INFO     | ReportEngine.utils.dependency_check:log_dependency_status:336 - 📚 安装说明请参考：static/Partial README for PDF Exporting/README.md
+2026-04-20 11:35:56.116 | INFO     | __main__:initialize_system_components:346 - [系统启动] ✓ ReportEngine 初始化成功
+2026-04-20 11:35:56.117 | INFO     | __main__:initialize_system_components:363 - [系统启动] ========== 启动完成 总耗时=10.7s, 错误=0 ==========
+2026-04-20 11:35:56.117 | INFO     | __main__:_do_start:1159 - [系统启动] 全部组件启动成功, 准备发送 system_start_result(success=True)
+2026-04-20 11:35:56.118 | INFO     | __main__:_do_start:1161 - [系统启动] system_start_result(success=True) 已发送
+2026-04-20 11:35:56.118 | INFO     | __main__:_do_start:1173 - [系统启动] 后台启动线程结束
+2026-04-20 11:36:05.979 | INFO     | ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=20260419_154202
+2026-04-20 11:36:05.980 | INFO     | ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-20 11:36:05.983 | INFO     | ReportEngine.flask_interface:get_result:895 - [get_result] base_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\engines, 扫描目录: [WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish_V2/src/engines/outputs/raw_md'), WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish_V2/src/outputs/raw_md')]
+2026-04-20 11:36:05.984 | INFO     | ReportEngine.flask_interface:get_result:898 - [get_result] 检查目录: C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\engines\outputs\raw_md, exists=False
+2026-04-20 11:36:05.985 | INFO     | ReportEngine.flask_interface:get_result:898 - [get_result] 检查目录: C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\outputs\raw_md, exists=False
+2026-04-20 11:36:05.986 | WARNING  | ReportEngine.flask_interface:get_result:918 - [get_result] 未找到匹配文件，返回404
+2026-04-20 11:36:10.572 | INFO     | ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=20260419_151336
+2026-04-20 11:36:10.573 | INFO     | ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-20 11:36:10.575 | INFO     | ReportEngine.flask_interface:get_result:895 - [get_result] base_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\engines, 扫描目录: [WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish_V2/src/engines/outputs/raw_md'), WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish_V2/src/outputs/raw_md')]
+2026-04-20 11:36:10.575 | INFO     | ReportEngine.flask_interface:get_result:898 - [get_result] 检查目录: C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\engines\outputs\raw_md, exists=False
+2026-04-20 11:36:10.576 | INFO     | ReportEngine.flask_interface:get_result:898 - [get_result] 检查目录: C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\outputs\raw_md, exists=False
+2026-04-20 11:36:10.577 | WARNING  | ReportEngine.flask_interface:get_result:918 - [get_result] 未找到匹配文件，返回404
+2026-04-20 11:37:34.710 | INFO     | __main__:search:883 - [搜索] 任务创建 task_id=c740bfba query='2026年Q1具身智能（人形机器人）核心零部件供应链的国产替代趋势与资本市场反馈'
+2026-04-20 11:37:34.736 | INFO     | __main__:_do_search:890 - [搜索] 任务开始执行 task_id=c740bfba
+2026-04-20 11:37:34.832 | INFO     | utils.report_cache:_ensure_db:64 - [ReportCache] 已迁移：新增 task_id 字段
+2026-04-20 11:37:34.837 | INFO     | utils.report_cache:_ensure_db:75 - [ReportCache] 已迁移：新增 report_task_id 字段
+2026-04-20 11:37:34.837 | INFO     | utils.report_cache:_ensure_db:80 - [ReportCache] 初始化完成 db=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\data\report_cache.db
+2026-04-20 11:37:34.847 | INFO     | utils.report_cache:_ensure_db:80 - [ReportCache] 初始化完成 db=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\data\report_cache.db
+2026-04-20 11:37:34.848 | INFO     | __main__:cb:894 - [搜索] [c740bfba] [pipeline] 启动三引擎并发采集... (已用时 0.1s)
+2026-04-20 11:37:35.325 | ERROR    | src.backend.runner:_run:102 - [runner] QueryEngine 执行失败: No module named 'retry_helper'
+Traceback (most recent call last):
+
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x0000025293B8B420>
+    └ <Thread(ThreadPoolExecutor-0_2, started daemon 10496)>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x0000025293B8B100>
+    └ <Thread(ThreadPoolExecutor-0_2, started daemon 10496)>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(ThreadPoolExecutor-0_2, started daemon 10496)>
+    │    │        │    └ (<weakref at 0x000002529AA1A660; to 'ThreadPoolExecutor' at 0x000002529A8AF260>, <_queue.SimpleQueue object at 0x000002529AA1...
+    │    │        └ <Thread(ThreadPoolExecutor-0_2, started daemon 10496)>
+    │    └ <function _worker at 0x00000252981FB100>
+    └ <Thread(ThreadPoolExecutor-0_2, started daemon 10496)>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 93, in _worker
+    work_item.run()
+    │         └ <function _WorkItem.run at 0x00000252981FB240>
+    └ <concurrent.futures.thread._WorkItem object at 0x000002529A9DF980>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             │    │   │    │       │    └ {}
+             │    │   │    │       └ <concurrent.futures.thread._WorkItem object at 0x000002529A9DF980>
+             │    │   │    └ (<function run_query at 0x000002529A9FC4A0>, 'QueryEngine')
+             │    │   └ <concurrent.futures.thread._WorkItem object at 0x000002529A9DF980>
+             │    └ <function run_all_engines.<locals>._run at 0x000002529A8FF920>
+             └ <concurrent.futures.thread._WorkItem object at 0x000002529A9DF980>
+
+> File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\runner.py", line 100, in _run
+    return fn(query, progress_cb)
+           │  │      └ <function search.<locals>._do_search.<locals>.cb at 0x00000252983CD300>
+           │  └ '2026年Q1具身智能（人形机器人）核心零部件供应链的国产替代趋势与资本市场反馈'
+           └ <function run_query at 0x000002529A9FC4A0>
+
+  File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\runner.py", line 69, in run_query
+    from QueryEngine.agent import DeepSearchAgent
+
+  File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\engines\QueryEngine\__init__.py", line 6, in <module>
+    from .agent import DeepSearchAgent, create_agent
+
+  File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\engines\QueryEngine\agent.py", line 22, in <module>
+    from .tools import TavilyNewsAgency, TavilyResponse
+
+  File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\engines\QueryEngine\tools\__init__.py", line 6, in <module>
+    from .search import (
+
+  File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\engines\QueryEngine\tools\search.py", line 35, in <module>
+    from retry_helper import with_graceful_retry, SEARCH_API_RETRY_CONFIG
+
+ModuleNotFoundError: No module named 'retry_helper'
+2026-04-20 11:37:35.325 | ERROR    | src.backend.runner:_run:102 - [runner] MediaEngine 执行失败: No module named 'retry_helper'
+Traceback (most recent call last):
+
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x0000025293B8B420>
+    └ <Thread(ThreadPoolExecutor-0_1, started daemon 7500)>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x0000025293B8B100>
+    └ <Thread(ThreadPoolExecutor-0_1, started daemon 7500)>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(ThreadPoolExecutor-0_1, started daemon 7500)>
+    │    │        │    └ (<weakref at 0x000002529AA1A250; to 'ThreadPoolExecutor' at 0x000002529A8AF260>, <_queue.SimpleQueue object at 0x000002529AA1...
+    │    │        └ <Thread(ThreadPoolExecutor-0_1, started daemon 7500)>
+    │    └ <function _worker at 0x00000252981FB100>
+    └ <Thread(ThreadPoolExecutor-0_1, started daemon 7500)>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 93, in _worker
+    work_item.run()
+    │         └ <function _WorkItem.run at 0x00000252981FB240>
+    └ <concurrent.futures.thread._WorkItem object at 0x000002529A5E7680>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             │    │   │    │       │    └ {}
+             │    │   │    │       └ <concurrent.futures.thread._WorkItem object at 0x000002529A5E7680>
+             │    │   │    └ (<function run_media at 0x000002529A9FC680>, 'MediaEngine')
+             │    │   └ <concurrent.futures.thread._WorkItem object at 0x000002529A5E7680>
+             │    └ <function run_all_engines.<locals>._run at 0x000002529A8FF920>
+             └ <concurrent.futures.thread._WorkItem object at 0x000002529A5E7680>
+
+> File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\runner.py", line 100, in _run
+    return fn(query, progress_cb)
+           │  │      └ <function search.<locals>._do_search.<locals>.cb at 0x00000252983CD300>
+           │  └ '2026年Q1具身智能（人形机器人）核心零部件供应链的国产替代趋势与资本市场反馈'
+           └ <function run_media at 0x000002529A9FC680>
+
+  File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\runner.py", line 38, in run_media
+    from MediaEngine.utils.config import Settings
+
+  File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\engines\MediaEngine\__init__.py", line 6, in <module>
+    from .agent import DeepSearchAgent, AnspireSearchAgent, create_agent
+
+  File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\engines\MediaEngine\agent.py", line 22, in <module>
+    from .tools import BochaMultimodalSearch, BochaResponse, AnspireAISearch, AnspireResponse
+
+  File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\engines\MediaEngine\tools\__init__.py", line 6, in <module>
+    from .search import (
+
+  File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\engines\MediaEngine\tools\search.py", line 45, in <module>
+    from retry_helper import with_graceful_retry, SEARCH_API_RETRY_CONFIG
+
+ModuleNotFoundError: No module named 'retry_helper'
+2026-04-20 11:37:56.993 | ERROR    | src.backend.runner:_run:102 - [runner] InsightEngine 执行失败: No module named 'retry_helper'
+Traceback (most recent call last):
+
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x0000025293B8B420>
+    └ <Thread(ThreadPoolExecutor-0_0, started daemon 33372)>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x0000025293B8B100>
+    └ <Thread(ThreadPoolExecutor-0_0, started daemon 33372)>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(ThreadPoolExecutor-0_0, started daemon 33372)>
+    │    │        │    └ (<weakref at 0x000002529AA19DA0; to 'ThreadPoolExecutor' at 0x000002529A8AF260>, <_queue.SimpleQueue object at 0x000002529AA1...
+    │    │        └ <Thread(ThreadPoolExecutor-0_0, started daemon 33372)>
+    │    └ <function _worker at 0x00000252981FB100>
+    └ <Thread(ThreadPoolExecutor-0_0, started daemon 33372)>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 93, in _worker
+    work_item.run()
+    │         └ <function _WorkItem.run at 0x00000252981FB240>
+    └ <concurrent.futures.thread._WorkItem object at 0x000002529A7AE7B0>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             │    │   │    │       │    └ {}
+             │    │   │    │       └ <concurrent.futures.thread._WorkItem object at 0x000002529A7AE7B0>
+             │    │   │    └ (<function run_insight at 0x000002529A9FC360>, 'InsightEngine')
+             │    │   └ <concurrent.futures.thread._WorkItem object at 0x000002529A7AE7B0>
+             │    └ <function run_all_engines.<locals>._run at 0x000002529A8FF920>
+             └ <concurrent.futures.thread._WorkItem object at 0x000002529A7AE7B0>
+
+> File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\runner.py", line 100, in _run
+    return fn(query, progress_cb)
+           │  │      └ <function search.<locals>._do_search.<locals>.cb at 0x00000252983CD300>
+           │  └ '2026年Q1具身智能（人形机器人）核心零部件供应链的国产替代趋势与资本市场反馈'
+           └ <function run_insight at 0x000002529A9FC360>
+
+  File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\runner.py", line 12, in run_insight
+    from InsightEngine.agent import DeepSearchAgent
+
+  File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\engines\InsightEngine\__init__.py", line 6, in <module>
+    from .agent import DeepSearchAgent, create_agent
+
+  File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\engines\InsightEngine\agent.py", line 27, in <module>
+    from .tools import (
+
+  File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\engines\InsightEngine\tools\__init__.py", line 12, in <module>
+    from .keyword_optimizer import (
+
+  File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\engines\InsightEngine\tools\keyword_optimizer.py", line 25, in <module>
+    from retry_helper import with_graceful_retry, SEARCH_API_RETRY_CONFIG
+
+ModuleNotFoundError: No module named 'retry_helper'
+2026-04-20 11:37:57.010 | ERROR    | __main__:_do_search:916 - [搜索] 任务失败 task_id=c740bfba 耗时=22.3s error=所有采集引擎均失败，无法生成报告
+Traceback (most recent call last):
+
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x0000025293B8B420>
+    └ <Thread(Thread-128 (_do_search), started daemon 31204)>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x0000025293B8B100>
+    └ <Thread(Thread-128 (_do_search), started daemon 31204)>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-128 (_do_search), started daemon 31204)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-128 (_do_search), started daemon 31204)>
+    │    └ <function search.<locals>._do_search at 0x000002529A9FC040>
+    └ <Thread(Thread-128 (_do_search), started daemon 31204)>
+
+> File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\app.py", line 900, in _do_search
+    result = run_pipeline(query, progress_cb=cb, force_refresh=force_refresh, task_id=task_id)
+             │            │                  │                 │                      └ 'c740bfba'
+             │            │                  │                 └ False
+             │            │                  └ <function search.<locals>._do_search.<locals>.cb at 0x00000252983CD300>
+             │            └ '2026年Q1具身智能（人形机器人）核心零部件供应链的国产替代趋势与资本市场反馈'
+             └ <function run_pipeline at 0x000002529A9FC860>
+
+  File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\runner.py", line 164, in run_pipeline
+    raise RuntimeError("所有采集引擎均失败，无法生成报告")
+
+RuntimeError: 所有采集引擎均失败，无法生成报告
+2026-04-20 11:44:17.220 | INFO     | ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=20260419_151336
+2026-04-20 11:44:17.221 | INFO     | ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-20 11:44:17.223 | INFO     | ReportEngine.flask_interface:get_result:895 - [get_result] base_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\engines, 扫描目录: [WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish_V2/src/engines/outputs/raw_md'), WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish_V2/src/outputs/raw_md')]
+2026-04-20 11:44:17.224 | INFO     | ReportEngine.flask_interface:get_result:898 - [get_result] 检查目录: C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\engines\outputs\raw_md, exists=False
+2026-04-20 11:44:17.225 | INFO     | ReportEngine.flask_interface:get_result:898 - [get_result] 检查目录: C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\outputs\raw_md, exists=False
+2026-04-20 11:44:17.227 | WARNING  | ReportEngine.flask_interface:get_result:918 - [get_result] 未找到匹配文件，返回404
+2026-04-20 11:57:35.759 | INFO     | __main__:_log_shutdown_step:533 - [Shutdown] 开始清理子进程
+2026-04-20 11:57:35.760 | ERROR    | __main__:cleanup_processes:681 - 停止ForumEngine失败
+Traceback (most recent call last):
+
+> File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\app.py", line 679, in cleanup_processes
+    stop_forum_engine()
+
+NameError: name 'stop_forum_engine' is not defined
+2026-04-20 11:57:35.760 | INFO     | __main__:_log_shutdown_step:533 - [Shutdown] 子进程清理完成
+2026-04-20 11:58:49.798 | DEBUG    | ReportEngine.agent:_setup_logging:309 - 已添加日志handler (ID: 1): ops/logs/report.log
+2026-04-20 11:59:00.178 | INFO     | ReportEngine.agent:_initialize_mini_llm:399 - [MiniLLM] 未配置小模型，Map 阶段将降级使用主模型
+2026-04-20 11:59:00.181 | WARNING  | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:518 - 未配置任何Engine API，图表API修复功能将不可用
+2026-04-20 11:59:00.181 | WARNING  | ReportEngine.renderers.html_renderer:__init__:124 - HTMLRenderer: 未配置任何LLM API，图表API修复功能不可用
+2026-04-20 11:59:00.185 | INFO     | ReportEngine.agent:initialize_baseline:118 - 文件数量基准已初始化: {'insight': 0, 'media': 0, 'query': 0}
+2026-04-20 11:59:00.190 | INFO     | ReportEngine.agent:__init__:235 - Report Agent已初始化
+2026-04-20 11:59:00.191 | INFO     | ReportEngine.agent:__init__:236 - 使用LLM: {'provider': 'deepseek-chat', 'model': 'deepseek-chat', 'api_base': 'https://api.deepseek.com'}
+2026-04-20 11:59:00.191 | INFO     | ReportEngine.flask_interface:initialize_report_engine:258 - Report Engine初始化成功
+2026-04-20 11:59:00.297 | WARNING  | ReportEngine.utils.dependency_check:log_dependency_status:334 - ⚠ WeasyPrint 未安装
+解决方法: pip install weasyprint
+2026-04-20 11:59:00.298 | INFO     | ReportEngine.utils.dependency_check:log_dependency_status:335 - 💡 提示：PDF 导出功能需要 Pango 库支持，但不影响系统其他功能的正常使用
+2026-04-20 11:59:00.298 | INFO     | ReportEngine.utils.dependency_check:log_dependency_status:336 - 📚 安装说明请参考：static/Partial README for PDF Exporting/README.md
+2026-04-20 11:59:00.299 | INFO     | __main__:initialize_system_components:346 - [系统启动] ✓ ReportEngine 初始化成功
+2026-04-20 11:59:00.300 | INFO     | __main__:initialize_system_components:363 - [系统启动] ========== 启动完成 总耗时=10.5s, 错误=0 ==========
+2026-04-20 11:59:00.300 | INFO     | __main__:_do_start:1101 - [系统启动] 全部组件启动成功, 准备发送 system_start_result(success=True)
+2026-04-20 11:59:00.301 | INFO     | __main__:_do_start:1103 - [系统启动] system_start_result(success=True) 已发送
+2026-04-20 11:59:00.301 | INFO     | __main__:_do_start:1115 - [系统启动] 后台启动线程结束
+2026-04-20 12:00:46.572 | INFO     | __main__:search:883 - [搜索] 任务创建 task_id=48b24db0 query='ottocast产品的舆情及评价'
+2026-04-20 12:00:46.593 | INFO     | __main__:_do_search:890 - [搜索] 任务开始执行 task_id=48b24db0
+2026-04-20 12:00:46.625 | INFO     | utils.report_cache:_ensure_db:80 - [ReportCache] 初始化完成 db=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\data\report_cache.db
+2026-04-20 12:00:46.633 | INFO     | utils.report_cache:_ensure_db:80 - [ReportCache] 初始化完成 db=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\data\report_cache.db
+2026-04-20 12:00:46.634 | INFO     | __main__:cb:894 - [搜索] [48b24db0] [pipeline] 启动三引擎并发采集... (已用时 0.0s)
+2026-04-20 12:00:46.819 | ERROR    | src.backend.runner:_run:102 - [runner] MediaEngine 执行异常: No module named 'retry_helper'
+2026-04-20 12:00:46.819 | ERROR    | src.backend.runner:_run:102 - [runner] QueryEngine 执行异常: No module named 'retry_helper'
+2026-04-20 12:01:02.378 | ERROR    | src.backend.runner:_run:102 - [runner] InsightEngine 执行异常: No module named 'retry_helper'
+2026-04-20 12:01:02.380 | ERROR    | __main__:_do_search:916 - [搜索] 任务失败 task_id=48b24db0 耗时=15.8s error=所有采集引擎均失败，无法生成报告
+Traceback (most recent call last):
+
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1032, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000001B61600F2E0>
+    └ <Thread(Thread-128 (_do_search), started daemon 33356)>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000001B61600EFC0>
+    └ <Thread(Thread-128 (_do_search), started daemon 33356)>
+  File "C:\Users\59849\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-128 (_do_search), started daemon 33356)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-128 (_do_search), started daemon 33356)>
+    │    └ <function search.<locals>._do_search at 0x000001B61C1BCC20>
+    └ <Thread(Thread-128 (_do_search), started daemon 33356)>
+
+> File "c:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\app.py", line 900, in _do_search
+    result = run_pipeline(query, progress_cb=cb, force_refresh=force_refresh, task_id=task_id)
+             │            │                  │                 │                      └ '48b24db0'
+             │            │                  │                 └ False
+             │            │                  └ <function search.<locals>._do_search.<locals>.cb at 0x000001B61C1ABE20>
+             │            └ 'ottocast产品的舆情及评价'
+             └ <function run_pipeline at 0x000001B61C1BC180>
+
+  File "C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\runner.py", line 164, in run_pipeline
+    raise RuntimeError("所有采集引擎均失败，无法生成报告")
+
+RuntimeError: 所有采集引擎均失败，无法生成报告
+2026-04-20 12:10:24.523 | INFO     | __main__:_log_shutdown_step:533 - [Shutdown] 开始清理子进程
+2026-04-20 12:10:24.523 | ERROR    | __main__:cleanup_processes:681 - 停止ForumEngine失败
+Traceback (most recent call last):
+
+> File "c:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\app.py", line 679, in cleanup_processes
+    stop_forum_engine()
+
+NameError: name 'stop_forum_engine' is not defined
+2026-04-20 12:10:24.525 | INFO     | __main__:_log_shutdown_step:533 - [Shutdown] 子进程清理完成
+2026-04-20 12:20:07.256 | DEBUG    | engines.ReportEngine.agent:_setup_logging:309 - 已添加日志handler (ID: 1): ops/logs/report.log
+2026-04-20 12:20:17.714 | INFO     | engines.ReportEngine.agent:_initialize_mini_llm:399 - [MiniLLM] 未配置小模型，Map 阶段将降级使用主模型
+2026-04-20 12:20:17.715 | WARNING  | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:518 - 未配置任何Engine API，图表API修复功能将不可用
+2026-04-20 12:20:17.716 | WARNING  | engines.ReportEngine.renderers.html_renderer:__init__:124 - HTMLRenderer: 未配置任何LLM API，图表API修复功能不可用
+2026-04-20 12:20:17.722 | INFO     | engines.ReportEngine.agent:initialize_baseline:118 - 文件数量基准已初始化: {'insight': 0, 'media': 0, 'query': 0}
+2026-04-20 12:20:17.727 | INFO     | engines.ReportEngine.agent:__init__:235 - Report Agent已初始化
+2026-04-20 12:20:17.727 | INFO     | engines.ReportEngine.agent:__init__:236 - 使用LLM: {'provider': 'deepseek-chat', 'model': 'deepseek-chat', 'api_base': 'https://api.deepseek.com'}
+2026-04-20 12:20:17.728 | INFO     | engines.ReportEngine.flask_interface:initialize_report_engine:258 - Report Engine初始化成功
+2026-04-20 12:20:17.842 | WARNING  | engines.ReportEngine.utils.dependency_check:log_dependency_status:334 - ⚠ WeasyPrint 未安装
+解决方法: pip install weasyprint
+2026-04-20 12:20:17.843 | INFO     | engines.ReportEngine.utils.dependency_check:log_dependency_status:335 - 💡 提示：PDF 导出功能需要 Pango 库支持，但不影响系统其他功能的正常使用
+2026-04-20 12:20:17.844 | INFO     | engines.ReportEngine.utils.dependency_check:log_dependency_status:336 - 📚 安装说明请参考：static/Partial README for PDF Exporting/README.md
+2026-04-20 12:20:17.845 | INFO     | __main__:initialize_system_components:352 - [系统启动] ✓ ReportEngine 初始化成功
+2026-04-20 12:20:17.845 | INFO     | __main__:initialize_system_components:369 - [系统启动] ========== 启动完成 总耗时=10.6s, 错误=0 ==========
+2026-04-20 12:20:17.846 | INFO     | __main__:_do_start:1107 - [系统启动] 全部组件启动成功, 准备发送 system_start_result(success=True)
+2026-04-20 12:20:17.846 | INFO     | __main__:_do_start:1109 - [系统启动] system_start_result(success=True) 已发送
+2026-04-20 12:20:17.847 | INFO     | __main__:_do_start:1121 - [系统启动] 后台启动线程结束
+2026-04-20 12:20:36.465 | INFO     | __main__:search:889 - [搜索] 任务创建 task_id=3235f3f8 query='端侧大模型算力下放对终端定价权影响'
+2026-04-20 12:20:36.481 | INFO     | __main__:_do_search:896 - [搜索] 任务开始执行 task_id=3235f3f8
+2026-04-20 12:20:36.515 | INFO     | utils.report_cache:_ensure_db:80 - [ReportCache] 初始化完成 db=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\data\report_cache.db
+2026-04-20 12:20:36.525 | INFO     | utils.report_cache:_ensure_db:80 - [ReportCache] 初始化完成 db=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\data\report_cache.db
+2026-04-20 12:20:36.526 | INFO     | __main__:cb:900 - [搜索] [3235f3f8] [pipeline] 启动三引擎并发采集... (已用时 0.0s)
+2026-04-20 12:20:36.738 | ERROR    | src.backend.runner:_run:102 - [runner] MediaEngine 执行异常: No module named 'utils.config'
+2026-04-20 12:20:36.851 | INFO     | __main__:cb:900 - [搜索] [3235f3f8] [query] QueryEngine 启动中... (已用时 0.4s)
+2026-04-20 12:20:56.114 | ERROR    | src.backend.runner:_run:102 - [runner] InsightEngine 执行异常: No module named 'utils.config'
+2026-04-20 12:21:02.273 | INFO     | engines.ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=20260419_154202
+2026-04-20 12:21:02.273 | INFO     | engines.ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-20 12:21:02.275 | INFO     | engines.ReportEngine.flask_interface:get_result:895 - [get_result] base_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2, 扫描目录: [WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish_V2/outputs/raw_md'), WindowsPath('c:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish_V2/src/outputs/raw_md')]
+2026-04-20 12:21:02.276 | INFO     | engines.ReportEngine.flask_interface:get_result:898 - [get_result] 检查目录: C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\outputs\raw_md, exists=True
+2026-04-20 12:21:02.281 | INFO     | engines.ReportEngine.flask_interface:get_result:902 - [get_result] 找到 22 个 md 文件
+2026-04-20 12:21:02.282 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2025-2026年全球AI大模型行业发展全景盘点与核心技术_20260414_161148.md, 匹配=False
+2026-04-20 12:21:02.282 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年AI产品经理的求职市场如何_20260415_120659.md, 匹配=False
+2026-04-20 12:21:02.283 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年出海短剧市场现状分析_20260416_114915.md, 匹配=False
+2026-04-20 12:21:02.284 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展情况_20260414_221322.md, 匹配=False
+2026-04-20 12:21:02.285 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_Agent的发展现状_20260413_235554.md, 匹配=False
+2026-04-20 12:21:02.286 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国深圳地区AI成熟落地方案_20260419_121534.md, 匹配=False
+2026-04-20 12:21:02.286 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_中国科技品牌在日韩市场的第二增长曲线_20260419_113325.md, 匹配=False
+2026-04-20 12:21:02.286 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人工智能_20260410_112137.md, 匹配=False
+2026-04-20 12:21:02.287 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人工智能的发展情况_20260419_151336.md, 匹配=False
+2026-04-20 12:21:02.287 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_人形机器人核心零部件供应链的国产替代_20260419_114159.md, 匹配=False
+2026-04-20 12:21:02.288 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_低空经济_20260419_154202.md, 匹配=True
+2026-04-20 12:21:02.289 | INFO     | engines.ReportEngine.flask_interface:get_result:907 - [get_result] 文件读取成功, MD长度=7119
+2026-04-20 12:21:02.420 | INFO     | engines.ReportEngine.flask_interface:get_result:909 - [get_result] 转换成功, HTML长度=9390
+2026-04-20 12:21:05.970 | DEBUG    | utils.forum_reader:get_latest_host_speech:25 - forum.log文件不存在
+2026-04-20 12:22:27.581 | DEBUG    | utils.forum_reader:get_latest_host_speech:25 - forum.log文件不存在
+2026-04-20 12:24:23.915 | INFO     | __main__:cb:900 - [搜索] [3235f3f8] [query] QueryEngine 段落 1/5 完成 (已用时 227.4s)
+2026-04-20 12:24:35.678 | DEBUG    | utils.forum_reader:get_latest_host_speech:25 - forum.log文件不存在
+2026-04-20 12:25:56.057 | DEBUG    | utils.forum_reader:get_latest_host_speech:25 - forum.log文件不存在
+2026-04-20 12:26:58.731 | INFO     | __main__:cb:900 - [搜索] [3235f3f8] [query] QueryEngine 段落 2/5 完成 (已用时 382.2s)
+2026-04-20 12:27:06.031 | DEBUG    | utils.forum_reader:get_latest_host_speech:25 - forum.log文件不存在
+2026-04-20 12:28:31.254 | DEBUG    | utils.forum_reader:get_latest_host_speech:25 - forum.log文件不存在
+2026-04-20 12:30:02.017 | INFO     | __main__:cb:900 - [搜索] [3235f3f8] [query] QueryEngine 段落 3/5 完成 (已用时 565.5s)
+2026-04-20 12:30:11.125 | DEBUG    | utils.forum_reader:get_latest_host_speech:25 - forum.log文件不存在
+2026-04-20 12:31:30.267 | DEBUG    | utils.forum_reader:get_latest_host_speech:25 - forum.log文件不存在
+2026-04-20 12:32:59.020 | INFO     | __main__:cb:900 - [搜索] [3235f3f8] [query] QueryEngine 段落 4/5 完成 (已用时 742.5s)
+2026-04-20 12:33:08.936 | DEBUG    | utils.forum_reader:get_latest_host_speech:25 - forum.log文件不存在
+2026-04-20 12:34:35.323 | DEBUG    | utils.forum_reader:get_latest_host_speech:25 - forum.log文件不存在
+2026-04-20 12:35:45.972 | INFO     | __main__:cb:900 - [搜索] [3235f3f8] [query] QueryEngine 段落 5/5 完成 (已用时 909.5s)
+2026-04-20 12:37:50.326 | INFO     | __main__:cb:900 - [搜索] [3235f3f8] [query] QueryEngine 完成 (已用时 1033.8s)
+2026-04-20 12:37:50.328 | INFO     | __main__:cb:900 - [搜索] [3235f3f8] [pipeline] 采集完成，共 1 份报告，启动 ReportEngine... (已用时 1033.8s)
+2026-04-20 12:37:50.328 | INFO     | __main__:cb:900 - [搜索] [3235f3f8] [report] ReportEngine 启动中... (已用时 1033.8s)
+2026-04-20 12:37:50.336 | DEBUG    | ReportEngine.agent:_setup_logging:309 - 已添加日志handler (ID: 3): ops/logs/report.log
+2026-04-20 12:37:50.336 | DEBUG    | ReportEngine.agent:_setup_logging:309 - 已添加日志handler (ID: 3): ops/logs/report.log
+2026-04-20 12:38:04.911 | INFO     | ReportEngine.agent:_initialize_mini_llm:399 - [MiniLLM] 未配置小模型，Map 阶段将降级使用主模型
+2026-04-20 12:38:04.911 | INFO     | ReportEngine.agent:_initialize_mini_llm:399 - [MiniLLM] 未配置小模型，Map 阶段将降级使用主模型
+2026-04-20 12:38:04.914 | WARNING  | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:518 - 未配置任何Engine API，图表API修复功能将不可用
+2026-04-20 12:38:04.914 | WARNING  | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:518 - 未配置任何Engine API，图表API修复功能将不可用
+2026-04-20 12:38:04.915 | WARNING  | ReportEngine.renderers.html_renderer:__init__:124 - HTMLRenderer: 未配置任何LLM API，图表API修复功能不可用
+2026-04-20 12:38:04.915 | WARNING  | ReportEngine.renderers.html_renderer:__init__:124 - HTMLRenderer: 未配置任何LLM API，图表API修复功能不可用
+2026-04-20 12:38:04.919 | INFO     | ReportEngine.agent:initialize_baseline:118 - 文件数量基准已初始化: {'insight': 0, 'media': 0, 'query': 0}
+2026-04-20 12:38:04.919 | INFO     | ReportEngine.agent:initialize_baseline:118 - 文件数量基准已初始化: {'insight': 0, 'media': 0, 'query': 0}
+2026-04-20 12:38:04.921 | INFO     | ReportEngine.agent:__init__:235 - Report Agent已初始化
+2026-04-20 12:38:04.921 | INFO     | ReportEngine.agent:__init__:235 - Report Agent已初始化
+2026-04-20 12:38:04.923 | INFO     | ReportEngine.agent:__init__:236 - 使用LLM: {'provider': 'deepseek-chat', 'model': 'deepseek-chat', 'api_base': 'https://api.deepseek.com'}
+2026-04-20 12:38:04.923 | INFO     | ReportEngine.agent:__init__:236 - 使用LLM: {'provider': 'deepseek-chat', 'model': 'deepseek-chat', 'api_base': 'https://api.deepseek.com'}
+2026-04-20 12:38:04.923 | INFO     | ReportEngine.agent:_map_reduce_reports:1033 - [MapReduce] query_engine 长度=7160，超过阈值2500，开始分块压缩
+2026-04-20 12:38:04.923 | INFO     | ReportEngine.agent:_map_reduce_reports:1033 - [MapReduce] query_engine 长度=7160，超过阈值2500，开始分块压缩
+2026-04-20 12:38:04.923 | INFO     | ReportEngine.agent:_map_reduce_reports:1039 - [MapReduce] query_engine 分为 2 块，逐块提炼 Fact-sheet...
+2026-04-20 12:38:04.923 | INFO     | ReportEngine.agent:_map_reduce_reports:1039 - [MapReduce] query_engine 分为 2 块，逐块提炼 Fact-sheet...
+2026-04-20 12:38:31.217 | INFO     | backend.utils.token_tracker:record_usage:89 - [TokenTracker] 本次消耗: 3896 tokens (prompt=2976, completion=920) | 累计: 3896/200000 tokens, 第 1 次调用
+2026-04-20 12:38:31.217 | INFO     | backend.utils.token_tracker:record_usage:89 - [TokenTracker] 本次消耗: 3896 tokens (prompt=2976, completion=920) | 累计: 3896/200000 tokens, 第 1 次调用
+2026-04-20 12:38:31.218 | INFO     | ReportEngine.agent:_map_reduce_reports:1057 - [MapReduce] query_engine 第1块 Fact-sheet 完成（小模型），长度=1624
+2026-04-20 12:38:31.218 | INFO     | ReportEngine.agent:_map_reduce_reports:1057 - [MapReduce] query_engine 第1块 Fact-sheet 完成（小模型），长度=1624
+2026-04-20 12:38:53.127 | INFO     | backend.utils.token_tracker:record_usage:89 - [TokenTracker] 本次消耗: 2148 tokens (prompt=1337, completion=811) | 累计: 6044/200000 tokens, 第 2 次调用
+2026-04-20 12:38:53.127 | INFO     | backend.utils.token_tracker:record_usage:89 - [TokenTracker] 本次消耗: 2148 tokens (prompt=1337, completion=811) | 累计: 6044/200000 tokens, 第 2 次调用
+2026-04-20 12:38:53.127 | INFO     | ReportEngine.agent:_map_reduce_reports:1057 - [MapReduce] query_engine 第2块 Fact-sheet 完成（小模型），长度=1379
+2026-04-20 12:38:53.127 | INFO     | ReportEngine.agent:_map_reduce_reports:1057 - [MapReduce] query_engine 第2块 Fact-sheet 完成（小模型），长度=1379
+2026-04-20 12:39:19.528 | INFO     | backend.utils.token_tracker:record_usage:89 - [TokenTracker] 本次消耗: 2786 tokens (prompt=1821, completion=965) | 累计: 8830/200000 tokens, 第 3 次调用
+2026-04-20 12:39:19.528 | INFO     | backend.utils.token_tracker:record_usage:89 - [TokenTracker] 本次消耗: 2786 tokens (prompt=1821, completion=965) | 累计: 8830/200000 tokens, 第 3 次调用
+2026-04-20 12:39:19.528 | INFO     | ReportEngine.agent:_map_reduce_reports:1096 - [MapReduce] query_engine Reduce完成，压缩前=7160，压缩后=1637
+2026-04-20 12:39:19.528 | INFO     | ReportEngine.agent:_map_reduce_reports:1096 - [MapReduce] query_engine Reduce完成，压缩前=7160，压缩后=1637
+2026-04-20 12:39:19.528 | INFO     | ReportEngine.agent:_map_reduce_reports:1027 - [MapReduce] media_engine 长度=0，未超阈值，跳过压缩
+2026-04-20 12:39:19.528 | INFO     | ReportEngine.agent:_map_reduce_reports:1027 - [MapReduce] media_engine 长度=0，未超阈值，跳过压缩
+2026-04-20 12:39:19.530 | INFO     | ReportEngine.agent:_map_reduce_reports:1027 - [MapReduce] insight_engine 长度=0，未超阈值，跳过压缩
+2026-04-20 12:39:19.530 | INFO     | ReportEngine.agent:_map_reduce_reports:1027 - [MapReduce] insight_engine 长度=0，未超阈值，跳过压缩
+2026-04-20 12:39:19.530 | INFO     | ReportEngine.agent:generate_report:477 - 开始生成报告 report-6ff87a32: 端侧大模型算力下放对终端定价权影响
+2026-04-20 12:39:19.530 | INFO     | ReportEngine.agent:generate_report:477 - 开始生成报告 report-6ff87a32: 端侧大模型算力下放对终端定价权影响
+2026-04-20 12:39:19.530 | INFO     | ReportEngine.agent:generate_report:478 - 输入数据 - 报告数量: 1, 论坛日志长度: 0
+2026-04-20 12:39:19.530 | INFO     | ReportEngine.agent:generate_report:478 - 输入数据 - 报告数量: 1, 论坛日志长度: 0
+2026-04-20 12:39:19.531 | INFO     | ReportEngine.agent:_select_template:837 - 选择报告模板...
+2026-04-20 12:39:19.531 | INFO     | ReportEngine.agent:_select_template:837 - 选择报告模板...
+2026-04-20 12:39:19.531 | INFO     | ReportEngine.nodes.template_selection_node:run:56 - 开始模板选择...
+2026-04-20 12:39:19.531 | INFO     | ReportEngine.nodes.template_selection_node:run:56 - 开始模板选择...
+2026-04-20 12:39:19.532 | ERROR    | ReportEngine.nodes.template_selection_node:_get_available_templates:229 - 模板目录不存在: src/engines/ReportEngine/report_template
+2026-04-20 12:39:19.532 | ERROR    | ReportEngine.nodes.template_selection_node:_get_available_templates:229 - 模板目录不存在: src/engines/ReportEngine/report_template
+2026-04-20 12:39:19.533 | INFO     | ReportEngine.nodes.template_selection_node:run:66 - 未找到预设模板，使用内置默认模板
+2026-04-20 12:39:19.533 | INFO     | ReportEngine.nodes.template_selection_node:run:66 - 未找到预设模板，使用内置默认模板
+2026-04-20 12:39:19.533 | INFO     | ReportEngine.nodes.template_selection_node:_get_fallback_template:280 - 未找到合适模板，使用空模板让LLM自行发挥
+2026-04-20 12:39:19.533 | INFO     | ReportEngine.nodes.template_selection_node:_get_fallback_template:280 - 未找到合适模板，使用空模板让LLM自行发挥
+2026-04-20 12:39:19.533 | INFO     | ReportEngine.agent:_select_template:860 - 选择模板: 自由发挥模板
+2026-04-20 12:39:19.533 | INFO     | ReportEngine.agent:_select_template:860 - 选择模板: 自由发挥模板
+2026-04-20 12:39:19.533 | INFO     | ReportEngine.agent:_select_template:861 - 选择理由: 未找到合适的预设模板，让LLM根据内容自行设计报告结构
+2026-04-20 12:39:19.533 | INFO     | ReportEngine.agent:_select_template:861 - 选择理由: 未找到合适的预设模板，让LLM根据内容自行设计报告结构
+2026-04-20 12:39:19.534 | WARNING  | ReportEngine.agent:_slice_template:892 - 模板未解析出章节，使用默认章节骨架
+2026-04-20 12:39:19.534 | WARNING  | ReportEngine.agent:_slice_template:892 - 模板未解析出章节，使用默认章节骨架
+2026-04-20 12:40:00.538 | DEBUG    | ReportEngine.utils.json_parser:parse:122 - 文档设计 JSON解析成功（候选1/1）
+2026-04-20 12:40:00.538 | DEBUG    | ReportEngine.utils.json_parser:parse:122 - 文档设计 JSON解析成功（候选1/1）
+2026-04-20 12:40:00.538 | INFO     | ReportEngine.nodes.document_layout_node:run:85 - 文档标题/目录设计已生成
+2026-04-20 12:40:00.538 | INFO     | ReportEngine.nodes.document_layout_node:run:85 - 文档标题/目录设计已生成
+2026-04-20 12:41:12.344 | DEBUG    | ReportEngine.utils.json_parser:parse:122 - 篇幅规划 JSON解析成功（候选1/1）
+2026-04-20 12:41:12.344 | DEBUG    | ReportEngine.utils.json_parser:parse:122 - 篇幅规划 JSON解析成功（候选1/1）
+2026-04-20 12:41:12.344 | INFO     | ReportEngine.nodes.word_budget_node:run:82 - 章节字数规划已生成
+2026-04-20 12:41:12.344 | INFO     | ReportEngine.nodes.word_budget_node:run:82 - 章节字数规划已生成
+2026-04-20 12:41:12.358 | INFO     | ReportEngine.agent:generate_report:764 - 并发生成 1 个章节，max_workers=1
+2026-04-20 12:41:12.358 | INFO     | ReportEngine.agent:generate_report:764 - 并发生成 1 个章节，max_workers=1
+2026-04-20 12:41:12.361 | INFO     | ReportEngine.agent:_generate_one_chapter:598 - 生成章节: 1.0 综合分析
+2026-04-20 12:41:12.361 | INFO     | ReportEngine.agent:_generate_one_chapter:598 - 生成章节: 1.0 综合分析
+2026-04-20 12:42:34.954 | WARNING  | ReportEngine.nodes.chapter_generation_node:_repair_llm_json:832 - 检测到章节JSON括号不平衡，已自动补齐/剔除异常括号
+2026-04-20 12:42:34.954 | WARNING  | ReportEngine.nodes.chapter_generation_node:_repair_llm_json:832 - 检测到章节JSON括号不平衡，已自动补齐/剔除异常括号
+2026-04-20 12:42:34.969 | WARNING  | ReportEngine.utils.json_parser:_apply_local_repairs:331 - 检测到括号不平衡，已自动补齐/剔除异常括号
+2026-04-20 12:42:34.969 | WARNING  | ReportEngine.utils.json_parser:_apply_local_repairs:331 - 检测到括号不平衡，已自动补齐/剔除异常括号
+2026-04-20 12:42:34.970 | DEBUG    | ReportEngine.utils.json_parser:parse:128 - ChapterJSON 候选1解析失败: Expecting ',' delimiter: line 1 column 6286 (char 6285)
+2026-04-20 12:42:34.970 | DEBUG    | ReportEngine.utils.json_parser:parse:128 - ChapterJSON 候选1解析失败: Expecting ',' delimiter: line 1 column 6286 (char 6285)
+2026-04-20 12:42:34.971 | DEBUG    | ReportEngine.utils.json_parser:parse:128 - ChapterJSON 候选2解析失败: Expecting ',' delimiter: line 1 column 6286 (char 6285)
+2026-04-20 12:42:34.971 | DEBUG    | ReportEngine.utils.json_parser:parse:128 - ChapterJSON 候选2解析失败: Expecting ',' delimiter: line 1 column 6286 (char 6285)
+2026-04-20 12:42:34.971 | ERROR    | ReportEngine.utils.json_parser:parse:162 - ChapterJSON JSON解析失败: Expecting ',' delimiter: line 1 column 6286 (char 6285)
+2026-04-20 12:42:34.971 | ERROR    | ReportEngine.utils.json_parser:parse:162 - ChapterJSON JSON解析失败: Expecting ',' delimiter: line 1 column 6286 (char 6285)
+2026-04-20 12:42:34.971 | DEBUG    | ReportEngine.utils.json_parser:parse:163 - 原始文本前500字符: {"chapter": {"chapterId": "S1", "title": "一、执行摘要与核心拓扑", "anchor": "section-1-0", "order": 10, "blocks": [{"type": "heading", "level": 2, "text": "1.1 摘要", "anchor": "executive-summary-abstract"}, {"type": "paragraph", "inlines": [{"text": "端侧大模型算力下放是AI产业从“中心集中式”向“分布式普惠”范式转移的关键进程，其商业本质在于通过技术下沉重构终端设备的价值链与定价权分配机制。这一趋势正从概念验证进入规模化应用，预计在2025-2026年深刻冲击由硬件成本、品牌溢价、软件生态和渠道结构构成的传统定价权体系。", "marks": []}]}, {"type": "engineQuote", "engine": "query", "title": "Query Agent", "blocks": [{"type": "paragraph", "in
+2026-04-20 12:42:34.971 | DEBUG    | ReportEngine.utils.json_parser:parse:163 - 原始文本前500字符: {"chapter": {"chapterId": "S1", "title": "一、执行摘要与核心拓扑", "anchor": "section-1-0", "order": 10, "blocks": [{"type": "heading", "level": 2, "text": "1.1 摘要", "anchor": "executive-summary-abstract"}, {"type": "paragraph", "inlines": [{"text": "端侧大模型算力下放是AI产业从“中心集中式”向“分布式普惠”范式转移的关键进程，其商业本质在于通过技术下沉重构终端设备的价值链与定价权分配机制。这一趋势正从概念验证进入规模化应用，预计在2025-2026年深刻冲击由硬件成本、品牌溢价、软件生态和渠道结构构成的传统定价权体系。", "marks": []}]}, {"type": "engineQuote", "engine": "query", "title": "Query Agent", "blocks": [{"type": "paragraph", "in
+2026-04-20 12:42:34.971 | WARNING  | ReportEngine.nodes.chapter_generation_node:run:238 - 1.0 综合分析 章节JSON解析失败，尝试跨引擎修复: 章节JSON解析失败: ChapterJSON JSON解析失败: Expecting ',' delimiter: line 1 column 6286 (char 6285)
+2026-04-20 12:42:34.971 | WARNING  | ReportEngine.nodes.chapter_generation_node:run:238 - 1.0 综合分析 章节JSON解析失败，尝试跨引擎修复: 章节JSON解析失败: ChapterJSON JSON解析失败: Expecting ',' delimiter: line 1 column 6286 (char 6285)
+2026-04-20 12:42:34.974 | INFO     | ReportEngine.nodes.chapter_generation_node:_attempt_cross_engine_json_rescue:575 - [report-6ff87a32] 章节 1.0 综合分析 触发 report_engine API JSON抢修（第1次尝试）
+2026-04-20 12:42:34.974 | INFO     | ReportEngine.nodes.chapter_generation_node:_attempt_cross_engine_json_rescue:575 - [report-6ff87a32] 章节 1.0 综合分析 触发 report_engine API JSON抢修（第1次尝试）
+2026-04-20 12:42:59.388 | INFO     | engines.ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=20260415_120659
+2026-04-20 12:42:59.388 | INFO     | engines.ReportEngine.flask_interface:get_result:876 - [get_result] 收到请求 task_id=20260415_120659
+2026-04-20 12:42:59.389 | INFO     | engines.ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-20 12:42:59.389 | INFO     | engines.ReportEngine.flask_interface:get_result:881 - [get_result] _get_task 返回: None
+2026-04-20 12:42:59.391 | INFO     | engines.ReportEngine.flask_interface:get_result:895 - [get_result] base_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2, 扫描目录: [WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish_V2/outputs/raw_md'), WindowsPath('c:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish_V2/src/outputs/raw_md')]
+2026-04-20 12:42:59.391 | INFO     | engines.ReportEngine.flask_interface:get_result:895 - [get_result] base_dir=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2, 扫描目录: [WindowsPath('C:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish_V2/outputs/raw_md'), WindowsPath('c:/Users/59849/Desktop/舆情分析系统(AI编程） (1)/舆情分析系统(AI编程）/BettaFish_V2/src/outputs/raw_md')]
+2026-04-20 12:42:59.392 | INFO     | engines.ReportEngine.flask_interface:get_result:898 - [get_result] 检查目录: C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\outputs\raw_md, exists=True
+2026-04-20 12:42:59.392 | INFO     | engines.ReportEngine.flask_interface:get_result:898 - [get_result] 检查目录: C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\outputs\raw_md, exists=True
+2026-04-20 12:42:59.395 | INFO     | engines.ReportEngine.flask_interface:get_result:902 - [get_result] 找到 22 个 md 文件
+2026-04-20 12:42:59.395 | INFO     | engines.ReportEngine.flask_interface:get_result:902 - [get_result] 找到 22 个 md 文件
+2026-04-20 12:42:59.396 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2025-2026年全球AI大模型行业发展全景盘点与核心技术_20260414_161148.md, 匹配=False
+2026-04-20 12:42:59.396 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2025-2026年全球AI大模型行业发展全景盘点与核心技术_20260414_161148.md, 匹配=False
+2026-04-20 12:42:59.396 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年AI产品经理的求职市场如何_20260415_120659.md, 匹配=True
+2026-04-20 12:42:59.396 | INFO     | engines.ReportEngine.flask_interface:get_result:904 - [get_result] 检查文件: deep_search_report_2026年AI产品经理的求职市场如何_20260415_120659.md, 匹配=True
+2026-04-20 12:42:59.404 | INFO     | engines.ReportEngine.flask_interface:get_result:907 - [get_result] 文件读取成功, MD长度=7285
+2026-04-20 12:42:59.404 | INFO     | engines.ReportEngine.flask_interface:get_result:907 - [get_result] 文件读取成功, MD长度=7285
+2026-04-20 12:42:59.426 | INFO     | engines.ReportEngine.flask_interface:get_result:909 - [get_result] 转换成功, HTML长度=9136
+2026-04-20 12:42:59.426 | INFO     | engines.ReportEngine.flask_interface:get_result:909 - [get_result] 转换成功, HTML长度=9136
+2026-04-20 12:43:57.561 | INFO     | backend.utils.token_tracker:record_usage:89 - [TokenTracker] 本次消耗: 13642 tokens (prompt=10590, completion=3052) | 累计: 22472/200000 tokens, 第 4 次调用
+2026-04-20 12:43:57.561 | INFO     | backend.utils.token_tracker:record_usage:89 - [TokenTracker] 本次消耗: 13642 tokens (prompt=10590, completion=3052) | 累计: 22472/200000 tokens, 第 4 次调用
+2026-04-20 12:43:57.564 | WARNING  | ReportEngine.nodes.chapter_generation_node:_attempt_cross_engine_json_rescue:596 - [report-6ff87a32] report_engine API已修复章节JSON
+2026-04-20 12:43:57.564 | WARNING  | ReportEngine.nodes.chapter_generation_node:_attempt_cross_engine_json_rescue:596 - [report-6ff87a32] report_engine API已修复章节JSON
+2026-04-20 12:43:57.564 | INFO     | ReportEngine.nodes.chapter_generation_node:run:249 - 1.0 综合分析 章节JSON已通过跨引擎修复
+2026-04-20 12:43:57.564 | INFO     | ReportEngine.nodes.chapter_generation_node:run:249 - 1.0 综合分析 章节JSON已通过跨引擎修复
+2026-04-20 12:43:57.570 | WARNING  | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:518 - 未配置任何Engine API，图表API修复功能将不可用
+2026-04-20 12:43:57.570 | WARNING  | ReportEngine.utils.chart_repair_api:create_llm_repair_functions:518 - 未配置任何Engine API，图表API修复功能将不可用
+2026-04-20 12:43:57.571 | WARNING  | ReportEngine.utils.chart_review_service:__init__:109 - ChartReviewService: 未配置任何 LLM API，图表 API 修复功能不可用
+2026-04-20 12:43:57.571 | WARNING  | ReportEngine.utils.chart_review_service:__init__:109 - ChartReviewService: 未配置任何 LLM API，图表 API 修复功能不可用
+2026-04-20 12:43:57.571 | INFO     | ReportEngine.utils.chart_review_service:__init__:118 - ChartReviewService 初始化完成
+2026-04-20 12:43:57.571 | INFO     | ReportEngine.utils.chart_review_service:__init__:118 - ChartReviewService 初始化完成
+2026-04-20 12:43:57.571 | INFO     | ReportEngine.utils.chart_review_service:_log_stats:496 - ChartReviewService 图表审查完成: 总计 1 个, 有效 1 个, 修复 0 个 (本地 0, API 0), 失败 0 个
+2026-04-20 12:43:57.571 | INFO     | ReportEngine.utils.chart_review_service:_log_stats:496 - ChartReviewService 图表审查完成: 总计 1 个, 有效 1 个, 修复 0 个 (本地 0, API 0), 失败 0 个
+2026-04-20 12:43:57.574 | WARNING  | ReportEngine.renderers.html_renderer:_collect_toc_entries:705 - 目录项 '二、多维深度洞察' 的anchor 'multi-dimensional-insights' 在文档中未找到对应的章节
+2026-04-20 12:43:57.574 | WARNING  | ReportEngine.renderers.html_renderer:_collect_toc_entries:705 - 目录项 '二、多维深度洞察' 的anchor 'multi-dimensional-insights' 在文档中未找到对应的章节
+2026-04-20 12:43:57.574 | WARNING  | ReportEngine.renderers.html_renderer:_collect_toc_entries:705 - 目录项 '三、战略预测与行动建议' 的anchor 'strategic-recommendations' 在文档中未找到对应的章节
+2026-04-20 12:43:57.574 | WARNING  | ReportEngine.renderers.html_renderer:_collect_toc_entries:705 - 目录项 '三、战略预测与行动建议' 的anchor 'strategic-recommendations' 在文档中未找到对应的章节
+2026-04-20 12:43:57.574 | WARNING  | ReportEngine.renderers.html_renderer:_collect_toc_entries:705 - 目录项 '四、数据溯源矩阵' 的anchor 'data-traceability' 在文档中未找到对应的章节
+2026-04-20 12:43:57.574 | WARNING  | ReportEngine.renderers.html_renderer:_collect_toc_entries:705 - 目录项 '四、数据溯源矩阵' 的anchor 'data-traceability' 在文档中未找到对应的章节
+2026-04-20 12:43:57.593 | INFO     | ReportEngine.renderers.html_renderer:_log_chart_validation_stats:2918 - ============================================================
+2026-04-20 12:43:57.593 | INFO     | ReportEngine.renderers.html_renderer:_log_chart_validation_stats:2918 - ============================================================
+2026-04-20 12:43:57.593 | INFO     | ReportEngine.renderers.html_renderer:_log_chart_validation_stats:2919 - 图表验证统计
+2026-04-20 12:43:57.593 | INFO     | ReportEngine.renderers.html_renderer:_log_chart_validation_stats:2919 - 图表验证统计
+2026-04-20 12:43:57.594 | INFO     | ReportEngine.renderers.html_renderer:_log_chart_validation_stats:2920 - ============================================================
+2026-04-20 12:43:57.594 | INFO     | ReportEngine.renderers.html_renderer:_log_chart_validation_stats:2920 - ============================================================
+2026-04-20 12:43:57.594 | INFO     | ReportEngine.renderers.html_renderer:_log_chart_validation_stats:2921 - 总图表数量: 1
+2026-04-20 12:43:57.594 | INFO     | ReportEngine.renderers.html_renderer:_log_chart_validation_stats:2921 - 总图表数量: 1
+2026-04-20 12:43:57.594 | INFO     | ReportEngine.renderers.html_renderer:_log_chart_validation_stats:2922 -   ✓ 验证通过: 1 (100.0%)
+2026-04-20 12:43:57.594 | INFO     | ReportEngine.renderers.html_renderer:_log_chart_validation_stats:2922 -   ✓ 验证通过: 1 (100.0%)
+2026-04-20 12:43:57.595 | INFO     | ReportEngine.renderers.html_renderer:_log_chart_validation_stats:2943 - ============================================================
+2026-04-20 12:43:57.595 | INFO     | ReportEngine.renderers.html_renderer:_log_chart_validation_stats:2943 - ============================================================
+2026-04-20 12:43:57.638 | INFO     | ReportEngine.agent:_save_report:1511 - HTML报告已保存: outputs\final_exports\final_report_端侧大模型算力下放对终端定价权影响_20260420_124357.html
+2026-04-20 12:43:57.638 | INFO     | ReportEngine.agent:_save_report:1511 - HTML报告已保存: outputs\final_exports\final_report_端侧大模型算力下放对终端定价权影响_20260420_124357.html
+2026-04-20 12:43:57.646 | INFO     | ReportEngine.agent:_save_report:1512 - Document IR已保存: outputs\final_exports\ir\report_ir_端侧大模型算力下放对终端定价权影响_20260420_124357.json
+2026-04-20 12:43:57.646 | INFO     | ReportEngine.agent:_save_report:1512 - Document IR已保存: outputs\final_exports\ir\report_ir_端侧大模型算力下放对终端定价权影响_20260420_124357.json
+2026-04-20 12:43:57.647 | INFO     | ReportEngine.agent:_save_report:1513 - 状态已保存到: outputs\final_exports\report_state_端侧大模型算力下放对终端定价权影响_20260420_124357.json
+2026-04-20 12:43:57.647 | INFO     | ReportEngine.agent:_save_report:1513 - 状态已保存到: outputs\final_exports\report_state_端侧大模型算力下放对终端定价权影响_20260420_124357.json
+2026-04-20 12:43:57.647 | INFO     | ReportEngine.agent:generate_report:806 - 报告生成完成，耗时: 352.72 秒
+2026-04-20 12:43:57.647 | INFO     | ReportEngine.agent:generate_report:806 - 报告生成完成，耗时: 352.72 秒
+2026-04-20 12:43:57.648 | INFO     | __main__:cb:900 - [搜索] [3235f3f8] [report] ReportEngine 完成 (已用时 1401.2s)
+2026-04-20 12:43:57.648 | INFO     | __main__:cb:900 - [搜索] [3235f3f8] [report] ReportEngine 完成 (已用时 1401.2s)
+2026-04-20 12:43:57.654 | INFO     | utils.report_cache:_ensure_db:80 - [ReportCache] 初始化完成 db=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\data\report_cache.db
+2026-04-20 12:43:57.654 | INFO     | utils.report_cache:_ensure_db:80 - [ReportCache] 初始化完成 db=C:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\data\report_cache.db
+2026-04-20 12:43:57.654 | WARNING  | src.backend.runner:run_pipeline:177 - [runner] 缓存写入失败，跳过: 'ReportCache' object has no attribute 'set'
+2026-04-20 12:43:57.654 | WARNING  | src.backend.runner:run_pipeline:177 - [runner] 缓存写入失败，跳过: 'ReportCache' object has no attribute 'set'
+2026-04-20 12:43:57.655 | INFO     | __main__:_do_search:911 - [搜索] 任务完成 task_id=3235f3f8 report_task_id='3235f3f8' 耗时=1401.2s report='C:\\Users\\59849\\Desktop\\舆情分析系统(AI编程） (1)\\舆情分析系统(AI编程）\\BettaFish_V2\\src\\outputs\\final_exports\\final_report_端侧大模型算力下放对终端定价权影响_20260420_124357.html' warnings=[]
+2026-04-20 12:43:57.655 | INFO     | __main__:_do_search:911 - [搜索] 任务完成 task_id=3235f3f8 report_task_id='3235f3f8' 耗时=1401.2s report='C:\\Users\\59849\\Desktop\\舆情分析系统(AI编程） (1)\\舆情分析系统(AI编程）\\BettaFish_V2\\src\\outputs\\final_exports\\final_report_端侧大模型算力下放对终端定价权影响_20260420_124357.html' warnings=[]
+2026-04-20 13:11:34.804 | INFO     | __main__:_log_shutdown_step:539 - [Shutdown] 开始清理子进程
+2026-04-20 13:11:34.804 | INFO     | __main__:_log_shutdown_step:539 - [Shutdown] 开始清理子进程
+2026-04-20 13:11:34.805 | ERROR    | __main__:cleanup_processes:687 - 停止ForumEngine失败
+Traceback (most recent call last):
+
+> File "c:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\app.py", line 685, in cleanup_processes
+    stop_forum_engine()
+
+NameError: name 'stop_forum_engine' is not defined
+2026-04-20 13:11:34.805 | ERROR    | __main__:cleanup_processes:687 - 停止ForumEngine失败
+Traceback (most recent call last):
+
+> File "c:\Users\59849\Desktop\舆情分析系统(AI编程） (1)\舆情分析系统(AI编程）\BettaFish_V2\src\backend\app.py", line 685, in cleanup_processes
+    stop_forum_engine()
+
+NameError: name 'stop_forum_engine' is not defined
+2026-04-20 13:11:34.808 | INFO     | __main__:_log_shutdown_step:539 - [Shutdown] 子进程清理完成
+2026-04-20 13:11:34.808 | INFO     | __main__:_log_shutdown_step:539 - [Shutdown] 子进程清理完成

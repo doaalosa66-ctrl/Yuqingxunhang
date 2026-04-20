@@ -26,7 +26,7 @@ class Settings(BaseSettings):
     变量名与原 config.py 大写一致，便于平滑过渡。
     """
     # ================== Flask 服务器配置 ====================
-    HOST: str = Field("0.0.0.0", description="BETTAFISH 主机地址，例如 0.0.0.0 或 127.0.0.1")
+    HOST: str = Field("0.0.0.0", description="Mina AI 舆情巡航系统 主机地址，例如 0.0.0.0 或 127.0.0.1")
     PORT: int = Field(5000, description="Flask服务器端口号，默认5000")
 
     # ====================== 数据库配置 ======================

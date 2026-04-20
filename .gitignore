@@ -1,5 +1,0 @@
-# 环境变量（含敏感信息）
-.env
-
-# Claude Code 本地配置
-.claude/

@@ -1,4 +1,4 @@
-# BettaFish 舆情分析系统 — 架构与 API 接口梳理
+# Mina AI舆情巡航系统 — 架构与 API 接口梳理
 
 > 梳理时间：2026-04-16  
 > 代码路径：`舆情分析系统(AI编程）\BettaFish-main\`
