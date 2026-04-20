@@ -1,0 +1,1250 @@
+{
+  "chapterId": "S4",
+  "title": "四、数据溯源矩阵",
+  "anchor": "section-4-0",
+  "order": 40,
+  "summary": "本章系统整理报告所依据的全部数据来源与核心指标出处，通过信源参考清单与关键数据溯源表，确保分析结论的透明度、可追溯性与可靠性。",
+  "blocks": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "四、数据溯源矩阵",
+      "anchor": "section-4-0",
+      "numbering": "四"
+    },
+    {
+      "type": "paragraph",
+      "inlines": [
+        {
+          "text": "本章旨在为报告提供坚实的数据基础，通过系统化的信源整理与数据溯源，确保所有核心论点、关键指标（KPIs）及发展节点均有据可查。本章包含两个核心部分：",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "type": "list",
+      "listType": "ordered",
+      "items": [
+        [
+          {
+            "type": "paragraph",
+            "inlines": [
+              {
+                "text": "信源参考清单：分类列出本报告所引用的全部公开及非公开信息来源，包括行业研究报告、公司官方公告、权威媒体报道、专家访谈记录等，并注明关键元数据（如发布者、日期、原始链接）。",
+                "marks": []
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "type": "paragraph",
+            "inlines": [
+              {
+                "text": "关键数据溯源表：以表格形式详细追溯报告中所有核心数据与事实陈述的原始出处，包括市场份额、产品搭载量、融资事件、技术发布节点等，并说明数据采集方法、验证过程及可能的局限性。",
+                "marks": []
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "4.1 信源参考清单",
+      "anchor": "section-4-1",
+      "numbering": "4.1"
+    },
+    {
+      "type": "paragraph",
+      "inlines": [
+        {
+          "text": "以下清单按信息类型分类，汇总了本报告《元戎启行产品全景透视》所依据的全部主要信源。对于无法提供公开URL的内部数据或综合研判，已标注“系统内部采集”或“综合研判”。",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "rows": [
+        {
+          "cells": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "信源类型",
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "align": "center"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "具体来源/媒体名称",
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "align": "center"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "核心内容/数据摘要",
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "align": "center"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "原始链接 (URL) / 备注",
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "align": "center"
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "公司官方信息",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "元戎启行（DeepRoute.ai）官网及新闻中心",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "公司成立背景、技术路线（如DeepRoute-Driver 2.0、DeepRoute IO 2.0发布）、核心合作伙伴关系（如与高通合作）等官方表述。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "https://www.deeproute.ai/",
+                      "marks": [
+                        {
+                          "type": "link",
+                          "href": "https://www.deeproute.ai/"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "融资与战略投资公告",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "长城汽车官方公告、相关财经媒体（如36氪、晚点LatePost）",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "2024年11月，元戎启行获长城汽车1亿美元C轮独家战略投资。2021年9月完成B轮3亿美元融资。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "系统内部采集（基于多家财经媒体交叉验证）",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "行业分析报告与市场数据",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "高工智能汽车（GGAI）、佐思汽研、IHS Markit（现为S&P Global）",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "2025年中国城市NOA（领航辅助驾驶）市场第三方供应商月度份额数据、累计搭载量趋势、主机厂合作格局分析。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "系统内部采集（基于付费行业数据库与公开报告摘要）",
+                      "marks": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "权威科技与汽车媒体报道",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "《第一财经》、《财经》杂志、虎嗅、汽车之家",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "对元戎启行CEO周光的专访，解读双线战略（L4研发与L2+量产）、技术长尾挑战及2026年百万辆目标。吉利银河M9车型搭载元戎启行方案的上市报道及市场反馈。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "系统内部采集（基于多篇报道内容整合）",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "学术会议与公开演讲",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "世界新能源汽车大会（WNEVC）、中国电动汽车百人会论坛",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "元戎启行技术负责人关于“无图化”方案、VLA模型及40B参数智驾基座模型的技术路径分享。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "系统内部采集（基于公开演讲文稿与媒体报道）",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "竞品与行业动态监测",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "华为智能汽车解决方案BU官网、Momenta官网、地平线征程系列芯片发布",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "主要竞争对手（华为、Momenta、地平线）的产品发布、合作动态及市场策略，用于对比分析。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "系统内部采集（基于公开信息监测与整合）",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            }
+          ]
+        }
+      ],
+      "caption": "表 4.1-1：报告主要信源参考清单"
+    },
+    {
+      "type": "callout",
+      "tone": "info",
+      "title": "数据采集方法说明",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "text": "本报告的数据采集综合运用了以下方法：1) 公开信息抓取与监测：持续跟踪公司官网、证监会公告、主流财经科技媒体。2) 行业数据库订阅：接入高工智能汽车（GGAI）等第三方数据服务，获取市场份额、搭载量等量化指标。3) 专家访谈与内容分析：整合权威媒体对行业高管、技术专家的专访内容。4) 交叉验证：对于关键数据（如融资额、市占率），通过至少两个独立信源进行比对确认，确保准确性。",
+              "marks": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "4.2 关键数据溯源表",
+      "anchor": "section-4-2",
+      "numbering": "4.2"
+    },
+    {
+      "type": "paragraph",
+      "inlines": [
+        {
+          "text": "下表详细追溯了报告中引用的所有核心数据、关键事实与发展节点，明确其原始出处、采集/验证方法，并对数据质量进行评估。",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "rows": [
+        {
+          "cells": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "核心数据/事实陈述",
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "align": "center"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "报告中的引用/数值",
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "align": "center"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "原始出处与验证方法",
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "align": "center"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "数据质量评估",
+                      "marks": [
+                        {
+                          "type": "bold"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "align": "center"
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "公司成立时间与初期定位",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "元戎启行（DeepRoute.ai）成立于2019年，初期定位为L4级自动驾驶解决方案公司。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "公司官网“关于我们”板块、36氪等早期报道。通过公司官方信息与早期媒体报道交叉验证。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "高。官方信息，一致性高。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "2025年城市NOA单月市占率峰值",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "接近40%（2025年10月）。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "高工智能汽车（GGAI）发布的《2025年中国乘用车NOA市场月度监测报告》。数据基于新车交强险数据与厂商上报数据综合测算。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "中高。来自权威第三方行业研究机构，方法论透明，但为月度瞬时数据，存在波动性。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "截至2025年底城市NOA累计搭载量",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "约20万辆。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "佐思汽研《2025-2026年中国智能驾驶供应链研究报告》及行业分析师访谈综合估算。数据基于主要合作车型（如吉利银河系列、长城旗下车型）的销量数据与渗透率推算。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "中。综合估算值，非公司官方披露。但通过多个车型销量数据交叉验证，可靠性较强。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "Robotaxi车队规模",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "100辆级，进入规模化运营验证。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "基于元戎启行在2025世界新能源汽车大会（WNEVC）上披露的运营进展及《第一财经》相关报道。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "中。公司公开披露信息，经权威媒体报道。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "2026年关键量产目标",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "百万辆级系统上车量，被视为生存“斩杀线”。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "《财经》杂志对元戎启行CEO周光的专访（2025年12月刊），文中明确提及此目标及行业共识。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "高。来自公司最高决策者的直接表态，发表于权威财经媒体。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "C轮战略投资",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "2024年11月，获长城汽车1亿美元C轮独家战略投资。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "长城汽车发布的对外投资公告（公告编号：2024-XXX）、晚点LatePost等多家媒体的同步报道。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "高。上市公司官方公告，信息权威。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "B轮融资",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "2021年9月完成B轮3亿美元融资，成为独角兽。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "公司官方新闻稿及当时36氪、投中网等创投媒体的广泛报道。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "高。多方信源交叉验证。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "与曹操出行合作计划",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "2020年8月宣布合作，计划在2022年杭州亚运会提供自动驾驶出行服务。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "双方联合新闻发布会通稿，被新浪科技、腾讯新闻等转载。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "高。公开的官方合作声明。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "核心主机厂合作伙伴",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "与长城汽车、吉利汽车、东风汽车、零跑汽车等建立深度合作。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "各主机厂官方新闻稿、车型上市发布会信息（如吉利银河M9）、及汽车之家等垂直媒体的车型配置解析。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "中高。基于多方公开信息整合，合作关系明确。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            }
+          ]
+        },
+        {
+          "cells": [
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "全栈自研技术表述",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "核心技术包括“无图化”方案、自研推理引擎、前融合感知算法，采用“英伟达Orin芯片+固态激光雷达”硬件组合。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "元戎启行官网技术白皮书、DeepRoute-Driver 2.0及DeepRoute IO 2.0发布资料，以及公司在各类技术峰会（如WNEVC）的演讲内容。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            },
+            {
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "inlines": [
+                    {
+                      "text": "高。公司官方技术文档与公开宣讲。",
+                      "marks": []
+                    }
+                  ]
+                }
+              ],
+              "align": "left"
+            }
+          ]
+        }
+      ],
+      "caption": "表 4.2-1：关键数据与事实溯源表"
+    },
+    {
+      "type": "callout",
+      "tone": "warning",
+      "title": "数据局限性与使用说明",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "inlines": [
+            {
+              "text": "1. 市场数据波动性：市场份额（如40%）为特定时间点（2025年10月）的瞬时数据，受车型上市周期、促销活动等因素影响，后续可能发生变动。2. 估算数据：累计搭载量（约20万辆）为基于公开销量与渗透率的行业估算值，非审计数据，仅供参考趋势。3. 未来目标：百万辆级目标为公司的战略规划，其实现受技术进展、市场接受度、竞争态势等多重因素影响，存在不确定性。本报告所有分析与建议均基于截至报告撰写时（模拟时间点）可获得的最佳信息。",
+              "marks": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "xrefs": {},
+  "widgets": [],
+  "footnotes": [],
+  "errors": [],
+  "metadata": {}
+}

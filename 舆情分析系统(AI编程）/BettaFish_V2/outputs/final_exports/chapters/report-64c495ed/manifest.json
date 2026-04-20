@@ -1,0 +1,259 @@
+{
+  "reportId": "report-64c495ed",
+  "createdAt": "2026-04-20T09:34:57.852986Z",
+  "metadata": {
+    "query": "元戎启行的产品情况分析",
+    "title": "元戎启行产品全景透视",
+    "subtitle": "高阶智驾双线战略下的市场突围与效能转化",
+    "tagline": "本文总览：从L4级自动驾驶到L2+前装量产，深度解析元戎启行的产品格局、竞争态势与战略路径",
+    "templateName": "市场竞争格局舆情分析报告模板",
+    "selectionReason": "查询内容聚焦于元戎启行的产品情况分析，报告内容深度分析了其技术路径、商业化进展、行业竞争态势及与华为、Momenta、地平线等对手的对比，核心任务是系统性评估其在自动驾驶赛道中的市场位置和竞争策略，符合该模板的对比与洞察目标。",
+    "themeTokens": {
+      "fontFamily": {
+        "title": "PingFang SC, Microsoft YaHei, sans-serif",
+        "body": "PingFang SC, Microsoft YaHei, sans-serif"
+      },
+      "fontSize": {
+        "title": "32px",
+        "subtitle": "20px",
+        "toc": "18px",
+        "h1": "24px",
+        "h2": "20px",
+        "body": "16px"
+      },
+      "spacing": {
+        "section": "40px",
+        "paragraph": "20px",
+        "element": "12px"
+      },
+      "colors": {
+        "primary": "#1a73e8",
+        "secondary": "#34a853",
+        "accent": "#fbbc05",
+        "background": "#ffffff",
+        "text": "#202124",
+        "border": "#dadce0"
+      },
+      "darkMode": {
+        "background": "#1e1e1e",
+        "text": "#e8eaed",
+        "border": "#5f6368"
+      }
+    },
+    "toc": {
+      "depth": 3,
+      "autoNumbering": true,
+      "title": "文章总览",
+      "customEntries": [
+        {
+          "chapterId": "S1",
+          "anchor": "section-1-0",
+          "display": "一、执行摘要与核心拓扑",
+          "description": "概述元戎启行产品格局、市场地位及关键指标，提供竞争态势的核心定性分析。",
+          "allowSwot": false,
+          "allowPest": false
+        },
+        {
+          "chapterId": "S2",
+          "anchor": "section-2-0",
+          "display": "二、多维深度洞察",
+          "description": "深入分析技术路径、用户偏好、竞争风险与差异化优势，识别机会窗口与挑战。",
+          "allowSwot": false,
+          "allowPest": true
+        },
+        {
+          "chapterId": "S3",
+          "anchor": "section-3-0",
+          "display": "三、战略预测与行动建议",
+          "description": "基于当前态势预测未来竞争演进，提供差异化策略与市场突围路径的具体建议。",
+          "allowSwot": true,
+          "allowPest": false
+        },
+        {
+          "chapterId": "S4",
+          "anchor": "section-4-0",
+          "display": "四、数据溯源矩阵",
+          "description": "列出报告关键数据来源与信参考清单，确保分析的可追溯性与可靠性。",
+          "allowSwot": false,
+          "allowPest": false
+        }
+      ]
+    },
+    "hero": {
+      "summary": "元戎启行（DeepRoute.ai）作为L4级自动驾驶起家的技术公司，已成功转型为“高阶L4研发”与“量产L2+落地”双线并行的智驾解决方案供应商。凭借全栈自研技术、深度主机厂绑定及快速上量能力，在2025年城市NOA市场一度占据近40%份额，但面临技术长尾、同质化竞争及规模效能转化的关键挑战。",
+      "highlights": [
+        "双线战略成型：L4级自动驾驶研发与L2+前装量产业务并行，2025年城市NOA累计搭载量约20万辆",
+        "技术全栈自研：核心包括无图化方案、自研推理引擎、前融合感知算法，采用英伟达Orin芯片+固态激光雷达硬件组合",
+        "深度主机厂绑定：获长城汽车C轮独家投资，与吉利、东风、零跑等建立合作，在第三方供应商中跻身第一梯队",
+        "关键目标明确：设定2026年百万辆级系统上车量为生存“斩杀线”，行业进入规模决胜阶段"
+      ],
+      "kpis": [
+        {
+          "label": "2025年城市NOA单月市占率峰值",
+          "value": "接近40%",
+          "delta": "快速上量期",
+          "tone": "up"
+        },
+        {
+          "label": "累计搭载量（截至2025年底）",
+          "value": "约20万辆",
+          "delta": "前装量产业务爆发",
+          "tone": "up"
+        },
+        {
+          "label": "Robotaxi车队规模",
+          "value": "100辆级",
+          "delta": "规模化运营验证",
+          "tone": "neutral"
+        },
+        {
+          "label": "2026年关键目标",
+          "value": "百万辆级",
+          "delta": "生存斩杀线",
+          "tone": "up"
+        }
+      ],
+      "actions": [
+        "强化技术长尾问题解决能力，应对复杂城市场景挑战",
+        "深化与核心主机厂的战略合作，巩固市场领先地位",
+        "关注特斯拉FSD入华及AI大模型开源等外部变量，提前布局应对",
+        "加速从“规模存在”向“规模效能”转化，提升盈利与可持续性"
+      ]
+    },
+    "layoutNotes": [
+      "目录与正文一级标题统一使用24px字号，确保视觉层级清晰一致。",
+      "章节间留白建议40px，段落间20px，元素间12px，提升阅读舒适度。",
+      "优先使用Chart.js图表、KPI卡、色块、表格等原生组件，避免外部图片依赖。",
+      "色板支持明暗模式切换，确保在暗黑模式下文本与背景对比度达标。",
+      "SWOT分析块仅用于第三章（战略预测与行动建议），PEST分析块仅用于第二章（多维深度洞察）。",
+      "二级目录采用1.1/1.2格式，在描述中简要说明各小节重点，保持结构简洁。"
+    ],
+    "wordPlan": {
+      "totalWords": 8000,
+      "globalGuidelines": [
+        "总字数目标8000字，允许±10%浮动（7200-8800字），确保内容详实且结构均衡。",
+        "核心章节按权重分配：第一章18%（约1500字）、第二章31%（约2500字）、第三章31%（约2500字）、第四章18%（约1500字），聚焦元戎启行产品分析。",
+        "强调数据驱动：基于素材中的关键指标（如40%市占率、20万辆搭载量、百万辆目标）展开分析，确保论证有据。",
+        "突出战略深度：在第二、三章重点剖析双线战略、技术路径、竞争风险及行动建议，融入PEST/SWOT分析框架。",
+        "保持可读性：章节间逻辑连贯，二级标题清晰，避免冗长，必要时用案例补充说明。"
+      ]
+    },
+    "templateOverview": {
+      "title": "**市场竞争格局舆情分析报告模板**",
+      "chapters": [
+        {
+          "chapterId": "S1",
+          "title": "1.0 执行摘要与核心拓扑",
+          "rawTitle": "1.0 执行摘要与核心拓扑",
+          "number": "1.0",
+          "slug": "section-1-0",
+          "order": 10,
+          "depth": 1,
+          "outline": [
+            "1.1 核心定性：竞争格局本质与市场态势",
+            "1.2 关键指标：声量对比、口碑差异、市场份额",
+            "1.3 传播时间轴：竞品动态与关键节点",
+            "1.4 核心传播阵地：各品牌平台布局对比"
+          ]
+        },
+        {
+          "chapterId": "S2",
+          "title": "2.0 多维深度洞察",
+          "rawTitle": "2.0 多维深度洞察",
+          "number": "2.0",
+          "slug": "section-2-0",
+          "order": 20,
+          "depth": 1,
+          "outline": [
+            "2.1 竞品情感溯源与用户偏好",
+            "2.2 意见领袖立场分布与影响力对比",
+            "2.3 竞争风险与机会窗口",
+            "2.4 差异化优势识别"
+          ]
+        },
+        {
+          "chapterId": "S3",
+          "title": "3.0 战略预测与行动建议",
+          "rawTitle": "3.0 战略预测与行动建议",
+          "number": "3.0",
+          "slug": "section-3-0",
+          "order": 30,
+          "depth": 1,
+          "outline": [
+            "3.1 竞争态势演进预测（7-30天）",
+            "3.2 差异化竞争策略（按优先级排序）",
+            "3.3 市场突围与防御路径"
+          ]
+        },
+        {
+          "chapterId": "S4",
+          "title": "4.0 数据溯源矩阵",
+          "rawTitle": "4.0 数据溯源矩阵",
+          "number": "4.0",
+          "slug": "section-4-0",
+          "order": 40,
+          "depth": 1,
+          "outline": [
+            "4.1 信源参考清单",
+            "4.2 关键数据溯源表"
+          ]
+        }
+      ]
+    }
+  },
+  "chapters": [
+    {
+      "chapterId": "S1",
+      "slug": "section-1-0",
+      "title": "1.0 执行摘要与核心拓扑",
+      "order": 10,
+      "status": "ready",
+      "files": {
+        "raw": "010-section-1-0\\stream.raw",
+        "json": "010-section-1-0\\chapter.json"
+      },
+      "errors": [],
+      "updatedAt": "2026-04-20T09:39:23.271832Z"
+    },
+    {
+      "chapterId": "S2",
+      "slug": "section-2-0",
+      "title": "2.0 多维深度洞察",
+      "order": 20,
+      "status": "ready",
+      "files": {
+        "raw": "020-section-2-0\\stream.raw",
+        "json": "020-section-2-0\\chapter.json"
+      },
+      "errors": [],
+      "updatedAt": "2026-04-20T09:39:04.393290Z"
+    },
+    {
+      "chapterId": "S3",
+      "slug": "section-3-0",
+      "title": "3.0 战略预测与行动建议",
+      "order": 30,
+      "status": "ready",
+      "files": {
+        "raw": "030-section-3-0\\stream.raw",
+        "json": "030-section-3-0\\chapter.json"
+      },
+      "errors": [],
+      "updatedAt": "2026-04-20T09:37:59.910381Z"
+    },
+    {
+      "chapterId": "S4",
+      "slug": "section-4-0",
+      "title": "4.0 数据溯源矩阵",
+      "order": 40,
+      "status": "ready",
+      "files": {
+        "raw": "040-section-4-0\\stream.raw",
+        "json": "040-section-4-0\\chapter.json"
+      },
+      "errors": [],
+      "updatedAt": "2026-04-20T09:39:42.978019Z"
+    }
+  ],
+  "updatedAt": "2026-04-20T09:34:57.877171Z"
+}
