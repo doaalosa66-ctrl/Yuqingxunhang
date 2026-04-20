@@ -2115,3 +2115,29 @@ body.immersive-reader .toc-handle .toc-icon-collapse { display: none; }
 body.immersive-reader .toc-handle.toc-handle-expanded { left: 240px; }
 body.immersive-reader .toc-handle.toc-handle-expanded .toc-icon-expand { display: none; }
 body.immersive-reader .toc-handle.toc-handle-expanded .toc-icon-collapse { display: block; }
+
+/* 确保右下角悬浮按钮始终可见 */
+#historyArchiveBtn, #guideTrigger {
+    z-index: 10002 !important;
+    display: flex !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+}
+
+/* 沉浸式阅读模式下也保持可见 */
+body.immersive-reader #historyArchiveBtn,
+body.immersive-reader #guideTrigger {
+    display: flex !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+}
+
+/* 防止使用指引弹窗被遮挡 */
+#guideOverlay {
+    z-index: 99999 !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+}

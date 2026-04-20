@@ -12,38 +12,56 @@ window.guideZoom = function(dir) {
     if (l) l.textContent = Math.round(STEPS[idx] * 100) + '%';
 };
 
-// 模态开关动画
+// 强制显示/隐藏函数
+window.showGuide = function() {
+    var overlay = document.getElementById('guideOverlay');
+    var modal = document.getElementById('guideModal');
+    if (overlay) {
+        overlay.style.display = 'flex';
+        overlay.style.opacity = '1';
+        overlay.style.visibility = 'visible';
+        overlay.style.pointerEvents = 'auto';
+    }
+    if (modal) {
+        modal.style.transform = 'scale(1) translateY(0)';
+    }
+    document.body.style.overflow = 'hidden';
+};
+
+window.hideGuide = function() {
+    var overlay = document.getElementById('guideOverlay');
+    if (overlay) {
+        overlay.style.display = 'none';
+        overlay.style.opacity = '0';
+        overlay.style.visibility = 'hidden';
+        overlay.style.pointerEvents = 'none';
+    }
+    document.body.style.overflow = '';
+};
+
+// 绑定打开按钮
+var guideTrigger = document.getElementById('guideTrigger');
+if (guideTrigger) {
+    guideTrigger.addEventListener('click', window.showGuide);
+}
+
+// 点击遮罩关闭
 var overlay = document.getElementById('guideOverlay');
-var modal   = document.getElementById('guideModal');
-
 if (overlay) {
-    // 监听 class 变化驱动动画
-    var observer = new MutationObserver(function() {
-        var open = overlay.classList.contains('open');
-        overlay.style.opacity  = open ? '1' : '0';
-        overlay.style.pointerEvents = open ? 'auto' : 'none';
-        if (modal) modal.style.transform = open
-            ? 'scale(1) translateY(0)'
-            : 'scale(0.94) translateY(12px)';
-        document.body.style.overflow = open ? 'hidden' : '';
-    });
-    observer.observe(overlay, { attributes: true, attributeFilter: ['class'] });
-
-    // 点击遮罩关闭
     overlay.addEventListener('click', function(e) {
-        if (e.target === overlay) overlay.classList.remove('open');
+        if (e.target === overlay) window.hideGuide();
     });
 }
 
 // ESC 关闭
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
-        var o = document.getElementById('guideOverlay');
-        if (o) o.classList.remove('open');
+        window.hideGuide();
     }
 });
 
 // Ctrl+滚轮缩放
+var modal = document.getElementById('guideModal');
 if (modal) {
     modal.addEventListener('wheel', function(e) {
         if (!e.ctrlKey && !e.metaKey) return;
